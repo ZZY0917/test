@@ -6,15 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="renderer" content="webkit|ie-comp|ie-stand" /> 
     <title>因乐 - 因你而乐</title>
-    <meta itemprop="images" content="/homes/images/logo.png" />
+    <meta itemprop="images" content="http://static.kgimg.com/public/root/images/logo.png" />
     <meta name="keywords" content="" />
-    <meta name="description" content="酷狗音乐旗下最新最全的在线正版音乐网站，本站为您免费提供最全的在线音乐试听下载，以及全球海量电台和MV播放服务、最新音乐播放器下载。酷狗音乐 和音乐在一起。" />
-<link rel="stylesheet" type="text/css" href="/admins/css/error.css" media="screen">   
-
+    
     <link href="root/favicon.ico" rel="shortcut icon">
-        <link rel="stylesheet" href="/homes/css/base_v.1.css" />
-        <link rel="stylesheet" href="/homes/css/user_center_v.1.css" />
-
     <link rel="stylesheet" href="/home/css/index.css">
     <link rel="alternate" media="only screen and (max-width: 640px)"  href="http://m.kugou.com">
 
@@ -23,30 +18,20 @@
 
     <!-- 歌单css js-->
     <link rel="stylesheet" type="text/css" href="/home/css/header-20160116.css">
-    <!-- <script type="text/javascript" src="/homes/js/hijacked-min.js"></script> -->
-    <script type="text/javascript" src="/homes/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/homes/js/lib.js"></script>
-    <script src="/homes/js/kguser_min.js?20180305"></script>
-    <!-- <script type="text/javascript" src="/homes/js/common_header.min.js"></script> -->
-
+    <script type="text/javascript" src="/home/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/home/common/js/lib.js"></script>
 
 
 
     <script type="text/javascript" src='/admins/js/libs/jquery-1.8.3.min.js'></script>
     <script type="text/javascript" src='/home/hdp/js/jquery.bxslider.min.js'></script>
-<!-- Theme Stylesheet -->
-<!-- <link rel="stylesheet" type="text/css" href="/admins/css/themer.css" media="screen">    -->
-<!-- Demo Stylesheet -->
-<!-- <link rel="stylesheet" type="text/css" href="/admins/css/demo.css" media="screen"> -->
-
-
     
 </head>
 
 <body>
     <div class="mainPage">
         <div class="header">
-            <h1 class="logo"><a  href="index.html"><img src="" alt=""></a></h1>
+            <h1 class="logo"><a  href="/"><img src="" alt=""></a></h1>
             <div class="search_wrapper top_search">
                 <div class="search_input"><input type="text"><div class="searh_btn"><i class="search_icon"></i><span>搜索</span></div></div>
                 <div class="search_recommend top_search_recommend">
@@ -63,25 +48,19 @@
                     <li><a target="_blank" href="http://vip.kugou.com/">会员中心 </a></li>
                 </ul>
                 <div class="login_area">
-                    @if(!session('uid'))
-                    <div id="login_in" class="">
-                        <a class="login_btn" href="home/login"  id="login_btn">登录</a>
-                        <a target="_blank" href="home/reg" class="regin_btn" id="regin_btn">注册</a>
-                    </div>
-                    <div id="" class="">
+                    <div id="login_in" class="clearfix"><a class="login_btn" id="login_btn">登录</a><a target="_blank" href="reg/web/index.html" class="regin_btn" id="regin_btn">注册</a></div>
+                    <div id="login_out" class="clearfix">
                         <img class="user_img" src="">
                         <span class="user_name"></span>
                     </div>
-                    @else
-                    <div id="" class="">
-                        <div class="topArrow1"  style="float: left;margin-left:15px;">Hello,{{session('username')}}</div>
+                    <div id="user_menu" class="user_menu">
+                        <div class="topArrow1"></div>
                         <div class="topArrow2"></div>
                         <ul>
-                            <li><a target="_blank" href="/home/person"><span class="user_icon1"></span>个人中心</a></li>
-                            <li><a href="/home/logout"><span class="user_icon2"></span>退出登录</a></li>
+                            <li><a target="_blank" href="index.html"><span class="user_icon1"></span>个人帐号</a></li>
+                            <li><a href="index.html"><span class="user_icon2"></span>退出登录</a></li>
                         </ul>
                     </div>
-                    @endif
                 </div>
             </div>
         </div>
@@ -91,7 +70,7 @@
                     <li><a class="normal active" href="/">首页</a></li>
                     <li><a class="normal"  href="yy/html/rank.html">榜单</a></li>
                     <li><a class="normal"  href="yy/html/rank.html">歌手</a></li>
-                    <li><a class="normal"  href="/home/special">歌单</a></li>
+                    <li><a class="normal"  href="/home/specialshow">歌单</a></li>
                     <li><a class="normal"  href="yy/html/rank.html">专辑</a></li>
                     <li><a class="normal"  href="yy/html/rank.html">我的音乐</a></li>
                     
@@ -102,6 +81,17 @@
               
             </div>
         </div>
+        
+
+
+
+
+
+       
+
+
+   
+
 
  @section('content')
                 
@@ -724,30 +714,21 @@
             <a class="macClick-down" target="_blank"  href="http://download.kugou.com/download/kugou_mac">下载</a>
         </div>
     </div>
-    <!-- <script type="text/javascript" charset="UTF-8"  src="http://static.kgimg.com/public/root/javascripts/jslib/jquery.js"></script> -->
-    <!-- <script type="text/javascript"  src="http://static.kgimg.com/public/root/javascripts/jslib/common_527f9e808b.js"></script> -->
-    <!-- <script src="/homes/js/kguser_min.js"></script> -->
-    <script src="/homes/js/popuplogin-min.js"></script>
-    <!-- <script src="/homes/js/index_3629d8393b.js"></script> -->
-    <script src="/homes/js/KgAck.js"></script>
-    <script type="text/javascript"  src="/homes/js/background-blur.js"></script>
-    <script type="text/javascript" src="/homes/js/uc-min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="/homes/js/user_center_global_v.1-min.js" charset="utf-8"></script>
+    <script type="text/javascript" charset="UTF-8"  src="http://static.kgimg.com/public/root/javascripts/jslib/jquery.js"></script>
+    <script type="text/javascript"  src="http://static.kgimg.com/public/root/javascripts/jslib/common_527f9e808b.js"></script>
+    <script src="http://login-user.kugou.com/v1/kguser_min.js?20180305"></script>
+    <script type="text/javascript"  src="http://static.kgimg.com/public/root/javascripts/jslib/background-blur.js"></script>
    
     
     
-    <!-- <script type="text/javascript"  src="http://static.kgimg.com/public/root/javascripts/index/index_3629d8393b.js"></script> -->
+    <script type="text/javascript"  src="http://static.kgimg.com/public/root/javascripts/index/index_3629d8393b.js"></script>
     
 
+    <script src="http://static.kgimg.com/common/js/min/hijacked-min.js"></script>
     <!-- Fri Sep 28 2018 20:39:00 GMT+0800 (CST) -->
 
     @section('js')
-    <script type="text/javascript">
-          // alert($);
-        setTimeout(function(){
-            $('.mws-form-message').slideUp(2000);
-        },3000)
-    </script>
+
 
    @show
 </body>
