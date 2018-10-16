@@ -1,4 +1,4 @@
-@extends('layout.admins')
+@extends('layout.admin')
 
 @section('title',$title)
 
@@ -77,7 +77,7 @@
             <img style="margin-left: 30px; max-width: 80%" src="{{$v->photo}} ">
         </td>
         <td class=" ">
-            <a class="btn btn-info" href="/admin/al/{{$v->aname}}">专辑歌曲</a>
+            <a class="btn btn-info" href="/admin/album/{{$v->aid}}">专辑歌曲</a>
             
             <!-- <a class="btn btn-danger" href="">删除</a> -->
         </td>
@@ -157,8 +157,8 @@
 
 @section('js')
 <script type="text/javascript">
-		setTimeout(function(){
-			$('.mws-form-message').slideUp(2000);
-		},3000)
+		// setTimeout(function(){
+		// 	$('.mws-form-message').slideUp(2000);
+		// },3000)
 	</script>
 @stop

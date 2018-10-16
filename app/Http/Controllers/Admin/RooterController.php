@@ -155,8 +155,8 @@ class RooterController extends Controller
         }
 
         $res['photo'] = '/uploads/'.$name.'.'.$suffix;
-        // $res['password'] = Hash::make($request->input('password'));
-        $res['password'] = encrypt($request->input('password'));
+        $res['password'] = Hash::make($request->input('password'));
+
         //往数据库中添加数据
         $rs = Rooter::create($res);
 
@@ -279,11 +279,11 @@ class RooterController extends Controller
     {   
 
 
-        // $info = Rooter::find($id);
+        $info = Rooter::find($id);
 
-        // $path = $info->photo;
+        $path = $info->photo;
 
-        // $data = unlink('.'.$path);
+        $data = unlink('.'.$path);
 
         try{
            

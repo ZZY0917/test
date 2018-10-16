@@ -1,4 +1,4 @@
-@extends('layout.admins')
+@extends('layout.admin')
 
 @section('title',$title)
 
