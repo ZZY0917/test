@@ -150,7 +150,37 @@ class AlbumController extends Controller
         // dd($id);
          // dd($request->id);
         // return 1;
+        $rs = DB::table('album')
+            ->join('music', 'album.aid', '=', 'music.aid')
+            // ->select('album.*', 'music.*')
+            ->where('music.aid',$id)
+            // ->where('sname','like','%'.$sname.'%')
+            ->where(function($query) use($request){
+                //检测关键字
+                $aname = $request->input('aname');
+                $sname = $request->input('sname');
+                //如果专辑名不为空
+                if(!empty($aname)) {
+                    $query->where('aname','like','%'.$aname.'%');
+                }
+                //如果歌手不为空
+                if(!empty($sname)) {
+                    $query->where('sname','like','%'.$sname.'%');
+                }
+
+            })
+            ->paginate($request->input('num', 10));
+        $num = $request->num;
         
+        // $rs['0']->aid = $id;
+        // dd($rs['0']->aid);
+        // dd($rs);
+        return view('admin/album/album_music',[
+            'title'=>'专辑详细页',
+            'request'=>$request,
+            'rs'=>$rs,
+            'id'=>$id
+        ]);
     }
 
     /**
@@ -337,44 +367,6 @@ class AlbumController extends Controller
             return  $filepath;
         }
 
-    }
-
-    public function music(Request $request,$aname)
-    {
-
-        
-        // $name = DB::table('music')->where('mid',$aname)
-        $rs = DB::table('album')
-            ->join('music', 'album.aname', '=', 'music.aname')
-            // ->select('album.*', 'music.*')
-            ->where('music.aname',$aname)
-            // ->where('sname','like','%'.$sname.'%')
-            ->where(function($query) use($request){
-                //检测关键字
-                $aname = $request->input('aname');
-                $sname = $request->input('sname');
-                //如果专辑名不为空
-                if(!empty($aname)) {
-                    $query->where('aname','like','%'.$aname.'%');
-                }
-                //如果歌手不为空
-                if(!empty($sname)) {
-                    $query->where('sname','like','%'.$sname.'%');
-                }
-
-            })
-            ->paginate($request->input('num', 10));
-        $num = $request->num;
-        
-        // $rs['0']->aid = $id;
-        // dd($rs['0']->aid);
-        // dd($rs);
-        return view('admin/album/album_music',[
-            'title'=>'专辑详细页',
-            'request'=>$request,
-            'rs'=>$rs
-            
-        ]);
     }
 
 }

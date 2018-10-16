@@ -13,7 +13,7 @@
                 <li><img src="/home/images/20180928104529276586.jpg"></li>
             </ul>
         </div>
-  
+
 
 
 
@@ -43,32 +43,27 @@
                     
 
                         
-                            @foreach($rs as $k=>$v)
-                                @if($v->status == 0)
+                            
                                 <div class="cpt cptBig">
-                                @else
-                                 <div class="cpt cptMid">   
-                                @endif
-                                        <p class="cptT"><span class="icon icon-select_icon"></span><span class="num"><?php echo rand(111,999);?>万</span></p>
-                                            @if($v->status == 0)
-                                            <img src="{{$v->photo}}" width="325" height="325" >
-                                            @else
-                                             <img  src="{{$v->photo}}" width="160" height="160">
-                                            @endif 
+                            
+                                        <p class="cptT"><span class="icon icon-select_icon"></span><span class="num">316.3万</span></p>
+                                          
+                                            <img src="/home/images/20180926175547544257.jpg" width="325" height="325" >
+                                        
                                         <div class="Cover" >
-                                            <a  href="/home/special/list/{{$v->gdid}}">
+                                            <a target="_blank" href="yy/special/single/538560.html">
                                             </a>
                                            
                                         </div>
                                         <p class="cptBg"></p>
                                         <div class="cptB">
-                                            <p class="songListName">{{$v->title}}</p>
-                                            <p class="songListSinger">{{$v->zhizuo}}</p>
+                                            <p class="songListName">致不再年少的姑娘：那个人你决定忘记了吗</p>
+                                            <p class="songListSinger">匠心</p>
                                         </div>
                                 </div>
-                            @endforeach
+                        
                             
-                                <!-- <div class="cpt cptMid">
+                                <div class="cpt cptMid">
                             
                                         <p class="cptT"><span class="icon icon-select_icon"></span><span class="num">71.6万</span></p>
                                           
@@ -141,7 +136,7 @@
                                             <p class="songListName">民谣：弹吉他的少年，你说风里有诗</p>
                                             <p class="songListSinger">被嫌弃的唐唐的一生</p>
                                         </div>
-                                </div> -->
+                                </div>
                         
                     
                     </div>

@@ -22,13 +22,12 @@ class LoginController extends Controller
     	$res = $request->except('_token');
 
     	// 判断验证码
-  //   	if(!captcha_check($request->input('code'))){
-		//     return back()->withErrors("验证码有误");
-		// }
+    	if(!captcha_check($request->input('code'))){
+		    return back()->withErrors("验证码有误");
+		}
 
     	//判断用户名
     	$data = DB::table('users')->where('username',$res['username'])->first();
-        // dd($data);
 
     	if(!$data){
 
@@ -44,9 +43,8 @@ class LoginController extends Controller
 
     		
     	}
-
     	//判断密码
-    	if(!$res['password']==$data->password){
+    	if(!Hash::check($res['password'], $data->password)){
 
     		return back()->with('error','用户名或者密码错误');
 

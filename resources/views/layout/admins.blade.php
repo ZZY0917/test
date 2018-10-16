@@ -62,11 +62,7 @@
         
         	<!-- Notifications -->
         	
-            @php
-
-                $rs = DB::table('rooter')->where('rid',session('rid'))->first();
-                   
-            @endphp
+            
             <!-- Messages -->
             
             
@@ -75,20 +71,17 @@
             
             	<!-- User Photo -->
             	<div id="mws-user-photo">
-
-                    
-                	<img src="{{$rs->photo}}" alt="User Photo">
-                    
+                	<img src="/admins/example/profile.jpg" alt="User Photo">
                 </div>
                 
                 <!-- Username and Functions -->
                 <div id="mws-user-functions">
                     <div id="mws-username">
-                        Hello, {{$rs->rname}}
+                        Hello, John Doe
                     </div>
                     <ul>
-                    	<li><a href="/admin/profile">修改头像</a></li>
-                        <li><a href="/admin/pass">修改密码</a></li>
+                    	<li><a href="#">修改头像</a></li>
+                        <li><a href="#">修改密码</a></li>
                         <li><a href="/admin/outlogin">退出</a></li>
                     </ul>
                 </div>
@@ -158,13 +151,6 @@
                         <ul class='closed'>
                             <li><a href="/admin/album/create">添加专辑</a></li>
                             <li><a href="/admin/album">浏览专辑</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="icon-film"></i>歌单管理</a>
-                        <ul class='closed'>
-                            <li><a href="/admin/special/create">添加歌单</a></li>
-                            <li><a href="/admin/special">浏览歌单</a></li>
                         </ul>
                     </li>
                     <li>
