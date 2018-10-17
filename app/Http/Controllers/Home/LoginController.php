@@ -34,7 +34,7 @@ class LoginController extends Controller
     		return back()->with('error','用户名或者密码错误');
     	}
 
-    	
+    	// dd($data);
 
     	//判断status
     	if($data->status == '0'){
@@ -50,7 +50,7 @@ class LoginController extends Controller
 
     	}
 
-    	session(['uid'=>$data->uid,'username'=>$data->username]);
+    	session(['uid'=>$data->uid,'username'=>$data->username,'photo'=>$data->photo]);
         // dd(session('username'));
     	return redirect('/');
     }

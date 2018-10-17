@@ -67,12 +67,12 @@ class RegController extends Controller
     	if($rs){
 
     		//发送邮件
-        	Mail::send('home.email.emessage', ['id'=>$rs,'res'=>$res,'token'=>$res['token']], function ($msg) use ($res){
-        		//从哪发的邮件
-	            $msg->from(env('MAIL_USERNAME'), '因你而乐');
-	            //发给谁的
-	            $msg->to($res['email'], $res['username'])->subject('欢迎注册我们的网站，请激活您的账号！');
-	        });
+        	$rs = Mail::send('home.email.emessage', ['id'=>$rs,'res'=>$res,'token'=>$res['token']], function ($msg) use ($res){
+            		//从哪发的邮件
+    	            $msg->from(env('MAIL_USERNAME'), '因你而乐');
+    	            //发给谁的
+    	            $msg->to($res['email'], $res['username'])->subject('欢迎注册我们的网站，请激活您的账号！');
+    	    });
     	}
 
     	return view('home.email.remind',['request'=>$request,'title'=>'账号激活']);

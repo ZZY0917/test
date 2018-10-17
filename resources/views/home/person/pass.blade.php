@@ -164,7 +164,7 @@
                                                                         验证码：
                                                                     </label>
                                                                 </td>
-                                                                <td>
+                                                                 <td>
                                                                     <div class="kg_uc_textbox_area kg_uc_textbox_code">
                                                                         <div class="kg_uc_textbox">
                                                                             <input id="uccode" name="code" type="text" class="kg_uc_textbox_ipt">

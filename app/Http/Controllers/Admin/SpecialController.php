@@ -23,7 +23,7 @@ class SpecialController extends Controller
     public function index(Request $request)
     {
          //获取改变位置的歌单status值
-        if($request->gdid){
+        if($request->hidden){
         $sta = DB::table('special')->where('gdid',$request->hidden)->first()->status;
         if($sta < 5){
             $res = [];

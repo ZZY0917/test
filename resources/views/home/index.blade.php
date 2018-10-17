@@ -13,7 +13,7 @@
                 <li><img src="/home/images/20180928104529276586.jpg"></li>
             </ul>
         </div>
-
+  
 
 
 
@@ -43,100 +43,32 @@
                     
 
                         
-                            
+                            @foreach($rs as $k=>$v)
+                                @if($v->status == 0)
                                 <div class="cpt cptBig">
-                            
-                                        <p class="cptT"><span class="icon icon-select_icon"></span><span class="num">316.3万</span></p>
-                                          
-                                            <img src="/home/images/20180926175547544257.jpg" width="325" height="325" >
-                                        
+                                @else
+                                 <div class="cpt cptMid">   
+                                @endif
+                                        <p class="cptT"><span class="icon icon-select_icon"></span><span class="num"><?php echo rand(111,999);?>万</span></p>
+                                            @if($v->status == 0)
+                                            <img src="{{$v->photo}}" width="325" height="325" >
+                                            @else
+                                             <img  src="{{$v->photo}}" width="160" height="160">
+                                            @endif 
                                         <div class="Cover" >
-                                            <a target="_blank" href="yy/special/single/538560.html">
+                                            <a  href="/home/special/list/{{$v->gdid}}">
                                             </a>
                                            
                                         </div>
                                         <p class="cptBg"></p>
                                         <div class="cptB">
-                                            <p class="songListName">致不再年少的姑娘：那个人你决定忘记了吗</p>
-                                            <p class="songListSinger">匠心</p>
+                                            <p class="songListName">{{$v->title}}</p>
+                                            <p class="songListSinger">{{$v->zhizuo}}</p>
                                         </div>
                                 </div>
-                        
+                            @endforeach
                             
-                                <div class="cpt cptMid">
-                            
-                                        <p class="cptT"><span class="icon icon-select_icon"></span><span class="num">71.6万</span></p>
-                                          
-                                            <img  src="/home/images/20180919182803304754.jpg" width="160" height="160">
-                                        
-                                        <div class="Cover" >
-                                            <a target="_blank" href="yy/special/single/533702.html">
-                                            </a>
-                                            
-                                        </div>
-                                        <p class="cptBg"></p>
-                                        <div class="cptB">
-                                            <p class="songListName">年轻人的最爱！这三十支国外电子组合值得一听</p>
-                                            <p class="songListSinger">白色镜框</p>
-                                        </div>
-                                </div>
-                        
-                            
-                                <div class="cpt cptMid">
-                            
-                                        <p class="cptT"><span class="icon icon-select_icon"></span><span class="num">58.2万</span></p>
-                                          
-                                            <img  src="/home/images/20180907121903106025.jpg" width="160" height="160" >
-                                        
-                                        <div class="Cover" >
-                                            <a target="_blank" href="yy/special/single/526272.html">
-                                            </a>
-                                            
-                                        </div>
-                                        <p class="cptBg"></p>
-                                        <div class="cptB">
-                                            <p class="songListName">酷情歌 | 拒绝懦弱，爱要坦荡荡</p>
-                                            <p class="songListSinger">丑萌的猫</p>
-                                        </div>
-                                </div>
-                        
-                            
-                                <div class="cpt cptMid">
-                            
-                                        <p class="cptT"><span class="icon icon-select_icon"></span><span class="num">49.1万</span></p>
-                                          
-                                            <img  src="/home/images/20180913063318694832.jpg" width="160" height="160" >
-                                        
-                                        <div class="Cover" >
-                                            <a target="_blank" href="www.baidu.com">
-                                            </a>
-                                            
-                                        </div>
-                                        <p class="cptBg"></p>
-                                        <div class="cptB">
-                                            <p class="songListName">国漫古风原声：昨夜的梦，躲进了谁的心？</p>
-                                            <p class="songListSinger">Soulmate-元箫</p>
-                                        </div>
-                                </div>
-                        
-                            
-                                <div class="cpt cptMid">
-                            
-                                        <p class="cptT"><span class="icon icon-select_icon"></span><span class="num">7.7万</span></p>
-                                          
-                                            <img  src="/home/images/20180926184203696067.jpg" width="160" height="160" >
-                                        
-                                        <div class="Cover" >
-                                            <a target="_blank" href="yy/special/single/534594.html">
-                                            </a>
-                                            
-                                        </div>
-                                        <p class="cptBg"></p>
-                                        <div class="cptB">
-                                            <p class="songListName">民谣：弹吉他的少年，你说风里有诗</p>
-                                            <p class="songListSinger">被嫌弃的唐唐的一生</p>
-                                        </div>
-                                </div>
+                                
                         
                     
                     </div>
@@ -292,9 +224,9 @@
                             
                                 <div class="cpt cptBigL">
                             
-                                    <a target="_blank" href="mvweb/html/mv_851202.html">
+                                    <a target="_blank" href="/home/mvplay">
                                         
-                                              <img  _src="http://imge.kugou.com/mvhdpic/400/20180927/20180927173146386001.jpg" width="320" height="175" src="yy/static/images/blank.gif" _def="http://static.kgimg.com/public/root/images/mv_defalut.jpg">
+                                              <img   width="320" height="175" src="/images/18.jpg" >
                                         
                                         <div class="Cover">
                                             <div class="playBtn icon icon-play_b">播放</div>

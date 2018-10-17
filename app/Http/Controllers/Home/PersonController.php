@@ -64,7 +64,7 @@ class PersonController extends Controller
     	// dd($rs);
     	try{
            
-            $rs = DB::table('users')->update($res);
+            $rs = DB::table('users')->where('uid','=',session('uid'))->update($res);
 
             if($rs){
 
@@ -95,6 +95,7 @@ class PersonController extends Controller
     	$res = $request->except('_token');
     	// dd($res);
     	$rs = DB::table('users')->where('uid','=',session('uid'))->update($res);
+        // dd($rs);
     	try{
             
             // $rs = DB::table('users')->update($res);
