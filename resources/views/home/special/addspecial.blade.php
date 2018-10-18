@@ -12,8 +12,20 @@
 <link rel="stylesheet" href="/css/header.css" />
 <link rel="stylesheet" href="/css/user_center_v.1.css" />
 @section('content')
-
-	@if(session('success'))  
+<div class="navWrap">
+            <div class="nav">
+                <ul class="homeNav">
+                    <li><a class="normal active" href="/">首页</a></li>
+                    <li><a class="normal"  href="yy/html/rank.html">榜单</a></li>
+                    <li><a class="normal"  href="yy/html/rank.html">歌手</a></li>
+                    <li><a class="normal"  href="/home/music">音乐</a></li>
+                    <li><a class="normal"  href="/home/specialshow">歌单</a></li>
+                    <li><a class="normal"  href="yy/html/rank.html">专辑</a></li>
+                    <li><a class="normal"  href="/home/personal">我的音乐</a></li>
+                </ul>
+            </div>
+        </div>
+	@if(session('success'))   
             <div class="mws-form-message info">
                 {{session('success')}}  
 
@@ -21,7 +33,18 @@
             @endif
 	<body>
 
-
+<div class="navWrap">
+            <div class="nav">
+                <ul class="homeNav">
+                    <li><a class="normal active" href="/">首页</a></li>
+                    <li><a class="normal"  href="yy/html/rank.html">榜单</a></li>
+                    <li><a class="normal"  href="yy/html/rank.html">歌手</a></li>
+                    <li><a class="normal"  href="/home/specialshow">歌单</a></li>
+                    <li><a class="normal"  href="yy/html/rank.html">专辑</a></li>
+                    <li><a class="normal"  href="/home/personal">我的音乐</a></li>
+                </ul>
+            </div>
+        </div>
 
 
 
@@ -36,17 +59,7 @@
           <form action="/home/special/create" method='post'>
           <ul>
               @foreach($rs as $k=>$v)               
-              <li>
-                <a  hidefocus="true" href="javascript:;" >
-                  <input type="checkbox"  class="cb checkItem" checked="true" id="chk_C3967DE92CF781436E29B2E30ACFA0E7" name='special_music[]' value="{{$v->mid}}">
-                  <span class="num1">@if($k+1>=10) {{$k+1}} @else 0{{$k+1}} @endif</span>
-                  <span class="text">
-                    <i> {{$v->mname}}- {{$v->sname}}</i>
-                    <span style="margin-left: 200px;">{{'<'.$v->aname.'>'}}
-                    </span>
-                  </span>
-                </a>
-              </li>
+              <li><a  hidefocus="true" href="javascript:;" ><input type="checkbox"  class="cb checkItem" checked="true" id="chk_C3967DE92CF781436E29B2E30ACFA0E7" name='special_music[]' value="{{$v->mid}}"><span class="num1">@if($k+1>=10) {{$k+1}} @else 0{{$k+1}} @endif</span><span class="text"><i> {{$v->mname}}- {{$v->sname}}</i><span style="margin-left: 200px;">{{'<'.$v->aname.'>'}}</span></span></a></li>
         	@endforeach
                       
           </ul>

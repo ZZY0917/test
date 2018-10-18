@@ -4,7 +4,19 @@
     <link rel="stylesheet" type="text/css" href="/home/css/special.css">
 
 @section('content')
-
+<div class="navWrap">
+            <div class="nav">
+                <ul class="homeNav">
+                    <li><a class="normal active" href="/">首页</a></li>
+                    <li><a class="normal"  href="yy/html/rank.html">榜单</a></li>
+                    <li><a class="normal"  href="yy/html/rank.html">歌手</a></li>
+                    <li><a class="normal"  href="/home/music">音乐</a></li>
+                    <li><a class="normal"  href="/home/specialshow">歌单</a></li>
+                    <li><a class="normal"  href="yy/html/rank.html">专辑</a></li>
+                    <li><a class="normal"  href="/home/personal">我的音乐</a></li>
+                </ul>
+            </div>
+        </div>
 <div class="wrap alm2 clear_fix specialPage">
 
   <div class="mbx">我的位置 &gt; <a title="乐库" href="/">首页</a> &gt; <a title="精选辑" href="/home/specialshow">热门歌单</a> &gt; <span>{{$res->gdname}}</span></div>

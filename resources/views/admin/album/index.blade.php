@@ -77,8 +77,18 @@
             <img style="margin-left: 30px; max-width: 80%" src="{{$v->photo}} ">
         </td>
         <td class=" ">
-            <a class="btn btn-info" href="/admin/al/{{$v->aname}}">专辑歌曲</a>
             
+            @if($v->status ==0) 第一张
+            @elseif ($v->status == 1) 第二张
+            @elseif ($v->status == 2) 第三张
+            @elseif ($v->status == 3) 第四张
+            @elseif ($v->status == 4) 第五张
+            @elseif ($v->status == 5) 第六张
+            @elseif ($v->status == 6) 第七张
+            @elseif ($v->status == 7) 第八张
+            @elseif ($v->status == 8) 第九张
+            @elseif ($v->status == 9) 第十张
+            @endif
             <!-- <a class="btn btn-danger" href="">删除</a> -->
         </td>
         <td class=" ">
@@ -88,7 +98,8 @@
                 {{ method_field('DELETE') }}
                 {{csrf_field()}}
                 <button class="btn btn-danger">删除</button>
-                
+                <a class="btn btn-info" href="/admin/al/{{$v->aname}}">歌曲</a>
+                <a class="btn btn-info" href="/admin/al/{{$v->aid}}/shezhi">设置</a>
             </form>
             
             

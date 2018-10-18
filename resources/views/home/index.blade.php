@@ -3,7 +3,24 @@
 
 
 @section('content')
-    
+    <div class="navWrap">
+            <div class="nav">
+                <ul class="homeNav">
+                    <li><a class="normal active" href="/">首页</a></li>
+                    <li><a class="normal"  href="yy/html/rank.html">榜单</a></li>
+                    <li><a class="normal"  href="yy/html/rank.html">歌手</a></li>
+                    <li><a class="normal"  href="/home/music">歌曲</a></li>
+                    <li><a class="normal"  href="/home/specialshow">歌单</a></li>
+                    <li><a class="normal"  href="yy/html/rank.html">专辑</a></li>
+                    <li><a class="normal"  href="/home/personal">我的音乐</a></li>
+                    
+                    
+                    
+                </ul>
+                
+              
+            </div>
+        </div>
     <div class="banner" >
            <ul id='bxslider'>
                 <li><img src="/home/images/20180604115326765470.jpg"></li>
@@ -242,9 +259,9 @@
                             
                                  <div class="cpt cptMidL">
                             
-                                    <a target="_blank" href="mvweb/html/mv_850754.html">
+                                    <a target="_blank" href="/home/mvplay">
                                         
-                                               <img  _src="http://imge.kugou.com/commendpic/20180925/20180925215554929011.jpg" width="154" height="84" src="yy/static/images/blank.gif" _def="http://static.kgimg.com/public/root/images/mv_defalut.jpg">
+                                               <img  src="/home/images/20180913063318694832.jpg" width="154" height="84" >
                                         
                                         <div class="Cover">
                                             <div class="playBtn icon icon-play_b">播放</div>
@@ -260,9 +277,9 @@
                             
                                  <div class="cpt cptMidL">
                             
-                                    <a target="_blank" href="mvweb/html/mv_850934.html">
+                                    <a target="_blank" href="/home/mvplay">
                                         
-                                               <img  _src="http://imge.kugou.com/commendpic/20180927/20180927165901814451.jpg" width="154" height="84" src="yy/static/images/blank.gif" _def="http://static.kgimg.com/public/root/images/mv_defalut.jpg">
+                                               <img  src="/home/images/20180926184203696067.jpg" width="154" height="84" >
                                         
                                         <div class="Cover">
                                             <div class="playBtn icon icon-play_b">播放</div>
@@ -289,126 +306,21 @@
                     
                     <div class="itemContent">
                         <ul>
+                            @foreach($rsz as $k=>$v)
                             <li>
-                                <a target="_blank" href="fmweb/html/index-chanelId=73.html">
+                                <a  href="/home/albumlist/{{$v->aid}}">
                                     <div class="Cover">
                                         <div class="playBtn icon icon-radio_play"></div>
                                     </div>
                                     <div class="radioLogo">
-                                        <img width="100" height="100" _src="http://static.kgimg.com/public/root//images/radio_1.jpg" src="yy/static/images/blank.gif"  class=" ">
+                                        <img width="100" height="100" src="{{$v->photo}}"  class=" ">
                                     </div>
-                                    <div class="radioKind">KTV必点曲</div>
-                                    <div class="radioName">陈奕迅 - 婚礼的祝福</div>
+                                    <div class="radioKind">{{$v->aname}}</div>
+                                    
                                 </a>
                             </li>
-                            <li>
-                                <a target="_blank" href="fmweb/html/index-chanelId=3.html">
-                                    <div class="Cover">
-                                        <div class="playBtn icon icon-radio_play" style="display: none;"></div>
-                                    </div>
-                                    <div class="radioLogo">
-                                        <img width="100" height="100" _src="http://static.kgimg.com/public/root//images/radio_2.jpg" src="yy/static/images/blank.gif"  class=" ">
-                                    </div>
-                                    <div class="radioKind">中文DJ</div>
-                                    <div class="radioName">李佩玲 - 心有独钟(Live)</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="fmweb/html/index-chanelId=1.html">
-                                    <div class="Cover">
-                                        <div class="playBtn icon icon-radio_play" style="display: none;"></div>
-                                    </div>
-                                    <div class="radioLogo">
-                                        <img width="100" height="100" _src="http://static.kgimg.com/public/root//images/radio_3.jpg" src="yy/static/images/blank.gif"  class=" ">
-                                    </div>
-                                    <div class="radioKind">酷狗热歌</div>
-                                    <div class="radioName">那英 - 放爱一条生路</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="fmweb/html/index-chanelId=2.html">
-                                    <div class="Cover">
-                                        <div class="playBtn icon icon-radio_play" style="display: none;"></div>
-                                    </div>
-                                    <div class="radioLogo">
-                                        <img width="100" height="100" _src="http://static.kgimg.com/public/root//images/radio_4.jpg" src="yy/static/images/blank.gif" class=" ">
-                                    </div>
-                                    <div class="radioKind">网络红歌</div>
-                                    <div class="radioName">斯琴高丽 - 情如花</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="fmweb/html/index-chanelId=5.html">
-                                    <div class="Cover">
-                                        <div class="playBtn icon icon-radio_play" style="display: none;"></div>
-                                    </div>
-                                    <div class="radioLogo">
-                                        <img width="100" height="100" _src="http://static.kgimg.com/public/root//images/radio_5.jpg" src="yy/static/images/blank.gif"  class=" ">
-                                    </div>
-                                    <div class="radioKind">经典</div>
-                                    <div class="radioName">G.E.M.邓紫棋 - 泡沫 - DJ版</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="fmweb/html/index-chanelId=276.html">
-                                    <div class="Cover">
-                                        <div class="playBtn icon icon-radio_play"></div>
-                                    </div>
-                                    <div class="radioLogo">
-                                        <img width="100" height="100" _src="http://static.kgimg.com/public/root//images/radio_6.jpg" src="yy/static/images/blank.gif"  class=" ">
-                                    </div>
-                                    <div class="radioKind">老情歌</div>
-                                    <div class="radioName">索朗扎西 - 郎啊郎</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="fmweb/html/index-chanelId=4.html">
-                                    <div class="Cover">
-                                        <div class="playBtn icon icon-radio_play"></div>
-                                    </div>
-                                    <div class="radioLogo">
-                                        <img width="100" height="100" _src="http://static.kgimg.com/public/root//images/radio_7.jpg" src="yy/static/images/blank.gif"  class=" ">
-                                    </div>
-                                    <div class="radioKind">新歌</div>
-                                    <div class="radioName">Owl City - Wolf Bite</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="fmweb/html/index-chanelId=8.html">
-                                    <div class="Cover">
-                                        <div class="playBtn icon icon-radio_play" style="display: none;"></div>
-                                    </div>
-                                    <div class="radioLogo">
-                                        <img width="100" height="100" _src="http://static.kgimg.com/public/root//images/radio_8.jpg" src="yy/static/images/blank.gif"  class=" ">
-                                    </div>
-                                    <div class="radioKind">动漫</div>
-                                    <div class="radioName">刘若英、黄立行 - 分开旅行</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="fmweb/html/index-chanelId=11.html">
-                                    <div class="Cover">
-                                        <div class="playBtn icon icon-radio_play" style="display: none;"></div>
-                                    </div>
-                                    <div class="radioLogo">
-                                        <img width="100" height="100" _src="http://static.kgimg.com/public/root//images/radio_9.jpg" src="yy/static/images/blank.gif"  class=" ">
-                                    </div>
-                                    <div class="radioKind">轻音乐</div>
-                                    <div class="radioName">GALA - 点豆豆</div>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="fmweb/html/index-chanelId=63.html">
-                                    <div class="Cover">
-                                        <div class="playBtn icon icon-radio_play" style="display: none;"></div>
-                                    </div>
-                                    <div class="radioLogo">
-                                        <img width="100" height="100" _src="http://static.kgimg.com/public/root//images/radio_10.jpg" src="yy/static/images/blank.gif"  class=" ">
-                                    </div>
-                                    <div class="radioKind">最爱成名曲</div>
-                                    <div class="radioName">Alicia Keys - 28 Thousand Days</div>
-                                </a>
-                            </li>
+                            @endforeach
+                            
                         </ul>
                     </div>
                 </div>
@@ -418,100 +330,76 @@
                     
                     <div class="itemTitle">
                         <h3><b>热门</b>歌手</h3>
-                        <div class="tabT" id="tabMenu"><span class="active" data="0">华语</span><span data="1">欧美</span><span data="2">日韩</span></div>
+                        <div class="tabT" id="tabMenu">
+                            <span data="0" class="geshou">大陆</span>
+                            
+                            <span data="1" class="geshou">港台</span>
+                            <span data="2" class="geshou">日韩</span>
+                            <span data="3" class="geshou">欧美</span>
+                        </div>
                     </div>
                     <div class="itemContent">
                         <div>
                             <ul class="firstUl clearFix" id="SingertabContent">
                                 <li class="item">
                                     <ul class="chinaSinger secondUl clearFix" id="chinaSingerContent">
-                                        <li>
-                                        
-
-                                            
-                                                
-                                                    <div class="cpt cptMid">
-                                                
-                                                        <a target="_blank" class="singerLink" href="yy/singer/home/3520.html">
-                                                            <img class="singerImg" src="http://static.kgimg.com/public/root/images/singdefalut.jpg" _src="http://singerimg.kugou.com/uploadpic/pass/softhead/240/20180515/20180515002522714.jpg" _def="http://static.kgimg.com/public/root/images/singdefalut.jpg">
-                                                            <div class="Cover">
-                                                                <div class="playBtn icon">播放</div> 
-                                                            </div>
-                                                            <p class="cptBg"></p>
-                                                            <div class="cptB">
-                                                                <p class="songListSinger">周杰伦</p>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                            
-                                                
-                                                    <div class="cpt cptMid">
-                                                
-                                                        <a target="_blank" class="singerLink" href="yy/singer/home/3060.html">
-                                                            <img class="singerImg" src="http://static.kgimg.com/public/root/images/singdefalut.jpg" _src="http://singerimg.kugou.com/uploadpic/pass/softhead/240/20180615/20180615165608155.jpg" _def="http://static.kgimg.com/public/root/images/singdefalut.jpg">
-                                                            <div class="Cover">
-                                                                <div class="playBtn icon">播放</div> 
-                                                            </div>
-                                                            <p class="cptBg"></p>
-                                                            <div class="cptB">
-                                                                <p class="songListSinger">薛之谦</p>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                            
-                                                
-                                                     <div class="cpt cptSmall">
-                                                
-                                                        <a target="_blank" class="singerLink" href="yy/singer/home/722869.html">
-                                                            <img class="singerImg" src="http://static.kgimg.com/public/root/images/singdefalut.jpg" _src="http://singerimg.kugou.com/uploadpic/pass/softhead/240/20180611/20180611160019456.jpg" _def="http://static.kgimg.com/public/root/images/singdefalut.jpg">
-                                                            <div class="Cover">
-                                                                <div class="playBtn icon">播放</div> 
-                                                            </div>
-                                                            <p class="cptBg"></p>
-                                                            <div class="cptB">
-                                                                <p class="songListSinger">毛不易</p>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                            
-                                                
-                                                     <div class="cpt cptSmall">
-                                                
-                                                        <a target="_blank" class="singerLink" href="yy/singer/home/3539.html">
-                                                            <img class="singerImg" src="http://static.kgimg.com/public/root/images/singdefalut.jpg" _src="http://singerimg.kugou.com/uploadpic/pass/softhead/240/20180122/20180122113125103.jpg" _def="http://static.kgimg.com/public/root/images/singdefalut.jpg">
-                                                            <div class="Cover">
-                                                                <div class="playBtn icon">播放</div> 
-                                                            </div>
-                                                            <p class="cptBg"></p>
-                                                            <div class="cptB">
-                                                                <p class="songListSinger">张杰</p>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                            
-                                                
-                                                     <div class="cpt cptSmall">
-                                                
-                                                        <a target="_blank" class="singerLink" href="yy/singer/home/192923.html">
-                                                            <img class="singerImg" src="http://static.kgimg.com/public/root/images/singdefalut.jpg" _src="http://singerimg.kugou.com/uploadpic/pass/softhead/240/20180613/20180613183831916.jpg" _def="http://static.kgimg.com/public/root/images/singdefalut.jpg">
-                                                            <div class="Cover">
-                                                                <div class="playBtn icon">播放</div> 
-                                                            </div>
-                                                            <p class="cptBg"></p>
-                                                            <div class="cptB">
-                                                                <p class="songListSinger">摩登兄弟</p>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                            
-                                        
+                                        <li id = "singer">     
+                                                                                                  
+                                                    
                                         </li>
-                                    </ul>
-                                    <div class="tabC" id="subMenu">
-                                        <a class="icon icon-s-dot icon-s_dot_hover" data="0"></a>
-                                        <a class="icon icon-s-dot" data="1"></a>
-                                        <a class="icon icon-s-dot" data="2"></a>
-                                    </div>    
+                                    
+           <script type="text/javascript">
+
+            $(function() {
+
+
+            // alert($);
+            $('.geshou').mouseover(function(){
+                $('.geshou').removeClass('active');
+                $(this).addClass('active');
+                var text = $(this).attr('data');
+
+
+                $.get('/home/geshou',{val:text},function(data) {
+                    $("#singer").html('');
+                    console.log(data);
+                    // 1. 循环遍历ajax放回的数组
+                    for (var i = 0; i < data.length; i++) {
+                        if(i<=1) {
+                            setSingerHtml(data[i], true);
+                        } else {
+                            setSingerHtml(data[i], false);                            
+                        }
+                    }
+
+                    // 2. 创建节点
+
+                    // 3. 将组合好的节点和数据插入到html中
+                });
+            });
+
+
+            // 设置html
+            function setSingerHtml(data, addClass) {
+                var str = addClass ? "cptMid": 'cptSmall';
+
+                var songer = `<div class="cpt ${str}">
+                        <a class="singerLink" href="/">
+                            <img class="singerImg" src="${data.photo}" >
+                            <div class="Cover">
+                                <div class="playBtn icon">播放</div> 
+                            </div>
+                            <p class="cptBg"></p>
+                            <div class="cptB">
+                                <p class="songListSinger"></p>
+                            </div>
+                        </a>
+                    </div>`;
+                $(songer).appendTo($("#singer"));
+            }
+        });
+
+        </script>                               
                                 </li>
                             </ul>
                         </div>
@@ -539,21 +427,21 @@
                 <div class="itemContent">
                     
                      
-                        <a target="_blank" href="http://www.lady8844.com/" title="爱美网">爱美网</a>
+                        <a target="_blank" href="/" title="爱美网">爱美网</a>
                     
-                        <a target="_blank" href="http://ent.cntv.cn/" title="央视网综艺频道">央视网综艺频道</a>
+                        <a target="_blank" href="/" title="央视网综艺频道">央视网综艺频道</a>
                     
-                        <a target="_blank" href="http://baa.bitauto.com/" title="汽车论坛">汽车论坛</a>
+                        <a target="_blank" href="/" title="汽车论坛">汽车论坛</a>
                     
-                        <a target="_blank" href="http://www.ithome.com/" title="IT之家">IT之家</a>
+                        <a target="_blank" href="/" title="IT之家">IT之家</a>
                     
-                        <a target="_blank" href="http://www.25pp.com" title="iPhone游戏">iPhone游戏</a>
+                        <a target="_blank" href="/" title="iPhone游戏">iPhone游戏</a>
                     
-                        <a target="_blank" href="http://you.ctrip.com/" title="旅游攻略">旅游攻略</a>
+                        <a target="_blank" href="/" title="旅游攻略">旅游攻略</a>
                     
-                        <a target="_blank" href="http://www.yswxcn.com/" title="悦声无限">悦声无限</a>
+                        <a target="_blank" href="/" title="悦声无限">悦声无限</a>
                     
-                        <a target="_blank" href="http://www.vmall.com/" title="华为商城">华为商城</a>
+                        <a target="_blank" href="/" title="华为商城">华为商城</a>
                     
                        
                     

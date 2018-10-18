@@ -11,6 +11,10 @@ use Config;
 
 class AlbumController extends Controller
 {
+    public function shezhi($id)
+    {
+        return view('admin.album.shezhi',['title'=>'专辑前台显示设置','id'=>$id]); 
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,6 +29,30 @@ class AlbumController extends Controller
         //     ->paginate(10);
             // dd($request);
 // return 123;
+        if($request->hidden){
+            // dd(13);
+        $sta = DB::table('album')->where('aid',$request->hidden)->first()->status;
+
+        if($sta < 10){
+            $res = [];
+            $res['status'] = $sta;
+            $a = DB::table('album')->where('status',$request->dingwei)->update($res);
+            $rs = [];
+            $rs['status'] = $request->dingwei;
+            DB::table('album')->where('aid',$request->hidden)->update($rs);
+        }else{
+            //获取原来的歌单信息 更改状态
+            $res = [];
+            $res['status'] = 10;
+           
+            $a = DB::table('album')->where('status',$request->dingwei)->update($res);
+             
+            //更改新的歌单
+            $rs = [];
+            $rs['status'] = $request->dingwei;
+            DB::table('album')->where('aid',$request->hidden)->update($rs);
+        }
+    }
             $rs = DB::table('album')
                 ->where( function ($query)use($request) {
             $sname = $request->input('sname');

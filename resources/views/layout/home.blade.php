@@ -52,19 +52,16 @@
                 <div class="login_area">
                     @if(!session('uid'))
                     <div id="login_in" class="">
-                        <a class="login_btn" href="/home/login"  id="login_btn">登录</a>
-                        <a target="_blank" href="/home/reg" class="regin_btn" id="regin_btn">注册</a>
+                        <a class="login_btn" href="home/login"  id="login_btn">登录</a>
+                        <a target="_blank" href="home/reg" class="regin_btn" id="regin_btn">注册</a>
                     </div>
                     <div id="" class="">
                         <img class="user_img" src="">
                         <span class="user_name"></span>
                     </div>
                     @else
-                    <div id="" class="" style="width:200px;">
-                        
-                        <div class="topArrow1"  style="float: left;margin-left:15px;">
-                             <img src="{{session('photo')}}" style="width: 30px;height: 30px;">
-                        Hello,{{session('username')}}</div>
+                    <div id="" class="">
+                        <div class="topArrow1"  style="float: left;margin-left:15px;">Hello,{{session('username')}}</div>
                         <div class="topArrow2"></div>
                         <ul>
                             <li><a target="_blank" href="/home/person"><span class="user_icon1"></span>个人中心</a></li>
@@ -76,36 +73,21 @@
                 </div>
             </div>
         </div>
-        <div class="navWrap">
+        
+ @section('content')
+ <div class="navWrap">
             <div class="nav">
                 <ul class="homeNav">
                     <li><a class="normal active" href="/">首页</a></li>
                     <li><a class="normal"  href="yy/html/rank.html">榜单</a></li>
                     <li><a class="normal"  href="yy/html/rank.html">歌手</a></li>
+                    <li><a class="normal"  href="/home/music">音乐</a></li>
                     <li><a class="normal"  href="/home/specialshow">歌单</a></li>
                     <li><a class="normal"  href="yy/html/rank.html">专辑</a></li>
                     <li><a class="normal"  href="/home/personal">我的音乐</a></li>
-                    
-                    
-                    
                 </ul>
-                
-              
             </div>
         </div>
-        
-
-
-
-
-
-       
-
-
-   
-
-
- @section('content')
                 
         <div class="content" id="content">
             <div class="subContentM" id="secoundContent">
@@ -733,7 +715,7 @@
    
     
     
-    <script type="text/javascript"  src="http://static.kgimg.com/public/root/javascripts/index/index_3629d8393b.js"></script>
+    <script type="text/javascript"  src="/home/js/index_3629d8393b.js"></script>
     
 
     <script src="http://static.kgimg.com/common/js/min/hijacked-min.js"></script>

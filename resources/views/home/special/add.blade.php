@@ -24,7 +24,19 @@
 
 
 @section('content')
-
+<div class="navWrap">
+            <div class="nav">
+                <ul class="homeNav">
+                    <li><a class="normal active" href="/">首页</a></li>
+                    <li><a class="normal"  href="yy/html/rank.html">榜单</a></li>
+                    <li><a class="normal"  href="yy/html/rank.html">歌手</a></li>
+                    <li><a class="normal"  href="/home/music">音乐</a></li>
+                    <li><a class="normal"  href="/home/specialshow">歌单</a></li>
+                    <li><a class="normal"  href="yy/html/rank.html">专辑</a></li>
+                    <li><a class="normal"  href="/home/personal">我的音乐</a></li>
+                </ul>
+            </div>
+        </div>
 	
 		@if (count($errors) > 0)
             <div class="mws-form-message error">

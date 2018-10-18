@@ -164,26 +164,7 @@
                                                                         验证码：
                                                                     </label>
                                                                 </td>
-                                                                 <td>
-                                                                    <div class="kg_uc_textbox_area kg_uc_textbox_code">
-                                                                        <div class="kg_uc_textbox">
-                                                                            <input id="uccode" name="code" type="text" class="kg_uc_textbox_ipt">
-                                                                        </div>
-                                                                        <div class="kg_uc_tips">
-                                                                            <i class="kg_uc_tips_icon">
-                                                                            </i>
-                                                                            <span class="kg_uc_tips_txt">
-                                                                            </span>
-                                                                        </div>
-                                                                        <div class="kg_uc_code_area">
-                                                                            <img id="uccheckimg" title="看不清，换一张" style="cursor: hand;padding-top:3px;"
-                                                                            onclick="this.src='{{captcha_src()}}?d='+Math.random();" src="{{captcha_src()}}">
-                                                                        </div>
-                                                                        <a href="javascript:;" onclick="getCodeImg(&#39;uccheckimg&#39;)" class="kg_uc_changeone">
-                                                                            换一张
-                                                                        </a>
-                                                                    </div>
-                                                                </td>
+                                                       
                                                             </tr>
                                                             <tr>
                                                                 <td>

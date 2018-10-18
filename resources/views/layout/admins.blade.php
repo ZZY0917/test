@@ -189,7 +189,7 @@
         <div id="mws-container" class="clearfix">
         
         	<!-- Inner Container Start -->
-            <div class="container">
+            <div class="container" style="min-width: 1200px;min-height: 600px">
             
             @section('content')
 

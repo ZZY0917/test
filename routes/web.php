@@ -8,8 +8,8 @@
 	Route::any('/admin/login','Admin\LoginController@login');
 	Route::post('/admin/dologin','Admin\LoginController@dologin');
 	// ,'roleper'权限中间件
-	// 'middleware'=>['adminlogin']
-	Route::group([],function(){
+	// 
+Route::group(['middleware'=>['adminlogin']],function(){
 	Route::any('admin','Admin\IndexController@index');
 	//后台退出登录
 	Route::any('/admin/outlogin','Admin\LoginController@outlogin');	
@@ -39,6 +39,7 @@
 
 	//专辑歌曲
 	Route::any('admin/al/{aname}','Admin\AlbumController@music');
+	Route::any('admin/al/{id}/shezhi','Admin\AlbumController@shezhi');
 
 	//专辑管理
 	Route::resource('admin/album','Admin\AlbumController');
@@ -70,13 +71,28 @@
 	Route::resource('/admin/userssong','Admin\UsersSongController');
 });
 
-
-//前台页面
-Route::group([],function(){
+//前台注册
+	Route::any('/home/reg','Home\RegController@register');
+	Route::any('/home/doreg','Home\RegController@doregister');
+	Route::any('/home/jihuo','Home\RegController@jihuo');
+// 前台登录
+	Route::any('/home/login','Home\LoginController@login');
+	Route::any('/home/dologin','Home\LoginController@dologin');
 	//前台歌单页面
 	Route::any('/home/specialshow','Home\HomeController@specialshow');
-
-
+	//mv播放
+	Route::any('/home/mvplay','Home\HomeController@mvplay');
+	//前台歌手管理
+	Route::resource('home/personal', 'Home\PersonalController');
+	// 前台歌曲列表
+	Route::any('/home/music','Home\MusicController@index');
+	Route::any('/home/music/show','Home\MusicController@show');
+	// Route::any('/home/music/show',function(){return 1;});
+	// 专辑列表
+	Route::any('/home/albumlist/{id}','Home\HomeController@albumlist');
+//前台页面
+Route::group(['middleware'=>['homelogin']],function(){
+	
 	//用户编辑歌单
 	//先添加歌曲	
 	// Route::resource('/home/special','Home\SpecialController');
@@ -90,14 +106,9 @@ Route::group([],function(){
 	Route::any('/home/special/update/{gdid}','Home\SpecialController@update');
 	Route::any('/home/special/destroy/{gdid}','Home\SpecialController@destroy');
 	Route::any('/home/special/list/{gdid}','Home\SpecialController@list');
-	//前台注册
-	Route::any('home/reg','Home\RegController@register');
-	Route::any('home/doreg','Home\RegController@doregister');
-	Route::any('home/jihuo','Home\RegController@jihuo');
+	
 	// Route::any('home/cap','Home\RegController@cap');
-	// 前台登录
-	Route::any('home/login','Home\LoginController@login');
-	Route::any('home/dologin','Home\LoginController@dologin');
+	// 前台退出登录
 	Route::any('home/logout','Home\LoginController@dologout');
 	// 个人中心
 	Route::any('home/person','Home\PersonController@editprofile');
@@ -109,10 +120,7 @@ Route::group([],function(){
 	// 修改密码
 	Route::any('/home/person/pass','Home\PersonController@pass');
 	Route::any('/home/person/editpass','Home\PersonController@editpass');
-	//mv播放
-	Route::any('/home/mvplay','Home\HomeController@mvplay');
-	//前台歌手管理
-	Route::resource('home/personal', 'Home\PersonalController');
+
 });
 
 
