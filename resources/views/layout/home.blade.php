@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="renderer" content="webkit|ie-comp|ie-stand" /> 
     <title>因乐 - 因你而乐</title>
-    <meta itemprop="images" content="http://static.kgimg.com/public/root/images/logo.png" />
+    <meta itemprop="images" content="/home/images/logo.png" />
     <meta name="keywords" content="" />
     
     <link href="root/favicon.ico" rel="shortcut icon">
     <link rel="stylesheet" href="/home/css/index.css">
     <link rel="stylesheet" href="/homes/css/base_v.1.css" />
     <link rel="stylesheet" href="/homes/css/user_center_v.1.css" />
-    <link rel="alternate" media="only screen and (max-width: 640px)"  href="http://m.kugou.com">
+    <!-- <link rel="alternate" media="only screen and (max-width: 640px)"  href="http://m.kugou.com"> -->
 
     
     <link rel="stylesheet" type="text/css" href="/home/hdp/css/bxslider.css">
@@ -45,9 +45,9 @@
             </div>
             <div class="topNav fr">
                 <ul>
-                    <li><a target="_blank" href="shop/help/serviceCenter.html">客服中心</a></li>
+                    <li><a target="_blank" href="#">客服中心</a></li>
                     
-                    <li><a target="_blank" href="http://vip.kugou.com/">会员中心 </a></li>
+                    <li><a target="_blank" href="#">会员中心 </a></li>
                 </ul>
                 <div class="login_area">
                     @if(!session('uid'))
@@ -704,22 +704,11 @@
             <p class="macDownload-txt">就是歌多</p>
         </div>
         <div class="macDownload-right">
-            <a class="macClick-up" target="_blank"  href="https://itunes.apple.com/cn/app/%E9%85%B7%E7%8B%97%E9%9F%B3%E4%B9%90-%E5%B0%B1%E6%98%AF%E6%AD%8C%E5%A4%9A/id658741592?l=en&amp;mt=12">详情</a>
-            <a class="macClick-down" target="_blank"  href="http://download.kugou.com/download/kugou_mac">下载</a>
+            <a class="macClick-up" target="_blank"  href="#">详情</a>
+            <a class="macClick-down" target="_blank"  href="#">下载</a>
         </div>
     </div>
-    <script type="text/javascript" charset="UTF-8"  src="http://static.kgimg.com/public/root/javascripts/jslib/jquery.js"></script>
-    <script type="text/javascript"  src="http://static.kgimg.com/public/root/javascripts/jslib/common_527f9e808b.js"></script>
-    <script src="http://login-user.kugou.com/v1/kguser_min.js?20180305"></script>
-    <script type="text/javascript"  src="http://static.kgimg.com/public/root/javascripts/jslib/background-blur.js"></script>
-   
     
-    
-    <script type="text/javascript"  src="/home/js/index_3629d8393b.js"></script>
-    
-
-    <script src="http://static.kgimg.com/common/js/min/hijacked-min.js"></script>
-    <!-- Fri Sep 28 2018 20:39:00 GMT+0800 (CST) -->
 
     @section('js')
 

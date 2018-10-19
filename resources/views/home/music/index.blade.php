@@ -74,18 +74,10 @@
 @section('js')
 <script type="text/javascript" src=""></script>
 	<script type="text/javascript">
-		
-		// var menu = document.getElementsByClassName('MenuItem');
-		// console.log($('.menu'));
 		$('.MenuItem').mouseover(function(){
-            // alert(123);
 			$('.MenuItem').removeClass('active')
 			$(this).addClass('active');
 			var a = $(this).attr('data');
-			// $('#SongtabContent').children().eq(a).attr('style','display: block; z-index: 2;');
-			// $('#SongtabContent').children().eq(a).siblings().attr('style','display: none;z-index:1');
-			// console.log($('#SongtabContent').children().eq(a))
-            // var str = '';
 			$.get("/home/music/show",{szone : a},function(data){
 			  	$("#music").html('');
                     bb = data[data.length-1];
@@ -96,10 +88,6 @@
                         if($.isPlainObject(data[i])) {
                             setSingerHtml(data[i],bb);
                         }
-                         // else {
-                        //     setSingerHtml(data[i],false);      
-                                                 
-                        // }
                     }
                      
                     // 2. 创建节点

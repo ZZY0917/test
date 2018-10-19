@@ -45,7 +45,7 @@
     	<tr role="row">
     		<th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 10px;">ID
     		</th>
-            <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 10px;">用户名
+            <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 10px;">账号
             </th>
     		
     		<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 35px;">歌曲
@@ -55,7 +55,7 @@
     		<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 91px;"> 专辑
     		</th>
     		
-    		<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 91px;">收藏和下载
+    		<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 91px;">用户收藏
     		</th>
     	</tr>
     </thead>
@@ -70,11 +70,7 @@
         <td class=" ">{{$v->aname}}</td>
         <td class=" ">
         	@if($v->status==1) 
-        		收藏
-        	@elseif($v->status==2)
-        		下载
-        	@elseif($v->status==3)
-        		收藏和下载
+        		已收藏
         	@endif
         </td>
 </tr>

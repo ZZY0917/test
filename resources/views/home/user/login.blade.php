@@ -266,7 +266,7 @@ function logStat(type, name, p1, p2, p3, p4) {
                                     </div>
                                 </td>
                             </tr>
-                            <!-- <tr>
+                            <tr>
                                 <td align="right" valign="top"><label for="t01Code" class="kg_lgn_reg_tb_tl"><span class="red">*</span> 验证码：</label></td>
                                 <td>
                                     <div class="kg_lgn_textbox_area kg_lgn_textbox_code">
@@ -279,13 +279,13 @@ function logStat(type, name, p1, p2, p3, p4) {
                                         <input  name="code" type="text" class="ipt kg_lgn_textbox_ipt" style="width:120px;" onblur="checkCode()"/>
                                         <span class="sts"></span>
                                         <span class="nts"></span>
-                                        <span class="pcr_codeimg" id="p_email_code"><img src="" onclick="this.src='?d='+Math.random();"></span>
+                                        <span class="pcr_codeimg" id="p_email_code"><img src="{{captcha_src()}}" onclick="this.src='{{captcha_src()}}?d='+Math.random();"></span>
                                         
                                     </span>
 
 
                                 </td>
-                            </tr> -->
+                            </tr>
                             <tr>
                                 <td></td>
                                 <td><label class="gray"><input type="checkbox" name="readed" id="t01Agree" class="kg_lgn_checkbox" checked />我已经认真阅读并同意 <a href="../../newuc/reg/protocol.html" target="_blank" class="a_link">《酷狗服务条款》</a></label></td>

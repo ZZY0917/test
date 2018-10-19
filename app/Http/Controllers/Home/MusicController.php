@@ -40,10 +40,7 @@ class MusicController extends Controller
 
     public function show(Request $request)
     {
-    	// dd($request->szone);
 
-        // $ress = DB::table('collect')->where('uid',session['uid'])->get()->toArray();
-        // $str = '';
         // 根据地区查找歌手
         $rs = [];
     	$res = DB::table('singer')->where('szone',$request->szone)->paginate(30);
@@ -57,7 +54,7 @@ class MusicController extends Controller
                 ->orderBy('mid','desc')
                 ->first();
             }
-        }else{
+        }else{ 
             $rs[] = '';
         }
         if(session('uid')){
@@ -126,8 +123,8 @@ class MusicController extends Controller
         // dd($rs);
         // 从收藏列表删除
         $rs = Collect::where([
-            'uid'=>17,
-            // 'uid'=>session('uid'),
+            // 'uid'=>17,
+            'uid'=>session('uid'),
             'sname'=>$request->sname,
             'mname'=>$request->mname,
             'aname'=>$rs->aname,

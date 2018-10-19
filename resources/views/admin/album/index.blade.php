@@ -59,7 +59,7 @@
     		
     		<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 60px;">专辑封面
     		</th>
-            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 60px">专辑歌曲
+            <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 60px">首页位置
             </th>
             <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 100px">操作
             </th>
@@ -74,7 +74,7 @@
         <td class=" ">{{$v->aname}}</td>
         <td class=" ">{{$v->times}}</td>
         <td class=" ">
-            <img style="margin-left: 30px; max-width: 80%" src="{{$v->photo}} ">
+            <img style="margin-left: 30px; max-width: 100px;max-height: 100px;" src="{{$v->photo}} ">
         </td>
         <td class=" ">
             

@@ -22,77 +22,51 @@ class AlbumController extends Controller
      */
     public function index(Request $request)
     {
-        // $rs = DB::table('album')
-        //     // ->join('music', 'album.aid', '=', 'music.mid')
-        //     ->select()
-            
-        //     ->paginate(10);
-            // dd($request);
-// return 123;
+        
         if($request->hidden){
             // dd(13);
-        $sta = DB::table('album')->where('aid',$request->hidden)->first()->status;
+            $sta = DB::table('album')->where('aid',$request->hidden)->first()->status;
 
-        if($sta < 10){
-            $res = [];
-            $res['status'] = $sta;
-            $a = DB::table('album')->where('status',$request->dingwei)->update($res);
-            $rs = [];
-            $rs['status'] = $request->dingwei;
-            DB::table('album')->where('aid',$request->hidden)->update($rs);
-        }else{
-            //获取原来的歌单信息 更改状态
-            $res = [];
-            $res['status'] = 10;
-           
-            $a = DB::table('album')->where('status',$request->dingwei)->update($res);
-             
-            //更改新的歌单
-            $rs = [];
-            $rs['status'] = $request->dingwei;
-            DB::table('album')->where('aid',$request->hidden)->update($rs);
+            if($sta < 10){
+                $res = [];
+                $res['status'] = $sta;
+                $a = DB::table('album')->where('status',$request->dingwei)->update($res);
+                $rs = [];
+                $rs['status'] = $request->dingwei;
+                DB::table('album')->where('aid',$request->hidden)->update($rs);
+            }else{
+                //获取原来的歌单信息 更改状态
+                $res = [];
+                $res['status'] = 10;
+               
+                $a = DB::table('album')->where('status',$request->dingwei)->update($res);
+                 
+                //更改新的歌单
+                $rs = [];
+                $rs['status'] = $request->dingwei;
+                DB::table('album')->where('aid',$request->hidden)->update($rs);
+            }
         }
-    }
-            $rs = DB::table('album')
-                ->where( function ($query)use($request) {
-            $sname = $request->input('sname');
-            $aname = $request->input('aname');
-            // echo $email;die;
-            // 如果用户名不为空
-            if(!empty($aname)){
-                $query->where('aname', 'like', '%'.$aname.'%');
-            }
+        
+        $rs = DB::table('album')
+            ->where( function ($query)use($request) {
+        $sname = $request->input('sname');
+        $aname = $request->input('aname');
+        // echo $email;die;
+        // 如果用户名不为空
+        if(!empty($aname)){
+            $query->where('aname', 'like', '%'.$aname.'%');
+        }
 
-            // 如果邮箱不为空
-            if(!empty($sname)){
-                $query->where('sname', 'like', '%'.$sname.'%');
-            }
+        // 如果邮箱不为空
+        if(!empty($sname)){
+            $query->where('sname', 'like', '%'.$sname.'%');
+        }
 
-            })
+        })
         ->paginate($request->input('num', 10));
         $num = $request->num;
-       
 
-        // $rs = DB::table('album')
-        //     // ->join('music', 'album.aid', '=', 'music.mid')
-        //     // ->select('album.*', 'music.mname')
-
-        //     ->where(function($query) use($request){
-        //         //检测关键字
-        //         $aname = $request->input('aname');
-        //         $sname = $request->input('sname');
-        //         //如果专辑名不为空
-        //         if(!empty($aname)) {
-        //             $query->where('aname','like','%'.$aname.'%');
-        //         }
-        //         //如果歌手不为空
-        //         if(!empty($sname)) {
-        //             $query->where('sname','like','%'.$sname.'%');
-        //         }
-
-        //     })
-        //     ->paginate($request->input('num', 10));
-            // dd($rs);
         return view('admin/album/index',[
             'title'=>'专辑浏览页',
             'request'=>$request,
@@ -300,12 +274,8 @@ class AlbumController extends Controller
      */
     public function destroy($id)
     {
-        //
-        // $rs = DB::table('album')->where('aid',$id)->delete();
-        // dd($rs);
+        
         try{
-            //关联模型
-            // $rs = $goods->gimgs()->delete();
             $rs = DB::table('album')->where('aid',$id)->delete();
 
             if($rs){
@@ -321,20 +291,15 @@ class AlbumController extends Controller
 
     public function search(Request $request, $id)
     {
-        // return 1;
-        // dd($id);
         $rs = DB::table('album')
             ->join('music', 'album.aid', '=', 'music.aid')
             ->where('music.aid',$id)
             ->select('album.*', 'music.*')
             ->where(function($query) use($request){
         //检测关键字
-        // $sname = $request->input('sname');
         
         $mname = $request->input('mname');
         $aname = $request->input('aname');
-        // dd($sname);
-        // $query->where('uid',$request->uid);
         //如果歌手名不为空
         if(!empty($mname)) {
             $query->where('mname','like','%'.$mname.'%');
@@ -344,29 +309,7 @@ class AlbumController extends Controller
             $query->where('aname','like','%'.$aname.'%');
         }
     })->paginate($request->input('num', 10));
-            // ->paginate($request->input('num', 10));
-      // dd($rs);
-    //     $aid = $id;
-    //     $rs = album::where('aid', $request->aid)
-    //     // ->join('music','music.aid','=',$aid)
-    // ->where(function($query) use($request){
-    //     //检测关键字
-    //     // $sname = $request->input('sname');
-    //     // dd($mname);
-    //     $sname = $request->input('sname');
-    //     $aname = $request->input('aname');
-    //     // $query->where('uid',$request->uid);
-    //     //如果歌手名不为空
-    //     if(!empty($sname)) {
-    //         $query->where('sname','like','%'.$sname.'%');
-    //     }
-    //     //如果专辑名不为空
-    //     if(!empty($aname)) {
-    //         $query->where('sname','like','%'.$aname.'%');
-    //     }
-    // })->paginate($request->input('num', 10));
-            // dd($rs);
-    //      $num = $request->num;
+   
         return view('admin/album/album_music',[
             'title'=>'专辑歌曲页',
             'request'=>$request,
@@ -395,6 +338,34 @@ class AlbumController extends Controller
             return  $filepath;
         }
 
+    }
+    public function music(Request $request,$aname)
+    {
+        // dd($aname);
+        $rs = DB::table('album')
+            ->join('music', 'album.aname', '=', 'music.aname')
+            ->where('music.aname',$aname)
+            ->where(function($query) use($request){
+                //检测关键字
+                $aname = $request->input('aname');
+                $sname = $request->input('sname');
+                //如果专辑名不为空
+                if(!empty($aname)) {
+                    $query->where('aname','like','%'.$aname.'%');
+                }
+                //如果歌手不为空
+                if(!empty($sname)) {
+                    $query->where('sname','like','%'.$sname.'%');
+                }
+            })
+            ->paginate($request->input('num', 10));
+            // dd($rs);
+        $num = $request->num;
+        return view('admin/album/album_music',[
+            'title'=>'专辑详细页',
+            'request'=>$request,
+            'rs'=>$rs
+        ]);
     }
 
 }

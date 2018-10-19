@@ -107,9 +107,9 @@
                             {{$v->email}}
                             
                         </td>
-                        <td class=" ">
+                        <td class=" " style="text-align:center">
                            
-                            <img src="{{$v->photo}}" alt="">
+                            <img src="{{$v->photo}}" style="max-width: 100px;max-height: 100px" alt="">
                         </td>
                         <!-- <td class=" ">
                             {{$v->status}}

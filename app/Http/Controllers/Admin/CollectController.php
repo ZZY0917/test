@@ -13,19 +13,13 @@ class CollectController extends Controller
     public function index(Request $request)
     {
     	$uid = $request->uid;
-
-    	// $rs = DB::table('users')
-     //        ->join('collect', 'collect.uid', '=', 'users.uid')
-     //        ->select('users.uname', 'collect.*')
-     //        ->where('uid', $request->uid)
-     //        ->get();
-
+        // dd($uid);
 
     	$rs = DB::table('users')
 	        	->join('collect', function ($join)use($request) {
 	            $join->on('users.uid', '=', 'collect.uid')
 	            ->where('collect.uid',  $request->uid);
-	        })->orderBy('status','desc')->paginate(10);
+	        })->paginate(10);
 
         // dd($rs[0]->username);
     	// die;
@@ -38,10 +32,10 @@ class CollectController extends Controller
 
     public function search(Request $request)
     {
-        // dd($request->uid);
+        // dd($request->input);
         $rs = Collect::orderBy('cid','asc')
         ->where('uid', $request->uid)
-    ->where(function($query) use($request){
+        ->where(function($query) use($request){
         //检测关键字
         $mname = $request->input('mname');
         // dd($mname);
@@ -58,17 +52,11 @@ class CollectController extends Controller
         }
         //如果专辑名不为空
         if(!empty($aname)) {
-            $query->where('sname','like','%'.$aname.'%');
+            $query->where('aname','like','%'.$aname.'%');
         }
     })->paginate($request->input('num', 10));
 
          $num = $request->num;
-        // dd($rs);
-
-        // $rs = DB::table('users')->hasMany('collect')->where('uid',2);
-
-           
-            
 
             return view('admin/collect/index',[
                 'title'=>'用户收藏列表',

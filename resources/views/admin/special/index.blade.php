@@ -142,9 +142,9 @@
                             @elseif ($v->status == 4) 第五张
                             @endif
                         </td>
-                        <td class=" ">
+                        <td class=" " style="text-align: center">
                            
-                            <img src="{{$v->photo}}" alt="">
+                            <img src="{{$v->photo}}" style="max-height: 100px;max-width: 100px;" alt="">
                         </td>
                         
                          <td class=" ">

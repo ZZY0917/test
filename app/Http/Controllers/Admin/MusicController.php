@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Admin\Music;
+use App\Model\Admin\album;
 use Config;
 use DB;
 
@@ -20,20 +21,11 @@ class MusicController extends Controller
 
         //  获取数据
         $rs = DB::table('Music')->first();
-        /*$res = explode(',',$rs->styles);
-        $rs->styles = $res;*/
-        
-        //dd($rs->mid);
-
-         
         //单条件查询
         $uname = $request->input('mname');
         //获取数据
         $rs = music::where('mname','like','%'.$uname.'%')
         ->paginate($request->input('num',10));
-        //var_dump($rs);die; 
-        
-        //dd($rrs);
         return view('/admin/music/index',[
             'title'=>'歌曲管理页面',
             'rs'=>$rs,
@@ -63,14 +55,10 @@ class MusicController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->mname);
         //表单验证
         $fields = $request->all();
         //曲风多选框
-        /*$rs =  $request->input('styles');  
-        $field = implode(",",$rs);
-        $fields['styles'] = $field;*/
-        //dd($fields);
-        
         $this->validate($request, [
             'mname' => 'required',
             'sname' => 'required',
@@ -78,6 +66,7 @@ class MusicController extends Controller
             'styles' =>'required',
             'photp' =>'required',
             'urll' =>'required',
+            'times' =>'required',
         ],[
             'mname.required'=>'歌曲名不能为空!!',
             'sname.required'=>'歌手名不能为空',
@@ -85,56 +74,26 @@ class MusicController extends Controller
             'styles.required'=>'曲风不能为空',
             'photp.required'=>'照片不能为空',
             'urll.required'=>'歌曲上传不能为空',
+            'times.required'=>'歌曲时长不能为空',
         ]);
 
-
-        /*$res = $request->except('_token','photp','repass');*/
-
-      /*  //文件上传
-        if($request->hasFile('photp')){
-
-            //自定义名字
-            $name = time().rand(1111,9999);
-          //获取后缀
-            $suffix = $request->file('photp')->getClientOriginalExtension(); 
-
-            //移动
-            $request->file('photp')->move('uploadsphotp',$name.'.'.$suffix);
-
-            $res['photp'] = '/uploadsphotp/'.$name.'.'.$suffix;
-        }
-
-        $res = $request -> except('_token','urll','repass');
-        if ($request->isMethod('POST')) {  
-        //在源生的php代码中是使用$_FILE来查看上传文件的属性         
-        //但是在laravel里面有更好的封装好的方法，就是下面这个         
-        //显示的属性更多           
-        $fileCharater = $request->file('source');           
-            if ($fileCharater->isValid()) {                             
-                //获取文件的扩展名             
-                    $ext = $fileCharater->getClientOriginalExtension();                 
-                //获取文件的绝对路径             
-                    $path = $fileCharater->getRealPath();               
-                //定义文件名             
-                    $filename = date('Y-m-d-h-i-s').'.'.$ext;               
-                //存储文件。disk里面的public。总的来说，就是调用disk模块里的public配置              
-                    Storage::disk('public')->put($filename, file_get_contents($path));          
-        }
-        */
         $imageUrl = $this->uploadFile($request, 'photp');
         $musicUrl = $this->uploadFile($request, 'urll');
-        /*$res = $request->except('_token','photp','urll');*/
-        
-        /*if ( $musicUrl && $imageUrl ) {
-             
-        }*/
+        $lrcUrl = $this->uploadFile($request, 'lrc');
+
         $fields['photp'] = $imageUrl;
         $fields['urll'] = $musicUrl;
+        $fields['lrc'] = $lrcUrl;
         $res = Music::create($fields);
-            
+
+        album::insert([
+            'aname'=>$request->aname,
+            'sname'=>$request->sname
+            // 'styles'=>$request->styles
+        ]);
+
         if ($musicUrl && $imageUrl) {
             // 文件上传成功
-            
             try{
                         if($res){
                             return redirect('/admin/music')->with('success','添加成功');

@@ -86,12 +86,30 @@ Route::group(['middleware'=>['adminlogin']],function(){
 	// 前台歌曲列表
 	Route::any('/home/music','Home\MusicController@index');
 	Route::any('/home/music/show','Home\MusicController@show');
-		// 用户收藏
-	// Route::get('/home/music/collect','Home\MusicController@collect');
-	// 	// 取消收藏
-	// Route::get('/home/music/xcollect','Home\MusicController@xcollect');
-
-	// Route::any('/home/music/show',function(){return 1;});
+	//前台专辑详情
+	Route::any('home/albumlist/{id}','Home\HomeController@albumlist');
+	//前台歌手AJAX
+	Route::any('/home/geshou','Home\HomeController@geshou');
+	//前台歌曲
+	Route::any('/home/music/show','Home\MusicController@show');
+	//前台歌手列表
+	Route::any('home/list', 'Home\ListController@index');
+	//前台歌手详情表
+	Route::any('home/list/listsinger/{sid}', 'Home\ListController@listsinger');
+	//歌手列表ajax
+	Route::any('home/list/list_zone', 'Home\ListController@list_zone');
+	//前台歌曲排行
+	Route::any('home/paihang', 'Home\PaiHangController@index');
+	//前台新歌飙升榜
+	Route::any('home/paihang/xg/1', 'Home\PaiHangController@xg');	
+	//前台流行飙升榜
+	Route::any('home/paihang/lx/2', 'Home\PaiHangController@lx');	
+	//前台经典飙升榜
+	Route::any('home/paihang/jd/3', 'Home\PaiHangController@jd');	
+	//前台轻音乐飙升榜
+	Route::any('home/paihang/qyy/4', 'Home\PaiHangController@qyy');
+	//前台播放页面
+	Route::any('home/play/{id}','Home\HomeController@play');
 	// 专辑列表
 	Route::any('/home/albumlist/{id}','Home\HomeController@albumlist');
 //前台页面

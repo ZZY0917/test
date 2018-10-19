@@ -7,11 +7,11 @@
             <div class="nav">
                 <ul class="homeNav">
                     <li><a class="normal active" href="/">首页</a></li>
-                    <li><a class="normal"  href="yy/html/rank.html">榜单</a></li>
-                    <li><a class="normal"  href="yy/html/rank.html">歌手</a></li>
+                    <li><a class="normal"  href="home/paihang">榜单</a></li>
+                    <li><a class="normal"  href="/home/list">歌手</a></li>
                     <li><a class="normal"  href="/home/music">歌曲</a></li>
                     <li><a class="normal"  href="/home/specialshow">歌单</a></li>
-                    <li><a class="normal"  href="yy/html/rank.html">专辑</a></li>
+                  
                     <li><a class="normal"  href="/home/personal">我的音乐</a></li>
                     
                     
@@ -101,22 +101,22 @@
                     
                         
                             <div class="listItem">
-                                 <a href="yy/rank/home/1-6666-from=homepage.html">
+                                 <a href="home/paihang/xg/1">
                                     <div class="Cover">
                                         <div class="playBtn icon icon-play_s" data-id="6666">播放</div>
                                     </div>
                                     <span class="arrow icon-big_arrow_right"></span>
-                                    <img  _src="http://imge.kugou.com/v2/rank_cover/T1M4h4BKKj1RCvBVdK.jpg_240x240.jpg" src="yy/static/images/blank.gif" width="98" height="98" _def="http://static.kgimg.com/public/root/images/rankdefalut.jpg">
+                                    <img src="/images/T1M4h4BKKj1RCvBVdK.jpg" width="98" height="98" >
                                     <div class="list">
                                         <dl>
-                                            <dt>酷狗飙升榜</dt>
+                                            <dt>新歌飙升榜</dt>
                                             
                                                 
-                                                    <dd>1 . 马良、孙茜茹 - 往后余生</dd>
+                                                    @foreach($rspx as $k=>$v)
+                                                    <dd>{{$k+1}} . {{$v->sname}} - {{$v->mname}}</dd>
                                                 
                                             
-                                                
-                                                    <dd>2 . 鹿晗 - 时间停了</dd>
+                                                @endforeach
                                                 
                                             
                                         </dl>
@@ -125,22 +125,22 @@
                             </div>
                         
                             <div class="listItem">
-                                 <a href="yy/rank/home/1-8888-from=homepage.html">
+                                 <a href="home/paihang">
                                     <div class="Cover">
                                         <div class="playBtn icon icon-play_s" data-id="8888">播放</div>
                                     </div>
                                     <span class="arrow icon-big_arrow_right"></span>
-                                    <img  _src="http://imge.kugou.com/v2/rank_cover/T1fHd4BXd_1RCvBVdK.jpg_240x240.jpg" src="yy/static/images/blank.gif" width="98" height="98" _def="http://static.kgimg.com/public/root/images/rankdefalut.jpg">
+                                    <img   src="/images/T1fHd4BXd_1RCvBVdK.jpg" width="98" height="98" >
                                     <div class="list">
                                         <dl>
-                                            <dt>酷狗TOP500</dt>
+                                            <dt>因乐TOP500</dt>
                                             
                                                 
-                                                    <dd>1 . 张紫豪 - 可不可以</dd>
+                                                @foreach($rspz as $k=>$v)
+                                                    <dd>{{$k+1}} . {{$v->sname}} - {{$v->mname}}</dd>
                                                 
                                             
-                                                
-                                                    <dd>2 . 黑龙 - 38度6</dd>
+                                                @endforeach
                                                 
                                             
                                         </dl>
@@ -149,22 +149,22 @@
                             </div>
                         
                             <div class="listItem">
-                                 <a href="yy/rank/home/1-23784-from=homepage.html">
+                                 <a href="home/paihang/lx/2">
                                     <div class="Cover">
                                         <div class="playBtn icon icon-play_s" data-id="23784">播放</div>
                                     </div>
                                     <span class="arrow icon-big_arrow_right"></span>
-                                    <img  _src="http://imge.kugou.com/v2/rank_cover/T1Fpd4BKbg1RCvBVdK.jpg_240x240.jpg" src="yy/static/images/blank.gif" width="98" height="98" _def="http://static.kgimg.com/public/root/images/rankdefalut.jpg">
+                                    <img  src="/images/T1Fpd4BKbg1RCvBVdK.jpg" width="98" height="98">
                                     <div class="list">
                                         <dl>
-                                            <dt>网络红歌榜</dt>
+                                            <dt>流行音乐榜</dt>
                                             
-                                                
-                                                    <dd>1 . 金南玲 - 逆流成河【我在锡林郭勒等你电视剧插曲】</dd>
+                                                @foreach($rspl as $k=>$v)
+                                                    <dd>{{$k+1}} . {{$v->sname}} - {{$v->mname}}</dd>
                                                 
                                             
-                                                
-                                                    <dd>2 . 胡66 - 读者</dd>
+                                                @endforeach
+                                                    
                                                 
                                             
                                         </dl>
@@ -184,47 +184,111 @@
                     <div class="itemTitle hasBorder">
                         <h3><b>新歌</b>首发</h3>
                         <div class="tabT" id="SongtabMenu">
-                            <span class="MenuItem active" data="0">华语</span>
-                            <span class="MenuItem " data="1">欧美</span>
-                            <span class="MenuItem " data="2">韩国</span>
-                            <span class="MenuItem " data="3">日本</span>
+                            <span class="MenuItem active" data="0">大陆</span>
+                            <span class="MenuItem " data="1">港台</span>
+                            <span class="MenuItem " data="2">欧美</span>
+                            <span class="MenuItem " data="3">日韩</span>
                         </div>
                         <button class="playAll"><span class="icon icon-play"></span><em>全部播放</em></button>
                     </div>
                 
                     <div class="itemContent">
                         <div class="tabC" id="SongtabContent">
-                            <ul>
-                            
-                               
-                                    <li  data='{"first":1,"Hash":"025CF1E4EB9187D5C5EF656FD0880298","time":"03:47","timeLen":227059,"FileName":"鹿晗 - 时间停了","Filename":"鹿晗 - 时间停了","albumId":10773504,"privilege":8,"size":3642015,"songLink":"q75bz3b"}'>
-                                        <a href="song/q75bz3b.html">
-                                        <span class="songName">鹿晗 - 时间停了</span>
+                            <ul id="music">
+                                @foreach($arr as $k => $v)
+                                <li>
+                                    <a href="/">
+                                        <span class="songName" >{{$v->sname}} - {{$v->mname}}</span>
+                                        <span class="songTips"></span>
+                                        <span class="songTime"></span>
+
+                                        @if(session('uid'))
+                                        <span class="icon playBtn icon-collect" style="width:15px;background:url('/home/images/<?php 
+                                            if(strstr($str,($v->sname.' - '.$v->mname))){echo 2;}
+                                            else{echo 1;}
+                                            ?>.jpg');display:block;">
+                                        </span>
+                                        @else
                                         
-                                            <span class="songTips"></span>
+                                        <span class="icon playBtn i-collect" style="width:15px;background:url('/home/images/1.jpg');display:block;" onclick="alert('请登录后进行收藏');return false;">
+                                        </span>
                                         
-                                        <span class="songTime">03:47</span>
-                                            <span class="icon playBtn icon-play"></span>
-                                            <span class="icon downloadBtn icon-download" onclick="_hmt.push(['_trackEvent', 'hidedown', 'hidecilick', 'hidepc']);"></span>
-                                            <span class="icon shareBtn icon-share"></span>
-                                        </a>
-                                    </li>
-                                 
-                            
+                                        @endif
+                                    </a>
+                                </li>
+                            @endforeach                           
+                                                               
                             </ul>
-                            <ul style="display: none">
                             
-                          
-                            </ul>
-                            <ul style="display: none">
-                            
-                            
-                            </ul>
-                            <ul style="display: none">
-                           
-                            </ul>
                         </div>
                     </div>
+                    
+    <script type="text/javascript">
+        $('.MenuItem').mouseover(function(){
+            $('.MenuItem').removeClass('active')
+            $(this).addClass('active');
+            var a = $(this).attr('data');
+            $.get("/home/music/show",{szone : a},function(data){
+                $("#music").html('');
+                    bb = data[data.length-1];
+
+                    // 1. 循环遍历ajax放回的数组
+                    for (var i = 0; i < data.length-1; i++) {
+
+                        if($.isPlainObject(data[i])) {
+                            setSingerHtml(data[i],bb);
+                        }
+                    }
+                     
+                    // 2. 创建节点
+
+                    // 3. 将组合好的节点和数据插入到html中
+                });
+                
+        });
+        // 设置html
+            function setSingerHtml(data,bb) {
+                var patt1 = new RegExp(data.sname + ' - ' + data.mname);
+                var str = patt1.test(bb) ? "2": '1';
+                var music = `<li>
+                                <a href="#">
+                                    <span class="songName" >${data.sname} - ${data.mname}</span>
+                                    <span class="songTips"></span>
+                                    <span class="songTime"></span>
+                                    <span id="a" class="icon playBtn icon-collect" style="width:15px;background:url('/home/images/${str}.jpg');display:block;">
+                                    </span>
+                                </a>
+                            </li>`;
+                $(music).appendTo($("#music"));
+            }
+        
+    </script>
+    <script type="text/javascript">
+        // $(function(){
+
+            $("ul").delegate(".icon-collect", "click", function(){
+                // alert(123);
+                var se = $(this).siblings().eq(0).text().split(' ');
+                var mname = se['2'];
+                var sname = se['0'];
+                // console.log(sname)
+                var str = $(this).attr('style')
+                $(this).removeAttr('style');
+                if(str == "width:15px;background:url('/home/images/1.jpg');display:block;"){
+                    $(this).attr("style","width:15px;background:url('/home/images/2.jpg');display:block;");
+                        $.get('/home/music/collect',{mname:mname,sname:sname},function(data){
+                            
+                        })
+                        return false;
+                }else{
+                    $(this).attr("style","width:15px;background:url('/home/images/1.jpg');display:block;");
+                        $.get('/home/music/xcollect',{mname:mname,sname:sname},function(data){
+                            
+                        })
+                        return false;
+                }
+            });
+    </script>
                     <div class="pages p">
                       
                     </div>   
@@ -344,8 +408,25 @@
                                 <li class="item">
                                     <ul class="chinaSinger secondUl clearFix" id="chinaSingerContent">
                                         <li id = "singer">     
-                                                                                                  
-                                                    
+                                            @foreach($rss as $k=>$v)                                                     @if($k<2) 
+                                            <div class="cpt cptMid">
+                                             @else   
+                                            <div class="cpt cptSmall">
+                                             @endif   
+                                                <a class="singerLink" href="/home/list/listsinger/{{$v->sid}}">
+                                                    <img class="singerImg" src="{{$v->photo}}" >
+                                                    <div class="Cover">
+                                                        <div class="playBtn icon">播放</div> 
+                                                    </div>
+                                                    <p class="cptBg"></p>
+                                                    <div class="cptB">
+                                                        <p class="songListSinger">
+                                                            {{$v->sname}}
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>  
+                                            @endforeach      
                                         </li>
                                     
            <script type="text/javascript">
@@ -362,7 +443,7 @@
 
                 $.get('/home/geshou',{val:text},function(data) {
                     $("#singer").html('');
-                    console.log(data);
+                    // console.log(data);
                     // 1. 循环遍历ajax放回的数组
                     for (var i = 0; i < data.length; i++) {
                         if(i<=1) {
@@ -384,14 +465,14 @@
                 var str = addClass ? "cptMid": 'cptSmall';
 
                 var songer = `<div class="cpt ${str}">
-                        <a class="singerLink" href="/">
+                        <a class="singerLink" href="/home/list/listsinger/${data.sid}">
                             <img class="singerImg" src="${data.photo}" >
                             <div class="Cover">
                                 <div class="playBtn icon">播放</div> 
                             </div>
                             <p class="cptBg"></p>
                             <div class="cptB">
-                                <p class="songListSinger"></p>
+                                <p class="songListSinger">${data.sname}</p>
                             </div>
                         </a>
                     </div>`;
@@ -416,7 +497,15 @@
                 <div class="itemContent">
 
                     <div class="hz_logo clear_fix">
-                        <a href="javascript:;" hidefocus="true" title="" rel="nofollow"><img title="" width="130" height="58"  src="yy/static/images/blank.gif" _src="http://static.kgimg.com/public/root//images/logo/partner01.jpg" alt=""></a><a href="javascript:;" hidefocus="true" title="" rel="nofollow"><img title="EMI" width="130" height="58"  src="yy/static/images/blank.gif" _src="http://static.kgimg.com/public/root//images/logo/partner02.jpg" alt=""></a><a href="javascript:;" hidefocus="true" title="" rel="nofollow"><img title="SONY" width="130" height="58"  src="yy/static/images/blank.gif" _src="http://static.kgimg.com/public/root//images/logo/partner03.jpg" alt=""></a><a href="javascript:;" hidefocus="true" title="" rel="nofollow"><img title="海蝶" width="130" height="58"  src="yy/static/images/blank.gif" _src="http://static.kgimg.com/public/root//images/logo/partner04.jpg" alt=""></a><a href="javascript:;" hidefocus="true" title="" rel="nofollow"><img title="丰华唱片" width="130" height="58"  src="yy/static/images/blank.gif" _src="http://static.kgimg.com/public/root//images/logo/partner05.jpg" alt=""></a><a href="javascript:;" hidefocus="true" title="" rel="nofollow"><img title="喜欢音乐" width="130" height="58"  src="yy/static/images/blank.gif" _src="http://static.kgimg.com/public/root//images/logo/partner06.jpg" alt=""></a><a href="javascript:;" hidefocus="true" title="" rel="nofollow"><img title="种子音乐" width="130" height="58"  src="yy/static/images/blank.gif" _src="http://static.kgimg.com/public/root//images/logo/partner07.jpg" alt=""></a>
+                        <a href="javascript:;" hidefocus="true" title="" rel="nofollow"><img title="" width="130" height="58"  src="/images/partner01.jpg" alt=""></a>
+                        <a href="javascript:;" hidefocus="true" title="" rel="nofollow"><img title="EMI" width="130" height="58"  src="/images/partner02.jpg"  alt=""></a>
+                        <a href="javascript:;" hidefocus="true" title="" rel="nofollow"><img title="SONY" width="130" height="58"  src="/images/partner03.jpg"  alt=""></a>
+                        <a href="javascript:;" hidefocus="true" title="" rel="nofollow"><img title="海蝶" width="130" height="58"  src="/images/partner06.jpg"  alt=""></a>
+                        <a href="javascript:;" hidefocus="true" title="" rel="nofollow"><img title="丰华唱片" width="130" height="58"  src="/images/partner08.jpg"  alt="">
+                        </a>
+                        <a href="javascript:;" hidefocus="true" title="" rel="nofollow"><img title="喜欢音乐" width="130" height="58"  src="/images/partner10.jpg"  alt=""></a>
+                        <a href="javascript:;" hidefocus="true" title="" rel="nofollow"><img title="种子音乐" width="130" height="58"  src="/images/partner15.jpg"  alt="">
+                        </a>
                     </div>
                 </div>
             </div>

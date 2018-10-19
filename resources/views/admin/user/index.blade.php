@@ -41,7 +41,7 @@
     	<tr role="row">
     		<th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 10px;">ID
     		</th>
-    		<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 80px;">用户名
+    		<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 80px;">用户账号
     		</th>
     		<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 35px;">昵称
     		</th>
@@ -49,11 +49,9 @@
     		</th>
     		<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 91px;"> 头像
     		</th>
-    		<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 91px;"> VIP
-    		</th>
             <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 91px;"> 性别
             </th>
-    		<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 91px;">用户收藏和下载
+    		<th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 91px;">用户收藏
     		</th>
     	</tr>
     </thead>
@@ -65,11 +63,10 @@
         <td class=" ">{{$v->username}}</td>
         <td class=" ">{{$v->uname}}</td>
         <td class=" ">{{$v->email}}</td>
-        <td class=" "><img src="{{$v->photo}}"></td>
-        <td class=" ">{{$v->vip ? '会员' : '普通'}}</td>
-        <td class=" ">{{$v->sex ? '男' : '女'}}</td>
+        <td class=" " style="text-align: center;"><img src="{{$v->photo}} " style="max-height: 100px;max-height: 100px;"></td>
+        <td class=" " style="text-align: center;">{{$v->sex ? '男' : '女'}}</td>
         <td class=" ">
-            <a class="btn btn-info" href="/admin/collect/{{$v->uid}}/index">收藏和下载</a>
+            <a class="btn btn-info" href="/admin/collect/{{$v->uid}}/index">用户收藏</a>
         	
         	<!-- <a class="btn btn-danger" href="">删除</a> -->
         </td>
