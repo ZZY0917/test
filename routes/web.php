@@ -83,10 +83,14 @@ Route::group(['middleware'=>['adminlogin']],function(){
 	//mv播放
 	Route::any('/home/mvplay','Home\HomeController@mvplay');
 	//前台歌手管理
-	Route::resource('home/personal', 'Home\PersonalController');
 	// 前台歌曲列表
 	Route::any('/home/music','Home\MusicController@index');
 	Route::any('/home/music/show','Home\MusicController@show');
+		// 用户收藏
+	// Route::get('/home/music/collect','Home\MusicController@collect');
+	// 	// 取消收藏
+	// Route::get('/home/music/xcollect','Home\MusicController@xcollect');
+
 	// Route::any('/home/music/show',function(){return 1;});
 	// 专辑列表
 	Route::any('/home/albumlist/{id}','Home\HomeController@albumlist');
@@ -120,6 +124,13 @@ Route::group(['middleware'=>['homelogin']],function(){
 	// 修改密码
 	Route::any('/home/person/pass','Home\PersonController@pass');
 	Route::any('/home/person/editpass','Home\PersonController@editpass');
+	// 前台歌曲列表
+	// 前台收藏
+	Route::any('/home/music/collect','Home\MusicController@collect');
+	// 取消收藏
+	Route::any('/home/music/xcollect','Home\MusicController@xcollect');
+	// 前台我的音乐
+	Route::resource('home/personal', 'Home\PersonalController');
 
 });
 
