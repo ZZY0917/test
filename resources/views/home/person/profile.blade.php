@@ -3,6 +3,20 @@
 @section('title')
 
 @section('content')
+<div class="navWrap">
+    <div class="nav">
+        <ul class="homeNav">
+            <li><a class="normal" href="/">首页</a></li>
+            <li><a class="normal active"  href="/home/paihang">榜单</a></li>
+            <li><a class="normal"  href="/home/list">歌手</a></li>
+            <li><a class="normal"  href="/home/music">音乐</a></li>
+            <li><a class="normal"  href="/home/specialshow">歌单</a></li>
+            <li><a class="normal"  href="/home/personal">我的音乐</a></li>
+        </ul>
+        
+      
+    </div>
+</div>
 
 <div class="kg_uc_bodyArea">
     <div class="wing_area_outset">
@@ -37,6 +51,53 @@
                                         
                                     </ul>
                                 </div>
+                                @if (count($errors) > 0)
+                                <div class="mws-form-message error" 
+                                style="background-color: #ffcbca;
+                                        background-image: url(/admins/images/core/message-error.png);
+                                        border-color: #eb979b;
+                                        color: #9b4449;
+                                        font-size: 12px;
+                                        cursor: pointer;
+                                        border: 1px solid #d2d2d2;
+                                        padding: 15px 8px 15px 45px;
+                                        position: relative;
+                                        vertical-align: middle;
+                                        background-position: 12px 12px;
+                                        background-repeat: no-repeat;
+                                        margin-bottom: 12px;
+                                        -webkit-border-radius: 3px;
+                                        -moz-border-radius: 3px;
+                                        border-radius: 3px;">
+                                    错误信息
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                        <li>
+                                            {{ $error }}
+                                        </li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                                @endif @if(session('success'))
+                                <div class="mws-form-message info" style="background-color: #bce5f7;
+                                        background-image: url(/admins/images/core/message-info.png);
+                                        border-color: #a6d3e8;
+                                        color: #11689E;
+                                        font-size: 12px;
+                                        cursor: pointer;
+                                        border: 1px solid #d2d2d2;
+                                        padding: 15px 8px 15px 45px;
+                                        position: relative;
+                                        vertical-align: middle;
+                                        background-position: 12px 12px;
+                                        background-repeat: no-repeat;
+                                        margin-bottom: 12px;
+                                        -webkit-border-radius: 3px;
+                                        -moz-border-radius: 3px;
+                                        border-radius: 3px;">
+                                    {{session('success')}}
+                                </div>
+                                @endif
                                 <div class="kg_uc_module02_bd">
                                 	<form action="/home/person/updatepro" method="post" id="art_form" enctype="multipart/form-data">
                                     <div class="bottom10 clearfix">
@@ -81,10 +142,7 @@
                         <p align="center">(帐号:{{session('username')}})</p>
                         <!--<p align="center">积分：0</p>-->
                         <!--<p align="center"><a href="http://www.kugou.com/uc/1349805978.html" style="text-decoration:underline" >返回旧版</a></p>--></div>
-                    <div class="kg_uc_avatar_vipinfo" id="user_vipinfo">
-                        <p>
-                            <a target="_blank" href="http://vip.kugou.com/recharge.html?from=music&version=7713&action=newSuperVipType" title="开通酷狗豪华VIP">开通酷狗豪华 VIP&gt;&gt;</a></p>
-                    </div>
+                    
                 </div>
                 <!--/头像区域 -->
                 <!--/左侧栏 --></div>
@@ -161,6 +219,12 @@
         });
     }
 
+</script>
+<script type="text/javascript">
+          // alert($);
+        setTimeout(function(){
+            $('.mws-form-message').slideUp(2000);
+        },3000)
 </script>
 @show
 

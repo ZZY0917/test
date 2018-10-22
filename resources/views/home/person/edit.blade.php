@@ -52,12 +52,12 @@ function set_son_name(father_name, son_name){
      son_name.options[ii] = new Option();
      son_name.options[ii].text = cities[pv][i];
      son_name.options[ii].value = cities[pv][i];
-     for (var i = 0; i < cities["{{$rs[0]->province}}"].length; i++){  
-        if (city.options[ii].value == "{{$rs['0']->city}}"){  
-            city.options[ii].selected = true;  
-            break;  
-        }  
-    }
+    //  for (var i = 0; i < cities["{{$rs['0']->province}}"].length; i++){  
+    //     if (city.options[ii].value == "{{$rs['0']->city}}"){  
+    //         // city.options[ii].selected = true;  
+    //         break;  
+    //     }  
+    // }
   }
 }  
       
@@ -65,6 +65,69 @@ function set_son_name(father_name, son_name){
 
 
 @section('content')
+
+<div class="navWrap">
+    <div class="nav">
+        <ul class="homeNav">
+            <li><a class="normal" href="/">首页</a></li>
+            <li><a class="normal active"  href="/home/paihang">榜单</a></li>
+            <li><a class="normal"  href="/home/list">歌手</a></li>
+            <li><a class="normal"  href="/home/music">音乐</a></li>
+            <li><a class="normal"  href="/home/specialshow">歌单</a></li>
+            <li><a class="normal"  href="/home/personal">我的音乐</a></li>
+        </ul>
+        
+      
+    </div>
+</div>
+
+@if (count($errors) > 0)
+    <div class="mws-form-message error" 
+    style="background-color: #ffcbca;
+            background-image: url(/admins/images/core/message-error.png);
+            border-color: #eb979b;
+            color: #9b4449;
+            font-size: 12px;
+            cursor: pointer;
+            border: 1px solid #d2d2d2;
+            padding: 15px 8px 15px 45px;
+            position: relative;
+            vertical-align: middle;
+            background-position: 12px 12px;
+            background-repeat: no-repeat;
+            margin-bottom: 12px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;">
+        错误信息
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>
+                {{ $error }}
+            </li>
+            @endforeach
+        </ul>
+    </div>
+    @endif @if(session('success'))
+    <div class="mws-form-message info" style="background-color: #bce5f7;
+            background-image: url(/admins/images/core/message-info.png);
+            border-color: #a6d3e8;
+            color: #11689E;
+            font-size: 12px;
+            cursor: pointer;
+            border: 1px solid #d2d2d2;
+            padding: 15px 8px 15px 45px;
+            position: relative;
+            vertical-align: middle;
+            background-position: 12px 12px;
+            background-repeat: no-repeat;
+            margin-bottom: 12px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;">
+        {{session('success')}}
+    </div>
+@endif
 <!-- body -->
     <div class="kg_uc_bodyArea">
         <div class="wing_area_outset">
@@ -226,43 +289,20 @@ function set_son_name(father_name, son_name){
                 <!--<p align="center">积分：0</p>-->
                  <!--<p align="center"><a href="http://www.kugou.com/uc/1349805978.html" style="text-decoration:underline" >返回旧版</a></p>-->
             </div>
-            <div class="kg_uc_avatar_vipinfo" id="user_vipinfo">
-                <p><a target="_blank" href="http://vip.kugou.com/recharge.html?from=music&version=7713&action=newSuperVipType" title="开通酷狗豪华VIP">开通酷狗豪华 VIP&gt;&gt;</a></p>
-            </div>
-
         </div>
         <!--/头像区域 -->
     <!--/左侧栏 -->
     </div>
-<script>
-// var myPic = "http://imge.kugou.com/kugouicon/165/20100101/20100101192931478054.jpg";
-
-// // document.domain="kugou.com";
-// try{
-//     var kugouC = read("KuGoo");
-//     var pic_src = kugouC.Pic;
-//     if(!pic_src || pic_src == "default.jpg"){
-//         pic_src = "http://imge.kugou.com/kugouicon/165/20120724/20120724145917274529.jpg";
-//     } else if(pic_src.indexOf("http://") != -1){
-//         pic_src = pic_src;
-//     } else {
-//         pic_src ="http://imge.kugou.com/kugouicon/165/"+pic_src.substr(0,8)+"/"+pic_src;
-//     }
-//     var nickname=kugouC.NickName.replace(/%/g, "\\");;
-//     nickname=eval("'" + nickname + "'");
-//     document.getElementById("myucname").innerHTML=nickname;
-//     document.getElementById("UserImage").src= myPic || pic_src;
-// }catch(ex){
-
-// }
-
-</script>
-
-            <div class="clear"></div>
-        </div>
-    </div>
+    <div class="clear"></div>
+</div>
+</div>
 </div>
     <!--/body -->
-	
+	<script type="text/javascript">
+          // alert($);
+        setTimeout(function(){
+            $('.mws-form-message').slideUp(2000);
+        },3000)
+</script>
 
 @stop

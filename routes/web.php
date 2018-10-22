@@ -71,11 +71,16 @@ Route::group(['middleware'=>['adminlogin']],function(){
 	Route::resource('/admin/userssong','Admin\UsersSongController');
 });
 
-//前台注册
+// 前台管理
+	
+	// 搜索
+	Route::any('/home/sou','Home\HomeController@sou');
+	Route::any('/home/albumsou/{name}','Home\HomeController@albumsou');
+	//前台注册
 	Route::any('/home/reg','Home\RegController@register');
 	Route::any('/home/doreg','Home\RegController@doregister');
 	Route::any('/home/jihuo','Home\RegController@jihuo');
-// 前台登录
+	// 前台登录
 	Route::any('/home/login','Home\LoginController@login');
 	Route::any('/home/dologin','Home\LoginController@dologin');
 	//前台歌单页面
@@ -112,6 +117,8 @@ Route::group(['middleware'=>['adminlogin']],function(){
 	Route::any('home/play/{id}','Home\HomeController@play');
 	// 专辑列表
 	Route::any('/home/albumlist/{id}','Home\HomeController@albumlist');
+	
+	Route::any('/home/special/list/{gdid}','Home\SpecialController@list');
 //前台页面
 Route::group(['middleware'=>['homelogin']],function(){
 	
@@ -127,7 +134,7 @@ Route::group(['middleware'=>['homelogin']],function(){
 	Route::any('/home/special/edits/{gdid}','Home\SpecialController@edits');
 	Route::any('/home/special/update/{gdid}','Home\SpecialController@update');
 	Route::any('/home/special/destroy/{gdid}','Home\SpecialController@destroy');
-	Route::any('/home/special/list/{gdid}','Home\SpecialController@list');
+	
 	
 	// Route::any('home/cap','Home\RegController@cap');
 	// 前台退出登录

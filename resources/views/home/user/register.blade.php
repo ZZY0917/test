@@ -38,40 +38,10 @@
     <!-- <a href="#" class="gb_logo"></a> -->
     <div class="login public_nav_bd" id="lng">
     	<ul class="nav_m_l_r clear_fix">
-    		<li class="nav_r noborder"><a class="regLink" href="index.html" title="新用户注册" hidefocus="true" target="_blank">注册</a></li>
+    		<li class="nav_r noborder"><a class="regLink" href="javascript:;" title="新用户注册" hidefocus="true" target="_blank">注册</a></li>
 			<li class="nav_r nav_handle not_login">
 				<div class="liubai"></div>
-				<a href="javascript:;" hidefocus="true" class="t_ico loginbtn">登录</a>
-				
-				<div class="user_info">
-					<div class="user_img clear_fix">
-						<a href="../../shop/product/kugouproduct/index.html" target="_blank" hidefocus="true" class="user_img"><img id="userImg" width="71" height="71" src="" alt="歌手头像"><i class="layer"></i></a>
-						<div class="txt">
-							<a hidefocus="true" class="nick_name" href="../../shop/product/kugouproduct/index.html" target="_blank" id="userName">hi!XXXX</a>
-							<a hidefocus="true" class="vipIcon vip_false" href="http://vip.kugou.com/" target="_blank" ></a>
-							<a hidefocus="true" class="vipIcon vip_true" href="http://vip.kugou.com/" target="_blank" ></a>
-						</div>
-					</div>
-					<div class="login_links">
-						<a class="" href="../../shop/product/kugouproduct/index.html" target="_blank" hidefocus="true"><!-- <i class="u_ico ico_1"></i> -->个人中心</a>
-						<a class="" href="../../shop/product/kugouproduct/index.html" target="_blank" hidefocus="true"><!-- <i class="u_ico ico_2"></i> -->我的订单</a>
-						<a class="" href="../../index.html" target="_blank" hidefocus="true"><!-- <i class="u_ico ico_3"></i> -->账户设置<em id="userMsg"></em></a>
-						<a class="" href="../../shop/help/expressPay/index.html" target="_blank" hidefocus="true">购物指南<em ></em></a>
-					</div>
-					<a href="index.html" class="out_login" hidefocus="true">退出登录</a>
-				</div>
-			</li>
-			<li class="nav_r w_space noborder"></li>
-			<li class="nav_r nav_handle"><a  href="../../shop/shoppingCart/cartinfo.html" target="_blank" hidefocus="true" class="g_ico">我的购物车</a><i class="sum_ico" id="myGoodsSum" style="display: none;"></i>
-				<div class="liubai"></div>
-				<div class="shop_cart">
-					<ul class="goods_list" id="cartInfoList"><li class="goods"><a class="goods_img" href="../../shop/product/index-id=12.html" hidefocus="true"></a><div class="goods_info"><a href="javascript:;" hidefocus="true" class="goods_name">39.00x4</a><em class="goods_mode">型号:大号 颜色:蓝色 </em></div><a href="javascript:;" hidefocus="true" class="del_g" data-value="12|31"></a></li></ul>
-					<div class="count_cart clear_fix" style="display: block;">
-						<span class="goods_sum">共计<i id="goodsNum"></i>件商品</span>
-						<span class="pay_sum">合计：<i id="totalSum"> </i></span>
-						<a href="../../shop/shoppingCart/cartinfo.html" target="_blank" hidefocus="true" class="goto_checkout">去购物车结算</a>
-					</div>
-				</div>
+				<a href="/home/login" hidefocus="true" class="t_ico loginbtn">登录</a>
 			</li>
 		</ul>
     </div>
@@ -79,134 +49,14 @@
 </div>
 <div class="public-nav-wrapper">
 	<div id="public-nav" class="clear_fix">
-	  <h1 class="logo"><a href="../../index.html"><img src="/homes/images/herder_logo.jpg" width="170" height="40" alt="酷狗音乐"/></a></h1>
+	  <h1 class="logo"><a href="/"><img src="/homes/images/herder_logo.jpg" width="170" height="40" alt="酷狗音乐"/></a></h1>
 	</div>
 </div>
 
 <div class="scroll" id="scroll"><img src="/homes/images/scrolltop.png" alt="返回顶部"/></div>
 
-<!-- <script type="text/javascript" src="/homes/js/base-min.js"></script> -->
 <script src="/homes/js/jquery-1.11.2.min-2015121154354.js"></script>
 <script type="text/javascript" src="/homes/js/header-2015121154354.js" charset="utf-8"></script>
-<script type="text/javascript">
-(function(){
-	//初始化
-	publicFun.headEventInit();
-	//回到顶部
-	Kg.$(window).addEvent("scroll",function(){
-		publicFun.scrollTop();
-	})
-	 // 鼠标放上去显示二级菜单的 dom 对象
-	var downloadLink_btn = document.getElementById("downloadLink"),
-		newsLink_btn = document.getElementById("newsLink"),
-		secondWrapper = document.getElementById("second-wrapper"),
-		downloadSoftware = document.getElementById("downloadSoftware"),
-		news = document.getElementById("news"),
-		isIE=!!window.ActiveXObject,
-		isIE6=isIE&&!window.XMLHttpRequest,
-		isIE8=isIE&&!!document.documentMode,
- 		isIE7=isIE&&!isIE6&&!isIE8,
-		timer1=null,
-		timer2=null,
-		Elespan = downloadLink_btn.getElementsByTagName("span")[0];
-
-	//下载按钮
-	downloadLink_btn.onmouseover = function(){
-
-		newsLink_btn.setAttribute("class","")
-		downloadLink_btn.setAttribute("class","hover");
-		news.style.display="none";
-		if(isIE6 || isIE7){
-			Elespan.style.visibility="visible";
-		}
-		
-		secondWrapper.style.display="block";
-		downloadSoftware.style.display="block";
-		clearTimeout(timer1);
-		if(timer2){
-			clearTimeout(timer2);
-		}
-
-	}
-	downloadLink_btn.onmouseout = function(){
-		timer1 = setTimeout(function(){
-			if(isIE6 || isIE7){
-
-				Elespan.style.visibility="hidden";
-			}
-			downloadLink_btn.setAttribute("class","");
-			secondWrapper.style.display="none";
-			downloadSoftware.style.display="none";
-		},300)
-	}
-
-	downloadSoftware.onmouseover = function(){
-		downloadLink_btn.setAttribute("class","hover")
-		if(isIE6 || isIE7){
-				Elespan.style.visibility="visible";
-		}
-		news.style.display="none";
-		secondWrapper.style.display="block";
-		downloadSoftware.style.display="block";
-		clearTimeout(timer1);
-	}
-	downloadSoftware.onmouseout=function(){
-		timer1 = setTimeout(function(){
-			if(isIE6 || isIE7){
-				Elespan.style.visibility="hidden";
-			}
-			downloadLink_btn.setAttribute("class","");
-			secondWrapper.style.display="none";
-			downloadSoftware.style.display="none";
-		},300)
-	}
-})()
-/**
- * 通用统计 sdnClickNew
- * @name sdnClickNew
- * @function
- * @param key
- * @param type
- */
-function sdnClickNew(num,type){
-    if(!num){
-        return;
-    }
-    var src = (new Date()).getTime();
-
-    switch(type){
-        case "aspx":
-            src = 'http://sdn.kugou.com/link.aspx?id=' + num + '&url=&t=' + src;
-            break;
-        case "php":
-        default:
-            src = 'http://tj.kugou.com/front/link.php?id=' + num + '&url=&t=' + src;
-            break;
-    }
-    (new Image()).src = src;
-}
-
-function sdnClick(num) {
-	(new Image()).src = "http://sdn.kugou.com/link.aspx?id=" + num + "&url=&t=" + Math.random();
-};
-/*分类统计*/
-function logStat(type, name, p1, p2, p3, p4) {
-		var param = [];
-		type != undefined && param.push("type=" + encodeURIComponent(type));
-		name != undefined && param.push("name=" + encodeURIComponent(name));
-		p1 != undefined && param.push("p1=" + encodeURIComponent(p1));
-		p2 != undefined && param.push("p2=" + encodeURIComponent(p2));
-		p3 != undefined && param.push("p3=" + encodeURIComponent(p3));
-		p4 != undefined && param.push("p4=" + encodeURIComponent(p4));
-		var url = "http://log.stat.kugou.com/statistics/statistics.html?" + param.join("&") + "&t=" + new Date().getTime();
-		setTimeout(function() {
-			new Image().src = url;
-		}, 1);
-	}
-/*-end- 分类统计 -end-*/
-</script>
-
-        
     <style type="text/css">.topBanner{display: none;}
     </style>
     
@@ -216,9 +66,7 @@ function logStat(type, name, p1, p2, p3, p4) {
         <div class="kg_lgn_reg_box" id="regBox">
             <div class="kg_lgn_reg_hd">
                 <ul class="kg_lgn_reg_tag_list" id="regTagList">
-                    <!-- <li class="cur"><a href="javascript:;" class="s1"><span>用户名注册</span></a></li> -->
                     
-                    <li class="last_child" style="display:none"><a href="javascript:;" class="s3"><span>用户名</span></a></li>
                 </ul>
             </div>
             <div class="kg_lgn_reg_ct" id="regCntList">
@@ -271,7 +119,6 @@ function logStat(type, name, p1, p2, p3, p4) {
                                     <div class="kg_lgn_textbox_area kg_lgn_textbox_password">
                                         <div class="kg_lgn_textbox"><input maxlength="16" id="t01Psw" name="password" type="password" class="kg_lgn_textbox_ipt" /></div>
                                         <div class="kg_lgn_tips"><i class="kg_lgn_tips_icon"></i><span class="kg_lgn_tips_txt"></span></div>
-                                        
                                     </div>
                                 </td>
                             </tr>
@@ -336,117 +183,9 @@ function logStat(type, name, p1, p2, p3, p4) {
                     </form>
                 </div>
                 <!--/邮箱注册 -->
-                <!-- 用户名 -->
-                <div class="kg_lgn_reg_ct_item" style="display:none;">
-                
-                    <form id="t03Form"　onsubmit="return false;">
-                        <table class="kg_lgn_general_tb kg_lgn_reg_tb" width="100%">
-                            
-                            <tr>
-                                <td width="300" align="right"><label for="t03User" class="kg_lgn_reg_tb_tl"><span class="red">*</span> 用户名：</label></td>
-                                <td>
-                                    <div class="kg_lgn_textbox_area kg_lgn_textbox_username">
-                                        <div class="kg_lgn_textbox"><input id="t03User" name="username"  maxlength="20" type="text" class="kg_lgn_textbox_ipt" /></div>
-                                        <div class="kg_lgn_tips"><i class="kg_lgn_tips_icon"></i><span class="kg_lgn_tips_txt"></span></div>
-                                    </div>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td align="right" valign="top"><label for="t03Psw" class="kg_lgn_reg_tb_tl"><span class="red">*</span> 密码：</label></td>
-                                <td>
-                                    <div class="kg_lgn_textbox_area kg_lgn_textbox_password">
-                                        <div class="kg_lgn_textbox"><input maxlength="16" id="t03Psw" name="password" type="password" class="kg_lgn_textbox_ipt" /></div>
-                                        <div class="kg_lgn_tips"><i class="kg_lgn_tips_icon"></i><span class="kg_lgn_tips_txt"></span></div>
-                                        <div class="kg_lgn_psw_strong" id="t03PswStrong">
-                                            <div class="kg_lgn_psw_txt">密码强度:弱</div>
-                                            <div class="kg_lgn_psw_strong_cnt"><span class="bg"></span><span class="line1"></span><span class="line2"></span></div>
-                                            <div class="kg_lgn_psw_txt">强</div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="right" valign="top"><label for="t03Psw2" class="kg_lgn_reg_tb_tl"><span class="red">*</span> 确认密码：</label></td>
-                                <td>
-                                    <div class="kg_lgn_textbox_area kg_lgn_textbox_repassword">
-                                        <div class="kg_lgn_textbox"><input maxlength="16" id="t03Psw2" name="repassword" type="password" class="kg_lgn_textbox_ipt" /></div>
-                                        <div class="kg_lgn_tips"><i class="kg_lgn_tips_icon"></i><span class="kg_lgn_tips_txt"></span></div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="300" align="right"><label for="t03Sex" class="kg_lgn_reg_tb_tl"><span class="red">*</span> 性别：</label></td>
-                                <td id="t03Sex">
-                                    <input type="radio" name="UM_Sex" value="1"> 男　
-                                    <input type="radio" name="UM_Sex" value="0"> 女
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="right" valign="top"><label for="t03Code" class="kg_lgn_reg_tb_tl"><span class="red">*</span> 验证码：</label></td>
-                                <td>
-                                    <div class="kg_lgn_textbox_area kg_lgn_textbox_code">
-                                        <div class="kg_lgn_textbox" style="display:none;">
-                                            <input id="t03Code"  maxlength="6"  name="code" type="text" class="kg_lgn_textbox_ipt" />
-                                        </div>
-                                        <div class="kg_lgn_tips">
-                                            <i class="kg_lgn_tips_icon"></i>
-                                            <span class="kg_lgn_tips_txt"></span>
-                                        </div>
-                                        <div class="kg_lgn_code_area" style="display:none;"><img id="t03CodeImg" src="{{captcha_src()}}"   title="看不清，换一张" style="cursor: hand;padding-top:3px;" /></div>
-                                        <img src="{{captcha_src()}}">
-                                        <a id="t03CodeChange"  class="kg_lgn_changeone" style="display:none;">换一张</a>
-                                        
-                                    </div>
-
-                                    <!-- <span class="pcr_iptbox pcr_codebox">
-                                        <label for="t03User" class="txt"></label>
-                                        <input id="t03Code" type="text" class="ipt" style="display: none;"/>
-                                        <span class="sts"></span>
-                                        <span class="nts"></span>
-                                        <span class="pcr_codeimg" id="p_user_code"></span>
-                                    </span> -->
-
-                                    <span class="pcr_iptbox pcr_codebox">
-                                        <label class="txt" for="usernamet03Code"></label>
-                                        <input id="usernamet03Code" type="text" class="ipt kg_lgn_textbox_ipt" style="width:120px;" onblur="checkCode()"/>
-                                        <span class="sts"></span>
-                                        <span class="nts"></span>
-                                        <span class="pcr_codeimg" id="p_user_code"></span>
-                                        <a id="usernamet03CodeChange"  class="kg_lgn_changeone">换一张</a>
-                                    </span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td><label class="gray"><input type="checkbox" name="readed" id="t03Agree" class="kg_lgn_checkbox" checked />我已经认真阅读并同意 <a  href="../../newuc/reg/protocol.html" target="_blank" class="a_link">《酷狗服务条款》</a></label></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <span class="reg_btn_s01" id="t03Submit"><input type="button" name="" value="注册"  /></span>
-                                    <span id="t03Msg" class="reg_inset_msg" style="display: none;"></span>
-                                </td>
-                            </tr>
-                        </table>
-                    </form>
-                </div>
-                <!--/用户名 -->
             </div>
         </div>
         <!--/注册主体 -->
-
-        <!-- 状态层 -->
-        <div class="kg_lgn_reg_box kg_lgn_reg_message" id="regMessage" style="display:none;">
-            <div class="kg_lgn_reg_hd">
-                <div class="h_tl"></div>
-            </div>
-            <div class="kg_lgn_reg_ct">
-                <h4 class="kg_lgn_reg_ct_tl" id="regMessageTl"></h4>
-                <div class="kg_lgn_reg_ct_item" id="regMessageCnt"></div>
-            </div>
-        </div>
-        <!--/状态层 -->
     </div>
     <!--/body -->
     <link rel="stylesheet"  data-embed href="/homes/css/footer.css">
@@ -469,89 +208,7 @@ function logStat(type, name, p1, p2, p3, p4) {
         </div>
     </div>
 </div>
-<!--百度统计-->
-<!-- <script>
-    (function () {
-        var kg_bottom = {
-            reportDialog:null,
-            getjs: function (url, callback) {
-                var s = document.createElement("script");
-                s.type = "text/javascript";
-                s.src = url;
-                document.getElementsByTagName("head")[0].appendChild(s);
-                if (typeof callback != "function") {
-                    return;
-                }
-                if (s.readyState) {
-                    if (/loaded|complete/.test(s.readyState)) {
-                        callback();
-                    } else {
-                        s.onreadystatechange = function () {
-                            if (/loaded|complete/.test(s.readyState)) {
-                                this.onreadystatechange = null;
-                                callback();
-                            }
-                        }
-                    }
-                } else {
-                    s.onload = function () {
-                        callback();
-                    }
-                }
-            },
-            jubao: function () {
-                 var _this = this;
-                if(_this.reportDialog){
-                    return;
-                }
-                _this.reportDialog = dialog({
-                    title: '提示',
-                    skin: 'report-dialog',
-                    width: 435,
-                    height: 105,
-                    fixed: true,
-                    content: [
-                        " <div class=\"report-content\" style=\"padding:10px;\">",
-                        "<div class=\"report-tips\" style=\"lin-height:22px;padding-bottom:30px;\"><p >为了倡导诚信、正直、敬业、积极的企业文化，防治舞弊，欢迎您</p><p>对我司存在的舞弊行为通过邮箱进行举报。</p></div>",
-                        " <div class=\"report-mail\">举报邮箱：<span style=\"color:#3399ff\">jubao@kugou.com</span></div>",
-                        "</div>"
-                    ].join(""),
-                    onclose:function(){
-                         _this.reportDialog = null;
-                    }
-                }).show();
-            },
-            bottom_init: function () {
-                var _this = this;
-                $("#report").click(function (e) {
-                    e.preventDefault();
-                    if (typeof dialog == "undefined" || dialog == null) {
-                        kg_bottom.getjs("/homes/js/dialog.min.js", function () {
-                            _this.jubao()
-                        })
-                    } else {
-                        _this.jubao();
-                    }
-                });
-            }
-        }
-        kg_bottom.bottom_init()
-    })(this)
-    var _hmt = _hmt || [];
-    (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?aedee6983d4cfc62f509129360d6bb3d";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-    (function () {
-        setTimeout(function () {
-            var d = document.createElement("script");
-            d.src = "/homes/js/hijacked-min.js";
-            document.body.appendChild(d);
-        }, 2000);
-    })();
-</script> -->
+
 <script type="text/javascript">
           // alert($);
         setTimeout(function(){
@@ -561,9 +218,6 @@ function logStat(type, name, p1, p2, p3, p4) {
 </div>	
 </body>
 </html>
-
-
-<!-- <script type="text/javascript" src="/homes/js/base-min.2015.js" charset="utf-8"></script> -->
 <script type="text/javascript" src="/homes/js/kguser_min.js" charset="utf-8"> </script>
 <script type="text/javascript" src="/homes/js/web_reg_v3-201511121557_v20160511.js" charset="utf-8"></script>
 <script>

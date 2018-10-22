@@ -5,22 +5,19 @@
 	
 @section('content')
 <div class="navWrap">
-            <div class="nav">
-                <ul class="homeNav">
-                    <li><a class="normal"  href="/">首页</a></li>
-                    <li><a class="normal active"  href="/home/paihang">榜单</a></li>
-                    <li><a class="normal "  href="/home/list">歌手</a></li>
-                    <li><a class="normal"  href="/home/specialshow">歌单</a></li>
-                    <li><a class="normal"  href="yy/html/rank.html">音乐</a></li>
-                    <li><a class="normal"  href="/home/personal">我的音乐</a></li>
-                    
-                    
-                    
-                </ul>
-                
-              
-            </div>
-        </div>
+    <div class="nav">
+        <ul class="homeNav">
+            <li><a class="normal" href="/">首页</a></li>
+            <li><a class="normal active"  href="/home/paihang">榜单</a></li>
+            <li><a class="normal"  href="/home/list">歌手</a></li>
+            <li><a class="normal"  href="/home/music">音乐</a></li>
+            <li><a class="normal"  href="/home/specialshow">歌单</a></li>
+            <li><a class="normal"  href="/home/personal">我的音乐</a></li>
+        </ul>
+        
+      
+    </div>
+</div>
 	<div class="pc_temp_wrap pc_temp_2col_critical">
 	<div class="pc_temp_main">
 		<!-- 侧栏 -->
@@ -74,9 +71,7 @@
 					<div id="pc_temp_title" class="pc_temp_title">
 						<h3>因乐排行榜
 						</h3>
-												<span class="rank_update">2018-10-24 更新</span>
-												
-
+							<span class="rank_update">2018-10-24 更新</span>
 					</div>
 				</div>
 				<div id="rankWrap">
@@ -88,7 +83,7 @@
 							<li class=" " title="{{$v->mname}}" data-index="0">
 								<span class="pc_temp_coverlayer"></span>
 								<span class="pc_temp_num"><strong>@if($k+1<10){{$k+1}}@else {{$k+1}} @endif </strong></span>
-									<a href="../../../song/q5s23bc.html" data-active="playDwn" data-index="0" class="pc_temp_songname" title="{{$v->mname}}" hidefocus="true">{{$v->sname}} - {{$v->mname}}</a>
+									<a href="/home/play/{{$v->mid}}" data-active="playDwn" data-index="0" class="pc_temp_songname" title="{{$v->mname}}" hidefocus="true">{{$v->sname}} - {{$v->mname}}</a>
 							</li>
 							@endforeach
 					</ul>

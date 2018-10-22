@@ -10,7 +10,7 @@
 
             </div>
             @endif
-	<img src="/images/18.jpg" style='margin-top: 50px;margin-left: 150px;'>
+	<img src="/images/9958981b5bc6d69.jpg" style='width: 100%;'>
 @stop
 
 @section('js')

@@ -30,6 +30,13 @@
     				</div>
     			</div>
 
+                <div class="mws-form-row">
+                    <label class="mws-form-label">歌曲时长</label>
+                    <div class="mws-form-item">
+                        <input type="text" class="small" name='times' value='{{$res->times}}'>
+                    </div>
+                </div>
+
     			<div class="mws-form-row">
     				<label class="mws-form-label">歌手名称</label>
     				<div class="mws-form-item">

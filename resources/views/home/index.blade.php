@@ -296,8 +296,9 @@
                 <!-- 新歌首发 -->
                 <!-- 推荐Mv -->
                 <div class="itemM albumList">
-                    <img src="/home/images/albumlist.jpg">
+                    
                     <div class="itemTitle">
+                        <img src="/home/images/albumlist.jpg">
                         </div>
                     <div class="itemContent">
                         

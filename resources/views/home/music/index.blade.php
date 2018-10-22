@@ -5,12 +5,11 @@
 <div class="navWrap">
             <div class="nav">
                 <ul class="homeNav">
-                    <li><a class="normal active" href="/">首页</a></li>
+                    <li><a class="normal" href="/">首页</a></li>
                     <li><a class="normal"  href="yy/html/rank.html">榜单</a></li>
                     <li><a class="normal"  href="yy/html/rank.html">歌手</a></li>
-                    <li><a class="normal"  href="/home/music">音乐</a></li>
+                    <li><a class="normal active"  href="/home/music">音乐</a></li>
                     <li><a class="normal"  href="/home/specialshow">歌单</a></li>
-                    <li><a class="normal"  href="yy/html/rank.html">专辑</a></li>
                     <li><a class="normal"  href="/home/personal">我的音乐</a></li>
                 </ul>
             </div>
@@ -28,16 +27,16 @@
                             <span class="MenuItem" data="2">韩国</span>
                             <span class="MenuItem" data="3">日本</span>
                         </div>
-                        <button class="playAll"><span class="icon icon-play"></span><em>全部播放</em></button>
+                        <button class=""><span class="icon "></span><em></em></button>
                     </div>
                     <div class="itemContent">
                         <div class="tabC" id="SongtabContent" style="margin-top: 0px;">
                         	{{--csrf_field()--}}
-                        <ul id="music" style="display: block;">
+                        <ul  style="display: block;">
                             
                             @foreach($rs as $k=>$v)
-                                <li>
-                                    <a href="/">
+                                <li id="music">
+                                    <a href="/home/play/{{$v->mid}}">
                                         <span class="songName" >{{$v->sname}} - {{$v->mname}}</span>
                                         <span class="songTips"></span>
                                         <span class="songTime"></span>
@@ -101,7 +100,7 @@
                 var patt1 = new RegExp(data.sname + ' - ' + data.mname);
                 var str = patt1.test(bb) ? "2": '1';
                 var music = `<li>
-                                <a href="#">
+                                <a href="/home/play/${data.mid}">
                                     <span class="songName" >${data.sname} - ${data.mname}</span>
                                     <span class="songTips"></span>
                                     <span class="songTime"></span>

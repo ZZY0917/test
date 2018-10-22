@@ -101,4 +101,25 @@ class HomeController extends Controller
             'rs' => $rs
         ]);
     }
+
+    public function sou(Request $request)
+    {
+        $sou = $request->sou;
+        
+        $res = DB::table('music')->where('mname','like','%'.$sou.'%')->get();
+        // dd($res);
+        return view('home.sou',['res'=>$res,'title'=>'搜索页','sou'=>$sou]);
+    }
+
+
+    //前台搜索页专辑跳转详情页
+    public function albumsou($name)
+    {
+        
+        $res = DB::table('album')->where('aname',$name)->first();
+        $rs = DB::table('music')->where('aname',$res->aname)->get();
+
+
+        return view('home.album.list',['res'=>$res,'rs'=>$rs]);
+    }
 }

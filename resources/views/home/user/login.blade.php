@@ -38,40 +38,11 @@
     <!-- <a href="#" class="gb_logo"></a> -->
     <div class="login public_nav_bd" id="lng">
     	<ul class="nav_m_l_r clear_fix">
-    		<li class="nav_r noborder"><a class="regLink" href="index.html" title="新用户注册" hidefocus="true" target="_blank">注册</a></li>
+    		<li class="nav_r noborder"><a class="regLink" href="/home/reg" title="新用户注册" hidefocus="true" >注册</a></li>
 			<li class="nav_r nav_handle not_login">
 				<div class="liubai"></div>
 				<a href="javascript:;" hidefocus="true" class="t_ico loginbtn">登录</a>
 				
-				<div class="user_info">
-					<div class="user_img clear_fix">
-						<a href="../../shop/product/kugouproduct/index.html" target="_blank" hidefocus="true" class="user_img"><img id="userImg" width="71" height="71" src="" alt="歌手头像"><i class="layer"></i></a>
-						<div class="txt">
-							<a hidefocus="true" class="nick_name" href="../../shop/product/kugouproduct/index.html" target="_blank" id="userName">hi!XXXX</a>
-							<a hidefocus="true" class="vipIcon vip_false" href="http://vip.kugou.com/" target="_blank" ></a>
-							<a hidefocus="true" class="vipIcon vip_true" href="http://vip.kugou.com/" target="_blank" ></a>
-						</div>
-					</div>
-					<div class="login_links">
-						<a class="" href="../../shop/product/kugouproduct/index.html" target="_blank" hidefocus="true"><!-- <i class="u_ico ico_1"></i> -->个人中心</a>
-						<a class="" href="../../shop/product/kugouproduct/index.html" target="_blank" hidefocus="true"><!-- <i class="u_ico ico_2"></i> -->我的订单</a>
-						<a class="" href="../../index.html" target="_blank" hidefocus="true"><!-- <i class="u_ico ico_3"></i> -->账户设置<em id="userMsg"></em></a>
-						<a class="" href="../../shop/help/expressPay/index.html" target="_blank" hidefocus="true">购物指南<em ></em></a>
-					</div>
-					<a href="index.html" class="out_login" hidefocus="true">退出登录</a>
-				</div>
-			</li>
-			<li class="nav_r w_space noborder"></li>
-			<li class="nav_r nav_handle"><a  href="../../shop/shoppingCart/cartinfo.html" target="_blank" hidefocus="true" class="g_ico">我的购物车</a><i class="sum_ico" id="myGoodsSum" style="display: none;"></i>
-				<div class="liubai"></div>
-				<div class="shop_cart">
-					<ul class="goods_list" id="cartInfoList"><li class="goods"><a class="goods_img" href="../../shop/product/index-id=12.html" hidefocus="true"></a><div class="goods_info"><a href="javascript:;" hidefocus="true" class="goods_name">39.00x4</a><em class="goods_mode">型号:大号 颜色:蓝色 </em></div><a href="javascript:;" hidefocus="true" class="del_g" data-value="12|31"></a></li></ul>
-					<div class="count_cart clear_fix" style="display: block;">
-						<span class="goods_sum">共计<i id="goodsNum"></i>件商品</span>
-						<span class="pay_sum">合计：<i id="totalSum"> </i></span>
-						<a href="../../shop/shoppingCart/cartinfo.html" target="_blank" hidefocus="true" class="goto_checkout">去购物车结算</a>
-					</div>
-				</div>
 			</li>
 		</ul>
     </div>
@@ -84,164 +55,41 @@
 </div>
 
 <div class="scroll" id="scroll"><img src="/homes/images/scrolltop.png" alt="返回顶部"/></div>
-
 <!-- <script type="text/javascript" src="/homes/js/base-min.js"></script> -->
 <script src="/homes/js/jquery-1.11.2.min-2015121154354.js"></script>
 <script type="text/javascript" src="/homes/js/header-2015121154354.js" charset="utf-8"></script>
-<!-- <script type="text/javascript">
-(function(){
-	//初始化
-	publicFun.headEventInit();
-	//回到顶部
-	Kg.$(window).addEvent("scroll",function(){
-		publicFun.scrollTop();
-	})
-	 // 鼠标放上去显示二级菜单的 dom 对象
-	var downloadLink_btn = document.getElementById("downloadLink"),
-		newsLink_btn = document.getElementById("newsLink"),
-		secondWrapper = document.getElementById("second-wrapper"),
-		downloadSoftware = document.getElementById("downloadSoftware"),
-		news = document.getElementById("news"),
-		isIE=!!window.ActiveXObject,
-		isIE6=isIE&&!window.XMLHttpRequest,
-		isIE8=isIE&&!!document.documentMode,
- 		isIE7=isIE&&!isIE6&&!isIE8,
-		timer1=null,
-		timer2=null,
-		Elespan = downloadLink_btn.getElementsByTagName("span")[0];
-
-	//下载按钮
-	downloadLink_btn.onmouseover = function(){
-
-		newsLink_btn.setAttribute("class","")
-		downloadLink_btn.setAttribute("class","hover");
-		news.style.display="none";
-		if(isIE6 || isIE7){
-			Elespan.style.visibility="visible";
-		}
-		
-		secondWrapper.style.display="block";
-		downloadSoftware.style.display="block";
-		clearTimeout(timer1);
-		if(timer2){
-			clearTimeout(timer2);
-		}
-
-	}
-	downloadLink_btn.onmouseout = function(){
-		timer1 = setTimeout(function(){
-			if(isIE6 || isIE7){
-
-				Elespan.style.visibility="hidden";
-			}
-			downloadLink_btn.setAttribute("class","");
-			secondWrapper.style.display="none";
-			downloadSoftware.style.display="none";
-		},300)
-	}
-
-	downloadSoftware.onmouseover = function(){
-		downloadLink_btn.setAttribute("class","hover")
-		if(isIE6 || isIE7){
-				Elespan.style.visibility="visible";
-		}
-		news.style.display="none";
-		secondWrapper.style.display="block";
-		downloadSoftware.style.display="block";
-		clearTimeout(timer1);
-	}
-	downloadSoftware.onmouseout=function(){
-		timer1 = setTimeout(function(){
-			if(isIE6 || isIE7){
-				Elespan.style.visibility="hidden";
-			}
-			downloadLink_btn.setAttribute("class","");
-			secondWrapper.style.display="none";
-			downloadSoftware.style.display="none";
-		},300)
-	}
-})()
-/**
- * 通用统计 sdnClickNew
- * @name sdnClickNew
- * @function
- * @param key
- * @param type
- */
-function sdnClickNew(num,type){
-    if(!num){
-        return;
-    }
-    var src = (new Date()).getTime();
-
-    switch(type){
-        case "aspx":
-            src = 'http://sdn.kugou.com/link.aspx?id=' + num + '&url=&t=' + src;
-            break;
-        case "php":
-        default:
-            src = 'http://tj.kugou.com/front/link.php?id=' + num + '&url=&t=' + src;
-            break;
-    }
-    (new Image()).src = src;
-}
-
-function sdnClick(num) {
-	(new Image()).src = "http://sdn.kugou.com/link.aspx?id=" + num + "&url=&t=" + Math.random();
-};
-/*分类统计*/
-function logStat(type, name, p1, p2, p3, p4) {
-		var param = [];
-		type != undefined && param.push("type=" + encodeURIComponent(type));
-		name != undefined && param.push("name=" + encodeURIComponent(name));
-		p1 != undefined && param.push("p1=" + encodeURIComponent(p1));
-		p2 != undefined && param.push("p2=" + encodeURIComponent(p2));
-		p3 != undefined && param.push("p3=" + encodeURIComponent(p3));
-		p4 != undefined && param.push("p4=" + encodeURIComponent(p4));
-		var url = "http://log.stat.kugou.com/statistics/statistics.html?" + param.join("&") + "&t=" + new Date().getTime();
-		setTimeout(function() {
-			new Image().src = url;
-		}, 1);
-	}
-/*-end- 分类统计 -end-*/
-</script>
- -->
-        
     <style type="text/css">.topBanner{display: none;}
     </style>
-    
     <!-- body -->
     <div class="kg_reg_body_area">
         <!-- 注册主体 -->
         <div class="kg_lgn_reg_box" id="regBox">
             <div class="kg_lgn_reg_hd">
                 <ul class="kg_lgn_reg_tag_list" id="regTagList">
-                    <!-- <li class="cur"><a href="javascript:;" class="s1"><span>用户名注册</span></a></li> -->
-                    
                     <li class="last_child" style="display:none"><a href="javascript:;" class="s3"><span>用户名</span></a></li>
                 </ul>
             </div>
             <div class="kg_lgn_reg_ct" id="regCntList">
                 @if (count($errors) > 0)
-                            <div class="mws-form-message error">
-                                错误信息
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                              @if(session('success'))
-                                   <div class="mws-form-message info">
-                                        {{session('success')}}
-                                   </div>
-                              @endif
-                              @if(session('error'))
-                                   <div class="mws-form-message danger">
-                                        {{session('error')}}
-                                   </div>
-                              @endif
+                    <div class="mws-form-message error">
+                        错误信息
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                @if(session('success'))
+                     <div class="mws-form-message info">
+                          {{session('success')}}
+                     </div>
+                @endif
+                @if(session('error'))
+                     <div class="mws-form-message danger">
+                          {{session('error')}}
+                     </div>
+                @endif
                 <!-- 用户名注册 -->
                 <div class="kg_lgn_reg_ct_item" style="min-height:0px" >
                     <form id="t01Form" action="/home/dologin" method="post">
@@ -267,7 +115,11 @@ function logStat(type, name, p1, p2, p3, p4) {
                                 </td>
                             </tr>
                             <tr>
-                                <td align="right" valign="top"><label for="t01Code" class="kg_lgn_reg_tb_tl"><span class="red">*</span> 验证码：</label></td>
+                                <td align="right" valign="top">
+                                    <label for="t01Code" class="kg_lgn_reg_tb_tl">
+                                        <span class="red">*</span> 验证码：
+                                    </label>
+                                </td>
                                 <td>
                                     <div class="kg_lgn_textbox_area kg_lgn_textbox_code">
                                         <div class="kg_lgn_textbox" style="display:none;">
@@ -305,10 +157,6 @@ function logStat(type, name, p1, p2, p3, p4) {
             </div>
         </div>
         <!--/注册主体 -->
-
-        <!-- 状态层 -->
-        
-        <!--/状态层 -->
     </div>
     <!--/body -->
     <link rel="stylesheet"  data-embed href="/homes/css/footer.css">
@@ -338,7 +186,7 @@ function logStat(type, name, p1, p2, p3, p4) {
         setTimeout(function(){
             $('.mws-form-message').slideUp(2000);
         },3000)
-    </script>
+</script>
 </div>	
 </body>
 </html>

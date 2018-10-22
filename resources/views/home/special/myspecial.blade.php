@@ -6,22 +6,10 @@
     <link rel="stylesheet" type="text/css" href="/css/main-201505211743_.css">
     <link rel="stylesheet" type="text/css" href="/css/gallery.css">
     <!-- <link rel="stylesheet" type="text/css" href="/css/style2.0.css"> -->
-
-
-
 <!-- Required Stylesheets -->
-
 <link rel="stylesheet" type="text/css" href="/admins/css/fonts/ptsans/stylesheet.css" media="screen">
 <link rel="stylesheet" type="text/css" href="/admins/css/fonts/icomoon/style.css" media="screen">
-
-
-
 <!-- Demo Stylesheet -->
-
-
-
-
-
     <style type="text/css">
     	.texts {
 
@@ -48,12 +36,11 @@
 <div class="navWrap">
             <div class="nav">
                 <ul class="homeNav">
-                    <li><a class="normal active" href="/">首页</a></li>
-                    <li><a class="normal"  href="yy/html/rank.html">榜单</a></li>
-                    <li><a class="normal"  href="yy/html/rank.html">歌手</a></li>
+                    <li><a class="normal" href="/">首页</a></li>
+                    <li><a class="normal"  href="/home/paihang">榜单</a></li>
+                    <li><a class="normal"  href="/home/list">歌手</a></li>
                     <li><a class="normal"  href="/home/music">音乐</a></li>
-                    <li><a class="normal"  href="/home/specialshow">歌单</a></li>
-                    <li><a class="normal"  href="yy/html/rank.html">专辑</a></li>
+                    <li><a class="normal active"  href="/home/specialshow">歌单</a></li>
                     <li><a class="normal"  href="/home/personal">我的音乐</a></li>
                 </ul>
             </div>

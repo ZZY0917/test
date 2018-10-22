@@ -9,13 +9,12 @@
     <div class="navWrap">
             <div class="nav">
                 <ul class="homeNav">
-                    <li><a class="normal active" href="/">首页</a></li>
-                    <li><a class="normal"  href="yy/html/rank.html">榜单</a></li>
-                    <li><a class="normal"  href="yy/html/rank.html">歌手</a></li>
+                   <li><a class="normal" href="/">首页</a></li>
+                    <li><a class="normal"  href="/home/paihang">榜单</a></li>
+                    <li><a class="normal"  href="/home/list">歌手</a></li>
                     <li><a class="normal"  href="/home/music">音乐</a></li>
                     <li><a class="normal"  href="/home/specialshow">歌单</a></li>
-                    <li><a class="normal"  href="yy/html/rank.html">专辑</a></li>
-                    <li><a class="normal"  href="/home/personal">我的音乐</a></li>
+                    <li><a class="normal active"  href="/home/personal">我的音乐</a></li>
                 </ul>
             </div>
         </div>
@@ -40,7 +39,7 @@
           <span>用户名:{{$res->uname}}</span><br />
           <span>账号：</span>{{$res->username}}<br />
           
-          <span>心情：</span>开心<br />
+          <span>个人签名：</span>{{$res->sign}}<br />
       </p>
 
            
@@ -53,20 +52,14 @@
           <form action="/home/special/create" method='post'>
           <ul>
               @foreach($rs as $k=>$v)               
-              <li><a  hidefocus="true" href="javascript:;" ><span class="num1">@if($k+1>=10) {{$k+1}} @else 0{{$k+1}} @endif</span><span class="text"><i> {{$v->mname}}- {{$v->sname}}</i><span style="margin-left: 200px;">{{'<'.$v->aname.'>'}}</span></span></a></li>
-          @endforeach
-                      
+              <li><a  hidefocus="true" href="/home/play/{{$v->mid}}" ><span class="num1">@if($k+1>=10) {{$k+1}} @else 0{{$k+1}} @endif</span><span class="text"><i> {{$v->mname}}- {{$v->sname}}</i><span style="margin-left: 200px;">{{'<'.$v->aname.'>'}}</span></span></a></li>
+              @endforeach
           </ul>
-          
-           
                {{csrf_field()}}
-               
-           
        </form>
     </div>
     <div class="clear"></div>
   </div>
-
 </div>
 @stop
 

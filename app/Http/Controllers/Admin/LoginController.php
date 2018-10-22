@@ -23,18 +23,11 @@ class LoginController extends Controller
 
      public function dologin(Request $request)
     {
-
-        // dd(123);
-    	// echo 123;
-    	//表单验证
-
-    	//检测验证码
-        // $code = session('code');
-
-        // if($code != $request->code){
-
-        //     return back()->with('error','验证码错误!');
-        // }
+        // dd($request);
+        // 判断验证码
+        if(!captcha_check($request->input('code'))){
+            return back()->withErrors("验证码有误");
+        }
 
     	//检测用户名
         $users = Rooter::where('username',$request->username)->first();

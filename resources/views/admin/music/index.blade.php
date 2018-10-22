@@ -23,7 +23,7 @@
             <form action='/admin/music' method='get'>
             <div class="dataTables_filter" id="DataTables_Table_1_filter">
                 <label>
-                    歌曲姓名:
+                    歌曲名:
                     <input aria-controls="DataTables_Table_1"  name='mname' type="text">
                 </label>
                 <button class='btn btn-info'>搜索</button>
@@ -34,24 +34,28 @@
                 <thead>
                     <tr role="row">
                         <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width:100px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
+                        rowspan="1" colspan="1" style="width:50px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
                             歌曲id
                         </th>
                          <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width:100px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
+                        rowspan="1" colspan="1" style="width:50px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
                             歌曲名
                         </th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 100px;" aria-label="Browser: activate to sort column ascending">
+                        rowspan="1" colspan="1" style="width: 50px;" aria-label="Browser: activate to sort column ascending">
                             歌手
                         </th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 100px;" aria-label="Platform(s): activate to sort column ascending">
+                        rowspan="1" colspan="1" style="width: 50px;" aria-label="Platform(s): activate to sort column ascending">
                             专辑名称
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 118px;" aria-label="CSS grade: activate to sort column ascending">
+                        rowspan="1" colspan="1" style="width: 58px;" aria-label="CSS grade: activate to sort column ascending">
                             曲风
                        
+                        </th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
+                        rowspan="1" colspan="1" style="width: 58px;" aria-label="CSS grade: activate to sort column ascending">
+                            歌曲时长
                         </th>
                          <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
                         rowspan="1" colspan="1" style="width: 50px;" aria-label="CSS grade: activate to sort column ascending">
@@ -94,11 +98,16 @@
                             @elseif($v->styles ==7) 治愈
                             @endif
                         </td>
-                        <td class=" ">
-                           <img src="{{$v->photp}}">
+                        <td>
+                            {{$v->times}}
                         </td>
-                         <td class=" ">
+                        <td class=" ">
+                           <img src="{{$v->photp}}" style="max-height: 100px;max-width: 100px;">
+                        </td>
+                         <td class=" " >
+                            <div style="width: 180px;overflow: hidden;text-overflow: ellipsis;">
                             {{$v->urll}}
+                            </div>
                         </td>
                         <td class=" ">
                             <a class='btn btn-primary' href="/admin/music/{{$v->mid}}/edit">修改</a>

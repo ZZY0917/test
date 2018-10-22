@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-// use App\Model\Admin\User;
+use App\Model\Admin\User;
 use App\Http\Controllers\Home\captcha;
 use Mail;
 use Hash;
@@ -23,13 +23,16 @@ class RegController extends Controller
     public function doregister(Request $request)
     {
     	// dd($request);
+        $rs = User::select('username')->where('username',$request->username)->first();
+        if($rs){
+            return back()->withErrors('用户名已存在');
+        }
+        // dd($rs);
     	
     	if(!captcha_check($request->input('code'))){
 		    return back()->withErrors("验证码有误");
 		}
-		// return 1;
-		// die;
-    	// dd($request);
+		
     	$this->validate($request, [
             'username' => 'required|regex:/^\w{6,12}$/',
             'uname' => 'required|regex:/^\S{2,12}$/',
@@ -59,9 +62,8 @@ class RegController extends Controller
     	$res['status'] = '0';
     	$res['token'] = str_random(60);
 
-  //   	if(!captcha_check($request->input('code'))){
-		//     return back()->withErrors("验证码有误");
-		// }
+
+
     	$rs = DB::table('users')->insertGetId($res);
     	// dd($rs);
     	if($rs){

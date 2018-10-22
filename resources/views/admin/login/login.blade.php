@@ -98,10 +98,10 @@
             <div style="margin:5px 0px;">
                 <input type="text" name='password' placeholder="请输入密码..."/>
             </div>
-            <!-- <div style="margin:5px 0px;">
-                <input type="text" style="width:150px;" placeholder="请输入验证码..."/>
-                <img src="./img/1.png" style="vertical-align:bottom;" alt="验证码"/>
-            </div> -->
+            <div style="margin:5px 0px;">
+                <input type="text" name="code" style="width:120px;" placeholder="请输入验证码..."/>
+                <img src="{{captcha_src()}}" onclick="this.src='{{captcha_src()}}?d='+Math.random();" style="vertical-align:bottom;" alt="验证码"/>
+            </div>
             <button type="submit" >登<span style="width:20px;"></span>录</button>
         </form>
     </div>

@@ -56,7 +56,7 @@ class MusicController extends Controller
             }
         }else{ 
             $rs[] = '';
-        }
+        } 
         if(session('uid')){
             // 根据session里的uid查找个人收藏的歌曲
             $ress = DB::table('collect')->where('uid',session('uid'))->get()->toArray();
