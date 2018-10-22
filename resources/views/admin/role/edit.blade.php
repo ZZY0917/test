@@ -20,7 +20,6 @@
 	        </div>
 		@endif
 
-
     	<form action="/admin/role/{{$rs->id}}" method='post' class="mws-form">
     		<div class="mws-form-inline">
     			<div class="mws-form-row">
@@ -29,15 +28,11 @@
     					<input type="text" class="small" name='role_name' value="{{$rs->role_name}}">
     				</div>
     			</div>
-
-    			
     		</div>
     		<div class="mws-button-row">
     			{{csrf_field()}}
                 {{method_field('PUT')}}
     			<input type="submit" class="btn btn-primary" value="修改">
-    			
-    			
     		</div>
     	</form>
     </div>    	
@@ -45,14 +40,7 @@
 @stop
 
 @section('js')
-<script>
-	/*setTimeout(function(){
-
-		$('.mws-form-message').fadeOut(2000);
-
-	},5000)*/
-
-	$('.mws-form-message').delay(3000).fadeOut(2000);
-</script>
-
+    <script>
+    	$('.mws-form-message').delay(3000).fadeOut(2000);
+    </script>
 @stop

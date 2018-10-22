@@ -20,7 +20,6 @@
 	        </div>
 		@endif
 
-
     	<form action="/admin/music/{{$res->mid}}" method='post' enctype='multipart/form-data' class="mws-form">
     		<div class="mws-form-inline">
     			<div class="mws-form-row">
@@ -29,28 +28,24 @@
     					<input type="text" class="small" name='mname' value='{{$res->mname}}'>
     				</div>
     			</div>
-
                 <div class="mws-form-row">
                     <label class="mws-form-label">歌曲时长</label>
                     <div class="mws-form-item">
                         <input type="text" class="small" name='times' value='{{$res->times}}'>
                     </div>
                 </div>
-
     			<div class="mws-form-row">
     				<label class="mws-form-label">歌手名称</label>
     				<div class="mws-form-item">
     				    <input type="text" class="small" name='sname' value="{{$res->sname}}">
     				</div>
     			</div>
-
     			<div class="mws-form-row">
     				<label class="mws-form-label">专辑名称</label>
     				<div class="mws-form-item">
     					<input type="text" class="small" name='aname' value="{{$res->aname}}">
     				</div>
     			</div>
-
     			<div class="mws-form-row">
                     <label class="mws-form-label">曲风</label>
                     <div class="mws-form-item">
@@ -64,36 +59,32 @@
                             <option value="6"  @if($res->styles== 6) checked="checked" @endif>摇滚</option>
                             <option value="6"  @if($res->styles== 7) checked="checked" @endif>治愈</option>
                         </select> 
-                </div>
-    			<div class="mws-form-row">
-                    <label class="mws-form-label">歌曲图片</label>
-                    <div class="mws-form-item">
-                        <img src="{{$res->photp}}" alt="" width='100px'>
-                        <div style="position: relative;" class="fileinput-holder"><input type="file" name='photp' style="position: absolute; top: 0px; right: 0px; margin: 0px; cursor: pointer; font-size: 999px; opacity: 0; z-index: 999;"required></div>
                     </div>
+        			<div class="mws-form-row">
+                        <label class="mws-form-label">歌曲图片</label>
+                        <div class="mws-form-item">
+                            <img src="{{$res->photp}}" alt="" width='100px'>
+                            <div style="position: relative;" class="fileinput-holder"><input type="file" name='photp' style="position: absolute; top: 0px; right: 0px; margin: 0px; cursor: pointer; font-size: 999px; opacity: 0; z-index: 999;"required></div>
+                        </div>
                     </div>
-                        <div class="mws-form-row">    
-                            <div class="mws-form-label">歌曲上传</div>
-                                <div class="mws-form-item">    
-                                                 
-                                    <input  id="file" type="file" class="form-control" name="urll" required>     
-                                </div>
+                    <div class="mws-form-row">    
+                        <div class="mws-form-label">歌曲上传</div>
+                        <div class="mws-form-item">               
+                            <input  id="file" type="file" class="form-control" name="urll" required>     
+                        </div>
                     </div>
-
-                <div class="mws-form-row">
-                    <label class="mws-form-label">歌词添加</label>
-                    <div class="mws-form-item">
-                        <textarea rows="3" cols="20" class="small" name="lrc" >{{$res->lrc}}</textarea>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">歌词添加</label>
+                        <div class="mws-form-item">
+                            <textarea rows="3" cols="20" class="small" name="lrc" >{{$res->lrc}}</textarea>
+                        </div>
                     </div>
-                </div>
-    		</div>
-    		<div class="mws-button-row">
-    			{{csrf_field()}}
-                {{method_field('PUT')}}
-    			<input type="submit" class="btn btn-primary" value="修改">
-    			
-    			
-    		</div>
+        		</div>
+        		<div class="mws-button-row">
+        			{{csrf_field()}}
+                    {{method_field('PUT')}}
+        			<input type="submit" class="btn btn-primary" value="修改">
+        		</div>
     	</form>
     </div>    	
 </div>
@@ -101,45 +92,24 @@
 
 @section('js')
 <script >
- //实例化编辑器
-    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
     var ue = UE.getEditor('editor');
-
-    /*setTimeout(function(){
-
-        $('.mws-form-message').fadeOut(2000);
-
-    },5000)*/
-
     $('.mws-form-message').delay(3000).fadeOut(2000);
-
-
     //删除图片
     $('.photp').click(function(){
-
         var gid = $(this).attr('mid');
-
         var imgs = $(this);
-
         $.get('/admin/music/'+gid,{},function(data){
-
             if(data == '1'){
-
                 imgs.remove();
             }
         })
     })
     //删除歌曲
     $('.urll').click(function(){
-
         var gid = $(this).attr('mid');
-
         var urls = $(this);
-
         $.get('/admin/music/'+gid,{},function(data){
-
             if(data == '1'){
-
                 urls.remove();
             }
         })

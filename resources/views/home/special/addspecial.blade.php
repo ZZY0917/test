@@ -25,11 +25,10 @@
             </div>
         </div>
 	@if(session('success'))   
-            <div class="mws-form-message info">
-                {{session('success')}}  
-
-            </div>
-            @endif
+    <div class="mws-form-message info">
+        {{session('success')}}  
+    </div>
+  @endif
 	<body>
 
 <!--精选集内页-->
@@ -37,12 +36,20 @@
   <div class="r">
       <div id="songs" class="list1">
           <strong>&lt;我的音乐&gt; - 歌曲列表</strong>
-          <form action="/home/special/create" method='post'>
-          <ul>
-              @foreach($rs as $k=>$v)               
-              <li><a  hidefocus="true" href="{{$v->mid}}" ><input type="checkbox"  class="cb checkItem" checked="true" id="chk_C3967DE92CF781436E29B2E30ACFA0E7" name='special_music[]' value="{{$v->mid}}"><span class="num1">@if($k+1>=10) {{$k+1}} @else 0{{$k+1}} @endif</span><span class="text"><i> {{$v->mname}}- {{$v->sname}}</i><span style="margin-left: 200px;">{{'<'.$v->aname.'>'}}</span></span></a></li>
-        	    @endforeach  
-          </ul>
+          <form action="/home/special/create" method='post'> 
+            <ul>
+                @foreach($rs as $k=>$v)               
+                <li>
+                  <a  hidefocus="true" href="{{$v->mid}}" >
+                    <input type="checkbox"  class="cb checkItem" checked="true" id="chk_C3967DE92CF781436E29B2E30ACFA0E7" name='special_music[]' value="{{$v->mid}}">
+                    <span class="num1">@if($k+1>=10) {{$k+1}} @else 0{{$k+1}} @endif</span>
+                    <span class="text"><i> {{$v->mname}}- {{$v->sname}}</i>
+                      <span style="margin-left: 200px;">{{'<'.$v->aname.'>'}}</span>
+                    </span>
+                  </a>
+                </li>
+          	    @endforeach  
+            </ul>
                {{csrf_field()}}
           <input type="submit" id="button" class="kg_uc_btn_style02 pc_temp_b_btn" value="编辑歌单" />
        </form>

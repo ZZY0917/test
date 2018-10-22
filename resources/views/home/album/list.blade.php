@@ -5,22 +5,17 @@
 
 @section('content')
 <div class="navWrap">
-            <div class="nav">
-                <ul class="homeNav">
-                    <li><a class="normal" href="/">首页</a></li>
-                    <li><a class="normal"  href="/home/paihang">榜单</a></li>
-                    <li><a class="normal"  href="/home/list">歌手</a></li>
-                    <li><a class="normal"  href="/home/music">音乐</a></li>
-                    <li><a class="normal special"  href="/home/specialshow">歌单</a></li>
-                    <li><a class="normal"  href="/home/personal">我的音乐</a></li>
-                    
-                    
-                    
-                </ul>
-                
-              
-            </div>
-        </div>
+    <div class="nav">
+        <ul class="homeNav">
+            <li><a class="normal" href="/">首页</a></li>
+            <li><a class="normal"  href="/home/paihang">榜单</a></li>
+            <li><a class="normal"  href="/home/list">歌手</a></li>
+            <li><a class="normal"  href="/home/music">音乐</a></li>
+            <li><a class="normal special"  href="/home/specialshow">歌单</a></li>
+            <li><a class="normal"  href="/home/personal">我的音乐</a></li>
+        </ul>
+    </div>
+</div>
 
 <div class="wrap alm2 clear_fix specialPage">
 

@@ -69,7 +69,7 @@
 <body>
 <div class="open">
     <div class="tan">
-        <h3>九天音乐 <a class="close"><img src="/home/images/x.jpg" /></a></h3>
+        <h3>因你而乐 <a class="close"><img src="/home/images/x.jpg" /></a></h3>
         <p class="text_delete"><img src="/home/images/delete.jpg" />确定要删除此歌曲？</p>
         <div class="but">
             <button class="ok">确定</button>

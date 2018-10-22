@@ -8,27 +8,23 @@
     	<span>{{$title}}</span>
     </div>
     <div class="mws-panel-body no-padding">
-
-	<form action="/admin/doprofile" id='art_form' method='post' enctype='multipart/form-data' class="mws-form">
-		<div class="mws-form-inline">
-			<div class="mws-form-row">
-            	<label class="mws-form-label">头像</label>
-            	<div class="mws-form-item">
-
-            		<img src="{{$rs->photo}}" id='imgs' alt="">
-
-                	<div style="position: relative;" class="fileinput-holder">
-                		<input type="file" id='file_upload' name='profile' style="position: absolute; top: 0px; right: 0px; margin: 0px; cursor: pointer; font-size: 999px; opacity: 0; z-index: 999;">
-
-                	</div>
+    	<form action="/admin/doprofile" id='art_form' method='post' enctype='multipart/form-data' class="mws-form">
+    		<div class="mws-form-inline">
+    			<div class="mws-form-row">
+                	<label class="mws-form-label">头像</label>
+                	<div class="mws-form-item">
+                		<img src="{{$rs->photo}}" id='imgs' alt="">
+                    	<div style="position: relative;" class="fileinput-holder">
+                    		<input type="file" id='file_upload' name='profile' style="position: absolute; top: 0px; right: 0px; margin: 0px; cursor: pointer; font-size: 999px; opacity: 0; z-index: 999;">
+                    	</div>
+                    </div>
                 </div>
-            </div>
-		</div>
-		<div class="mws-button-row">
-			{{csrf_field()}}
-			<input type="submit" class="btn btn-primary" value="添加">
-		</div>
-	</form>
+    		</div>
+    		<div class="mws-button-row">
+    			{{csrf_field()}}
+    			<input type="submit" class="btn btn-primary" value="添加">
+    		</div>
+    	</form>
     </div>    	
 </div>
 
@@ -57,7 +53,6 @@ function uploadImage() {
         alert("请选择上传图片！");
         return;
     }
-
     //判断上传文件的后缀名
     var strExtension = imgPath.substr(imgPath.lastIndexOf('.') + 1);
     if (strExtension != 'jpg' && strExtension != 'gif'
@@ -65,9 +60,7 @@ function uploadImage() {
         alert("选择图片文件类型错误");
         return;
     }
-
     var formData = new FormData($('#art_form')[0]);
-
     $.ajax({
         type: "POST",
         url: "/admin/doprofile",
@@ -76,14 +69,8 @@ function uploadImage() {
         processData: false,
 
         success: function(data) {
-
-        	// console.log(data);
-
             $('#imgs').attr('src',data);
-
             location.href = '/admin';
-
-            // $('#art_thumb').val(data);
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) {
             alert("上传失败，请检查网络后重试");
@@ -91,6 +78,5 @@ function uploadImage() {
     });
 }
 </script>
-
 
 @stop

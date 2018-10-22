@@ -110,8 +110,5 @@
 
 <script type="text/javascript" src="/admins/js/jquery-1.8.0.min.js"></script>
 <script type="text/javascript" src="/admins/js/com.js"></script>
-
-
-
 </body>
 </html>

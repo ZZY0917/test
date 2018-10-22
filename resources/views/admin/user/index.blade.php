@@ -4,9 +4,9 @@
 
 @section('content')
 @if(session('success'))
-<div class="mws-form-message info">
-	{{session('success')}}
-</div>
+    <div class="mws-form-message info">
+    	{{session('success')}}
+    </div>
 @endif
 <div class="mws-panel grid_8">
     <div class="mws-panel-header">
@@ -67,8 +67,6 @@
         <td class=" " style="text-align: center;">{{$v->sex ? '男' : '女'}}</td>
         <td class=" ">
             <a class="btn btn-info" href="/admin/collect/{{$v->uid}}/index">用户收藏</a>
-        	
-        	<!-- <a class="btn btn-danger" href="">删除</a> -->
         </td>
 </tr>
 @endforeach

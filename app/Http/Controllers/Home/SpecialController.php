@@ -43,18 +43,10 @@ class SpecialController extends Controller
     {   
 
         $uid = session('uid');
-        // 
-
-        // dd($res);
-        
         $rs = DB::table('collect')
                 ->join('music','music.mname','collect.mname')
                 ->where('collect.uid',$uid)
                 ->get();
-
-                
-        
-
         return view('/home/special/addspecial',['rs'=>$rs]);
     }
 
@@ -74,9 +66,6 @@ class SpecialController extends Controller
         foreach ($mid as $k => $v) {
             $music[] = DB::table('music')->where('mid',$v)->first();
         }
-        // dd($music);
-       
-        
         return view('home.special.listspecial',['res'=>$res,'music'=>$music,'special'=>$special]);
     }
 
@@ -108,8 +97,7 @@ class SpecialController extends Controller
                $str .=$vv.',';
             }
         }
-        
-        return view('home.special.add',['res'=>$res,'str'=>$str]);
+        return view('/home/special/add',['res'=>$res,'str'=>$str]);
     }
 
     /**

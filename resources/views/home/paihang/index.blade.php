@@ -58,13 +58,11 @@
 						<a title="轻音乐排行榜"  hidefocus="true" href="/home/paihang/qyy/4" onclick="">
 							<span style="background-image:url('/images/20130807185439172736.png');_background-image:none; _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://imge.kugou.com/temppic/20130807/20130807185439172736.png', sizingMethod='crop');"></span>
 							轻音乐排行榜
-							
+						</a>
 					</li>			    							
 				</ul>
 			</div>
-	
-	</div>
-	
+		</div>
 		<div class="pc_temp_content">
 			<div class="pc_temp_container">
 				<div class="pc_rank_title clear_fix">
@@ -75,9 +73,7 @@
 					</div>
 				</div>
 				<div id="rankWrap">
-					
 					<div class="pc_temp_songlist ">
-
 						<ul>
 							@foreach($res as $k=>$v)
 							<li class=" " title="{{$v->mname}}" data-index="0">
@@ -86,14 +82,11 @@
 									<a href="/home/play/{{$v->mid}}" data-active="playDwn" data-index="0" class="pc_temp_songname" title="{{$v->mname}}" hidefocus="true">{{$v->sname}} - {{$v->mname}}</a>
 							</li>
 							@endforeach
-					</ul>
+						</ul>
 					</div>
 				</div>
-				
-
 			</div>
 		</div>
-		
 	</div>
 </div>
 

@@ -39,12 +39,13 @@
                 <div class="search_input">
                     <form method="post" action="/home/sou">
                         <input name="sou" type="text" placeholder="搜索音乐"> 
-                    <div class="searh_btn">
-                        <button type="submit" style="background: #fff">
-                            {{csrf_field()}}
-                            <i class="search_icon"></i>
-                         </button><span>搜索</span>
-                    </div>
+                        <div class="searh_btn">
+                            <button type="submit" style="background: #fff">
+                                {{csrf_field()}}
+                                <i class="search_icon"></i>
+                             </button><span>搜索</span>
+                        </div>
+                    </form>
                  </div>
                 <div class="search_recommend top_search_recommend">
                     

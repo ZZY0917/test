@@ -50,8 +50,6 @@
     		<div class="mws-button-row">
     			{{csrf_field()}}
     			<input type="submit" class="btn btn-primary" value="修改">
-    			
-    			
     		</div>
     	</form>
     </div>    	

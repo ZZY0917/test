@@ -1,5 +1,4 @@
 @extends('layout.home')
-<!-- <link rel="stylesheet" type="text/css" href="/admins/css/form_error.css" media="screen">    -->
 
 @section('content')
 <div class="navWrap">
@@ -12,8 +11,6 @@
             <li><a class="normal"  href="/home/specialshow">歌单</a></li>
             <li><a class="normal"  href="/home/personal">我的音乐</a></li>
         </ul>
-        
-      
     </div>
 </div>
 <!-- body -->

@@ -134,8 +134,6 @@ Route::group(['middleware'=>['homelogin']],function(){
 	Route::any('/home/special/edits/{gdid}','Home\SpecialController@edits');
 	Route::any('/home/special/update/{gdid}','Home\SpecialController@update');
 	Route::any('/home/special/destroy/{gdid}','Home\SpecialController@destroy');
-	
-	
 	// Route::any('home/cap','Home\RegController@cap');
 	// 前台退出登录
 	Route::any('home/logout','Home\LoginController@dologout');

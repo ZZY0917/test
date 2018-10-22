@@ -33,7 +33,6 @@
 
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/lib.js"></script>
-<script src="http://login-user.kugou.com/v1/kguser_min.js?20180305"></script>
 <script type="text/javascript" src="/js/common_header.min.js"> </script>
    
     
@@ -48,7 +47,6 @@
                         <div class="kg_uc_module01">
                             <div class="kg_uc_module01_hd">
                                 <h4 class="h_tl">我的歌单</h4>
-                                
                             </div>
                             <div class="kg_uc_module01_bd">
                                 <!-- tab 区域 -->
@@ -56,17 +54,12 @@
                                     <div class="kg_uc_module02_hd">
                                         <div class="kg_uc_module02_tag_list"></div>
                                         <ul class="kg_uc_module02_tag_list_ct">
-                                            
                                             <li class="cur"><a href="#" title="编辑歌单"><span>编辑歌单</span></a></li>
-                                            
                                         </ul>
                                     </div>
                                     <div class="kg_uc_module02_bd">
                                         <form id="infForm" action="/home/special/store" method="post" enctype="multipart/form-data">
                                             <table class="kg_uc_gen_tb" width="100%">
-
-                                                
-                                                
                                                 <tr>
                                                     <td align="right" valign="top"><label for="nickname" class="kg_uc_gen_tb_tl">歌单名称：</label></td>
                                                     <td>
@@ -121,7 +114,6 @@
                                                 
                                                 {{csrf_field()}}
                                                 <input type="hidden" name="hidden" value="{{$str}}">
-                                               
                                                 <tr>
                                                     <td></td>
                                                     <td><input type="submit"  class="kg_uc_btn_style02 pc_temp_b_btn" value="保存上传" /></td>
@@ -142,43 +134,18 @@
     <div class="kg_uc_avatar_area">
         <div class="kg_uc_avatar_cover"><img id="UserImage" width="165" height="165" src="{{$res->photo}}" alt="枉叹之"></div>
         <div class="kg_uc_avatar_txt">
-            <p align="center"><a href="#" id="myucname" class="kg_uc_avatar_name">{{$res->uname}}</a>
-                                    </p>
-            <p align="center">{{$res->username}}</p>
-            <!--<p align="center">积分：0</p>-->
-             <!--<p align="center"><a href="http://www.kugou.com/uc/1349805978.html" style="text-decoration:underline" >返回旧版</a></p>-->
+            <p align="center"><a href="/home/person" id="myucname" class="kg_uc_avatar_name">{{$res->uname}}</a>
+            </p>
+            <p align="center">(账号: {{$res->username}})</p>
         </div>
         <div class="kg_uc_avatar_vipinfo" id="user_vipinfo">
-                        <p><a target="_blank" href="http://vip.kugou.com/recharge.html?from=music&version=7713&action=newSuperVipType" title="开通酷狗豪华VIP">开通因乐豪华 VIP&gt;&gt;</a></p>
-                    </div>
-
+            
+        </div>
     </div>
     <!--/头像区域 -->
 <!--/左侧栏 -->
 </div>
-<script>
-var myPic = "http://imge.kugou.com/kugouicon/165/20100101/20100101192931478054.jpg";
 
-// document.domain="kugou.com";
-try{
-    var kugouC = read("KuGoo");
-    var pic_src = kugouC.Pic;
-    if(!pic_src || pic_src == "default.jpg"){
-        pic_src = "http://imge.kugou.com/kugouicon/165/20120724/20120724145917274529.jpg";
-    } else if(pic_src.indexOf("http://") != -1){
-        pic_src = pic_src;
-    } else {
-        pic_src ="http://imge.kugou.com/kugouicon/165/"+pic_src.substr(0,8)+"/"+pic_src;
-    }
-    var nickname=kugouC.NickName.replace(/%/g, "\\");;
-    nickname=eval("'" + nickname + "'");
-    document.getElementById("myucname").innerHTML=nickname;
-    document.getElementById("UserImage").src= myPic || pic_src;
-}catch(ex){
-
-}
-
-</script>
 
                 <div class="clear"></div>
             </div>
