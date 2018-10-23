@@ -59,7 +59,6 @@
                                                 </span>
                                             </a>
                                         </li>
-                                        
                                     </ul>
                                 </div>
                                 @if (count($errors) > 0)
@@ -242,18 +241,13 @@
                         <p align="center">
                             (帐号:{{$rs['0']->username}})
                         </p>
-                        <!--<p align="center">积分：0</p>-->
-                        <!--<p align="center"><a href="http://www.kugou.com/uc/1349805978.html" style="text-decoration:underline" >返回旧版</a></p>-->
                     </div>
-                    
                 </div>
                 <!--/头像区域 -->
                 <!--/左侧栏 -->
             </div>
             <script>
                 var myPic = "http://imge.kugou.com/kugouicon/165/20100101/20100101192931478054.jpg";
-
-                // document.domain="kugou.com";
                 try {
                     var kugouC = read("KuGoo");
                     var pic_src = kugouC.Pic;
@@ -269,8 +263,8 @@
                     document.getElementById("myucname").innerHTML = nickname;
                     document.getElementById("UserImage").src = myPic || pic_src;
                 } catch(ex) {
-
-}
+                
+                }
             </script>
             <div class="clear">
             </div>

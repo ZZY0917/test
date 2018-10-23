@@ -8,7 +8,6 @@
         <span>{{$title}}</span>
     </div>
     <div class="mws-panel-body no-padding">
-
         @if (count($errors) > 0)
             <div class="mws-form-message error">
                 错误信息
@@ -19,8 +18,6 @@
                 </ul>
             </div>
         @endif
-
-
         <form action="/admin/userssong/{{$res->sid}}" method='post' enctype='multipart/form-data' class="mws-form">
             <div class="mws-form-inline">
                 <div class="mws-form-row">
@@ -29,9 +26,6 @@
                         <input type="text" class="small" name='sname' value='{{$res->sname}}'>
                     </div>
                 </div>
-
-                
-
                 <div class="mws-form-row">
                     <label class="mws-form-label">地区</label>
                     <div class="mws-form-item">
@@ -42,7 +36,6 @@
                     <input name="szone" type="radio" value="4" @if($res->sex == 3) checked="checked" @endif />其他
                     </div>
                 </div>
-
                 <div class="mws-form-row">
                     <label class="mws-form-label">性别</label>
                     <div class="mws-form-item">
@@ -56,7 +49,6 @@
                         <textarea rows="3" cols="20" class="small" name="cv" >{{$res->cv}}</textarea>
                     </div>
                 </div>
-
                 <div class="mws-form-row">
                     <label class="mws-form-label">照片</label>
                     <div class="mws-form-item">
@@ -64,16 +56,11 @@
                         <div style="position: relative;" class="fileinput-holder"><input type="file" name='photo' style="position: absolute; top: 0px; right: 0px; margin: 0px; cursor: pointer; font-size: 999px; opacity: 0; z-index: 999;"></div>
                     </div>
                 </div>
-                
-                
             </div>
             <div class="mws-button-row">
                 {{csrf_field()}}
-
                 {{method_field('PUT')}}
                 <input type="submit" class="btn btn-primary" value="修改">
-                
-                
             </div>
         </form>
     </div>      
@@ -82,36 +69,17 @@
 
 @section('js')
 <script>
-
-    //实例化编辑器
-    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
-    var ue = UE.getEditor('editor');
-
-    /*setTimeout(function(){
-
-        $('.mws-form-message').fadeOut(2000);
-
-    },5000)*/
-
     $('.mws-form-message').delay(3000).fadeOut(2000);
-
-
     //删除图片
     $('.photo').click(function(){
-
         var gid = $(this).attr('sid');
-
         var imgs = $(this);
-
         $.get('/admin/userssong/'+gid,{},function(data){
-
             if(data == '1'){
-
                 imgs.remove();
             }
         })
     })
-
 </script>
 
 @stop

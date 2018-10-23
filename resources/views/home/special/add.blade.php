@@ -4,39 +4,34 @@
 <link rel="stylesheet" href="/css/header.css" />
 <link rel="stylesheet" href="/css/user_center_v.1.css" />
 
-
 @section('content')
-<div class="navWrap">
-            <div class="nav">
-                <ul class="homeNav">
-                    <li><a class="normal" href="/">首页</a></li>
-                    <li><a class="normal"  href="/home/paihang">榜单</a></li>
-                    <li><a class="normal"  href="/home/list">歌手</a></li>
-                    <li><a class="normal"  href="/home/music">音乐</a></li>
-                    <li><a class="normal active"  href="/home/specialshow">歌单</a></li>
-                    <li><a class="normal"  href="/home/personal">我的音乐</a></li>
-                </ul>
-            </div>
+    <div class="navWrap">
+        <div class="nav">
+            <ul class="homeNav">
+                <li><a class="normal" href="/">首页</a></li>
+                <li><a class="normal"  href="/home/paihang">榜单</a></li>
+                <li><a class="normal"  href="/home/list">歌手</a></li>
+                <li><a class="normal"  href="/home/music">音乐</a></li>
+                <li><a class="normal active"  href="/home/specialshow">歌单</a></li>
+                <li><a class="normal"  href="/home/personal">我的音乐</a></li>
+            </ul>
         </div>
+    </div>
 	
-		@if (count($errors) > 0)
-            <div class="mws-form-message error">
-                错误信息
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-              
-
-<script type="text/javascript" src="/js/jquery.min.js"></script>
-<script type="text/javascript" src="/js/lib.js"></script>
-<script type="text/javascript" src="/js/common_header.min.js"> </script>
-   
-    
-
+	@if (count($errors) > 0)
+        <div class="mws-form-message error">
+            错误信息
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+             
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/lib.js"></script>
+    <script type="text/javascript" src="/js/common_header.min.js"> </script>
     <!-- body -->
     <div class="kg_uc_bodyArea">
         <div class="wing_area_outset">
@@ -91,7 +86,8 @@
                                                         <input type="radio" name="styles"   value="7" />治愈
                                                         
                                                     </td>
-                                                </tr>                             <tr>
+                                                </tr>                             
+                                                <tr>
                                                     <td align="right" valign="top"><label for="intro" class="kg_uc_gen_tb_tl">简介：</label></td>
                                                     <td>
                                                         <div class="kg_uc_textbox_area kg_uc_textbox_nickname">
@@ -107,11 +103,9 @@
                                                     <td>
                                                         <div class="">
                                                             <div class=""><input type="file" name="photo"></div>
-                                                            
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                
                                                 {{csrf_field()}}
                                                 <input type="hidden" name="hidden" value="{{$str}}">
                                                 <tr>
@@ -129,39 +123,31 @@
                     </div>
                 </div>
                 <div class="wing_side">
-<!-- 左侧栏 -->
-    <!-- 头像区域 -->
-    <div class="kg_uc_avatar_area">
-        <div class="kg_uc_avatar_cover"><img id="UserImage" width="165" height="165" src="{{$res->photo}}" alt="枉叹之"></div>
-        <div class="kg_uc_avatar_txt">
-            <p align="center"><a href="/home/person" id="myucname" class="kg_uc_avatar_name">{{$res->uname}}</a>
-            </p>
-            <p align="center">(账号: {{$res->username}})</p>
-        </div>
-        <div class="kg_uc_avatar_vipinfo" id="user_vipinfo">
-            
-        </div>
-    </div>
-    <!--/头像区域 -->
-<!--/左侧栏 -->
-</div>
-
-
+                <!-- 左侧栏 -->
+                    <!-- 头像区域 -->
+                    <div class="kg_uc_avatar_area">
+                        <div class="kg_uc_avatar_cover"><img id="UserImage" width="165" height="165" src="{{$res->photo}}" alt="枉叹之"></div>
+                        <div class="kg_uc_avatar_txt">
+                            <p align="center"><a href="/home/person" id="myucname" class="kg_uc_avatar_name">{{$res->uname}}</a>
+                            </p>
+                            <p align="center">(账号: {{$res->username}})</p>
+                        </div>
+                        <div class="kg_uc_avatar_vipinfo" id="user_vipinfo">
+                            
+                        </div>
+                    </div>
+                    <!--/头像区域 -->
+                <!--/左侧栏 -->
+                </div>
                 <div class="clear"></div>
             </div>
         </div>
     </div>
     <!--/body -->
-    
-
-
-
-
 @stop
 
 @section('js')
-<script>
-	$('.mws-form-message').delay(3000).fadeOut(2000);
-</script>
-
+    <script>
+    	$('.mws-form-message').delay(3000).fadeOut(2000);
+    </script>
 @stop

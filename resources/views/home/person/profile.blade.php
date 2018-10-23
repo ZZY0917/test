@@ -13,8 +13,6 @@
             <li><a class="normal"  href="/home/specialshow">歌单</a></li>
             <li><a class="normal"  href="/home/personal">我的音乐</a></li>
         </ul>
-        
-      
     </div>
 </div>
 
@@ -48,7 +46,6 @@
                                             <a href="/home/person/pass" title="修改密码">
                                                 <span>修改密码</span></a>
                                         </li>
-                                        
                                     </ul>
                                 </div>
                                 @if (count($errors) > 0)
@@ -126,8 +123,8 @@
                             </div>
                             <!--/tab 区域 --></div>
                     </div>
-                    
-                    <!--/主体 --></div>
+                    <!--/主体 -->
+                </div>
             </div>
             <div class="wing_side">
                 <!-- 左侧栏 -->
@@ -136,42 +133,38 @@
                     <div class="kg_uc_avatar_cover">
                         <img id="UserImage" width="165" height="165" src="{{$rs['0']->photo}}" alt=""></div>
                     <div class="kg_uc_avatar_txt">
-
                         <p align="center">
                             <a href="/home/person" id="myucname" class="kg_uc_avatar_name">{{$rs['0']->uname}}</a></p>
                         <p align="center">(帐号:{{session('username')}})</p>
-                        <!--<p align="center">积分：0</p>-->
-                        <!--<p align="center"><a href="http://www.kugou.com/uc/1349805978.html" style="text-decoration:underline" >返回旧版</a></p>--></div>
-                    
+                    </div>
                 </div>
                 <!--/头像区域 -->
-                <!--/左侧栏 --></div>
-            
+                <!--/左侧栏 -->
+            </div>
             <div class="clear"></div>
         </div>
     </div>
 </div>
 @section('js')
 <script>var myPic = "{{$rs['0']->photo}}";
+    try {
+        var kugouC = read("KuGoo");
+        var pic_src = kugouC.Pic;
+        if (!pic_src || pic_src == "default.jpg") {
+            pic_src = "http://imge.kugou.com/kugouicon/165/20120724/20120724145917274529.jpg";
+        } else if (pic_src.indexOf("http://") != -1) {
+            pic_src = pic_src;
+        } else {
+            pic_src = "http://imge.kugou.com/kugouicon/165/" + pic_src.substr(0, 8) + "/" + pic_src;
+        }
+        var nickname = kugouC.NickName.replace(/%/g, "\\");;
+        nickname = eval("'" + nickname + "'");
+        document.getElementById("myucname").innerHTML = nickname;
+        document.getElementById("UserImage").src = myPic || pic_src;
+    } catch(ex) {
 
-                // document.domain="kugou.com";
-                try {
-                    var kugouC = read("KuGoo");
-                    var pic_src = kugouC.Pic;
-                    if (!pic_src || pic_src == "default.jpg") {
-                        pic_src = "http://imge.kugou.com/kugouicon/165/20120724/20120724145917274529.jpg";
-                    } else if (pic_src.indexOf("http://") != -1) {
-                        pic_src = pic_src;
-                    } else {
-                        pic_src = "http://imge.kugou.com/kugouicon/165/" + pic_src.substr(0, 8) + "/" + pic_src;
-                    }
-                    var nickname = kugouC.NickName.replace(/%/g, "\\");;
-                    nickname = eval("'" + nickname + "'");
-                    document.getElementById("myucname").innerHTML = nickname;
-                    document.getElementById("UserImage").src = myPic || pic_src;
-                } catch(ex) {
-
-            }</script>
+    }
+</script>
 
 <script type="text/javascript">
      $.ajaxSetup({
@@ -221,10 +214,9 @@
 
 </script>
 <script type="text/javascript">
-          // alert($);
-        setTimeout(function(){
-            $('.mws-form-message').slideUp(2000);
-        },3000)
+    setTimeout(function(){
+        $('.mws-form-message').slideUp(2000);
+    },3000)
 </script>
 @show
 

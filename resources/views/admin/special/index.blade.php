@@ -10,43 +10,32 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
-
 </style>
+	@if(session('success'))  
+        <div class="mws-form-message info">
+            {{session('success')}}  
 
-
-			@if(session('success'))  
-            <div class="mws-form-message info">
-                {{session('success')}}  
-
-            </div>
-            @endif
+        </div>
+    @endif
 <div class="mws-panel grid_8">
     <div class="mws-panel-header">
         <span>
-            <i class="icon-table">
-            </i>
+            <i class="icon-table"></i>
             {{$title}}
         </span>
     </div>
     <div class="mws-panel-body no-padding">
         <div role="grid" class="dataTables_wrapper" id="DataTables_Table_1_wrapper">
-
         	<form action="/admin/special" method='get'>
-            <div id="DataTables_Table_1_length" class="dataTables_length">
-                
-            </div>
-            <div class="dataTables_filter" id="DataTables_Table_1_filter">
-                <label>
-                    歌单名:
-                    <input type="text" name='gdname' aria-controls="DataTables_Table_1">
-                </label>
-
-                <button class='btn btn-info'>搜索</button>
-            </div>
-
+                <div id="DataTables_Table_1_length" class="dataTables_length"></div>
+                <div class="dataTables_filter" id="DataTables_Table_1_filter">
+                    <label>
+                        歌单名:
+                        <input type="text" name='gdname' aria-controls="DataTables_Table_1">
+                    </label>
+                    <button class='btn btn-info'>搜索</button>
+                </div>
             </form>
-
-
             <table class="mws-datatable-fn mws-table dataTable" id="DataTables_Table_1"
             aria-describedby="DataTables_Table_1_info">
                 <thead>
@@ -63,8 +52,6 @@
                         rowspan="1" colspan="1" style="width: 50px;" aria-label="Browser: activate to sort column ascending">
                             风格
                         </th>
-                        
-                        
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
                         rowspan="1" colspan="1" style="width: 100px;" aria-label="Engine version: activate to sort column ascending">
                             标题
@@ -97,7 +84,6 @@
                     </tr>
                 </thead>
                 <tbody role="alert" aria-live="polite" aria-relevant="all">
-					
 					@foreach($rs as $k => $v)
                     <tr class="@if($k % 2 == 0)odd @else even @endif" >
                         <td class="">
@@ -117,22 +103,16 @@
                             @elseif ($v->styles == 7) 治愈
                             @endif
                         </td>
-                        
-                        
                         <td class=" ">
                             {{$v->title}}
-                            
                         </td>
                         <td class=" ">
                             {{$v->zhizuo}}
-                            
                         </td>
                         <td >
                             <div class="overflow-text">
-                            {{$v->jianjie}}
-                                
+                                {{$v->jianjie}}
                             </div>
-                            
                         </td>
                         <td class=" ">
                            @if($v->status ==0) 第一张
@@ -143,26 +123,19 @@
                             @endif
                         </td>
                         <td class=" " style="text-align: center">
-                           
                             <img src="{{$v->photo}}" style="max-height: 100px;max-width: 100px;" alt="">
                         </td>
-                        
-                         <td class=" ">
-                            
+                        <td class=" ">
                             <form action="/admin/special/{{$v->gdid}}" method='post' style='display:inline'>
                                 <a class='btn btn-primary' href="/admin/special/{{$v->gdid}}/shezhi">设置</a>
                                 <a class='btn btn-primary' href="/admin/special/{{$v->gdid}}/edit">修改</a>
                                 {{csrf_field()}}
                                 {{method_field('DELETE')}}
-
                                 <button class='btn btn-danger'>删除</button>
-
                             </form>
                         </td>
                     </tr>
                     @endforeach
-
-                  
                 </tbody>
             </table>
             <div class="dataTables_info" id="DataTables_Table_1_info">
@@ -209,12 +182,8 @@
                     .pagination{
                         margin:0px;
                     }
-
             </style>
-
-
             <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_1_paginate">
-				
 				{{$rs->links()}}
             </div>
         </div>

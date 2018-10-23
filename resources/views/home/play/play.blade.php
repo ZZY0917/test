@@ -67,105 +67,106 @@
     .cance{width: 128px;height:40px;bottom: 38px; left: 344px; color: #9b9b9b; background: none; border-radius: 10px; border: 1px solid #9b9b9b;text-align: center; line-height: 40px;}
 	</style>
 <body>
-<div class="open">
-    <div class="tan">
-        <h3>因你而乐 <a class="close"><img src="/home/images/x.jpg" /></a></h3>
-        <p class="text_delete"><img src="/home/images/delete.jpg" />确定要删除此歌曲？</p>
-        <div class="but">
-            <button class="ok">确定</button>
-            <button class="cance">取消</button>
-        </div>
-    </div>
-</div>
-<div class="bg_class" style="background-image: url(/home/images/1111.jpg)">
-</div>
-<div class="music_bg">
-<div id="jquery_jplayer_2" class="jp-jplayer"></div>
-<div id="lrcWrap"></div>
-    <div class="fixedbg"></div>
-    <div class="boxxx">
-        <div class="music_txt">
-            <div class="music_logo"><a href="/" target="_blank"><img src="/home/images/logo1.png" /></a></div>
-             <ul class="ul-title">
-                <li class="li1">歌曲名</li>
-                <li class="li2">音乐人</li>
-                <li class="li3">时长</li>
-                <li class="li4">&nbsp;</li>
-            </ul>
-            <div class="swiper-container"><!--music_list-->
-                <div class="swiper-wrapper">
-                    <div class="music_list mCustomScrollbar">
-                    </div>
-                </div>
-            </div>
-
-            <div class="music_right">
-                <div class="musicright_box1">
-                   <a href="###" id="playhref" target="_blank">
-                    <img src="/home/images/1111.jpg" id="playimg" width="185" height="185" />
-                    <em></em>
-                    </a>
-                </div>
-                <div class="musicright_box2"></div>
-                <div class="musicright_box3"></div>
-                <div class="musicright_box4">
-	                <div class="swiper-container1"><!--music_list-->
-	                        <div class="swiper-wrapper">
-	                            <div class="lrc_list" id="lrc_list">
-	                              
-	                            </div>
-	                        </div>
+	<div class="open">
+	    <div class="tan">
+	        <h3>因你而乐 <a class="close"><img src="/home/images/x.jpg" /></a></h3>
+	        <p class="text_delete"><img src="/home/images/delete.jpg" />确定要删除此歌曲？</p>
+	        <div class="but">
+	            <button class="ok">确定</button>
+	            <button class="cance">取消</button>
+	        </div>
+	    </div>
+	</div>
+	<div class="bg_class" style="background-image: url(/home/images/1111.jpg)">
+	</div>
+	<div class="music_bg">
+	<div id="jquery_jplayer_2" class="jp-jplayer"></div>
+	<div id="lrcWrap"></div>
+	    <div class="fixedbg"></div>
+	    <div class="boxxx">
+	        <div class="music_txt">
+	            <div class="music_logo">
+	            	<a href="/" target="_blank">
+	            		<img src="/home/images/logo1.png" />
+	            	</a>
+	            </div>
+	            <ul class="ul-title">
+	                <li class="li1">歌曲名</li>
+	                <li class="li2">音乐人</li>
+	                <li class="li3">时长</li>
+	                <li class="li4">&nbsp;</li>
+	            </ul>
+	            <div class="swiper-container"><!--music_list-->
+	                <div class="swiper-wrapper">
+	                    <div class="music_list mCustomScrollbar">
+	                    </div>
 	                </div>
-                </div>
-            </div>
-        </div>
-        <div class="music_controller" id="jp_container_1">
-          <div class="jp-playlist" style="height: 500px; overflow-y: auto; display:none">
-			 <ul>
-				 <!-- The method Playlist.displayPlaylist() uses this unordered list -->
-				 <li></li>
-			 </ul>
-		 </div>
-            <div class="operation">
-                <div class="tion_box tion_box1">
-                    <div class="prev jp-previous"><img src="/home/images/left.png" width="100%" /></div>
-                    <div class="on_off jp-play"><img src="/home/images/play.png" width="100%" /></div>
-                    <div class="on_off jp-pause"><img src="/home/images/zhong.png" width="100%" /></div>
-                    <div class="next jp-next"><img src="/home/images/right.png" width="100%" /></div>
-                </div>
-                <div class="tion_box tion_box2">
-                    <span class="jp-current-time">00:00</span>
-                    <div class="time_jindu" id="progreeBar">
-                        <div class="time_line jp-seek-bar"><a></a>
-                         <div class="time_hong jp-play-bar"></div>
-                        </div>
-                        <a class="time_dian" href="#####"></a>
-                    </div>
-                    <span class="right jp-duration"></span>
-                </div>
-                <div class="tion_box tion_box4">
-                  <img onclick="myloop(this)" src="/home/images/repeat.png" />
-                </div>
-                <div class="tion_box tion_box3">
-                    <span class="jp-mute"><img src="/home/images/i_3.png" /></span>
-                    <span class="jp-unmute"><img src="/home/images/i_4.png" /></span>
-                    <div class="time_jindu_v" id="soundBar">
-                        <div class="time_line_v jp-volume-bar"><a></a>
-                        <div class="time_hong_v jp-volume-bar-value"></div>
-                        </div>
-                        <div class="time_dian_v"></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-</div>
+	            </div>
+	            <div class="music_right">
+	                <div class="musicright_box1">
+	                   <a href="###" id="playhref" target="_blank">
+	                    <img src="/home/images/1111.jpg" id="playimg" width="185" height="185" />
+	                    <em></em>
+	                    </a>
+	                </div>
+	                <div class="musicright_box2"></div>
+	                <div class="musicright_box3"></div>
+	                <div class="musicright_box4">
+		                <div class="swiper-container1"><!--music_list-->
+		                        <div class="swiper-wrapper">
+		                            <div class="lrc_list" id="lrc_list">
+		                              
+		                            </div>
+		                        </div>
+		                </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="music_controller" id="jp_container_1">
+	            <div class="jp-playlist" style="height: 500px; overflow-y: auto; display:none">
+				 <ul>
+					 <!-- The method Playlist.displayPlaylist() uses this unordered list -->
+					 <li></li>
+				 </ul>
+			    </div>
+	            <div class="operation">
+	                <div class="tion_box tion_box1">
+	                    <div class="prev jp-previous"><img src="/home/images/left.png" width="100%" /></div>
+	                    <div class="on_off jp-play"><img src="/home/images/play.png" width="100%" /></div>
+	                    <div class="on_off jp-pause"><img src="/home/images/zhong.png" width="100%" /></div>
+	                    <div class="next jp-next"><img src="/home/images/right.png" width="100%" /></div>
+	                </div>
+	                <div class="tion_box tion_box2">
+	                    <span class="jp-current-time">00:00</span>
+	                    <div class="time_jindu" id="progreeBar">
+	                        <div class="time_line jp-seek-bar"><a></a>
+	                         <div class="time_hong jp-play-bar"></div>
+	                        </div>
+	                        <a class="time_dian" href="#####"></a>
+	                    </div>
+	                    <span class="right jp-duration"></span>
+	                </div>
+	                <div class="tion_box tion_box4">
+	                    <img onclick="myloop(this)" src="/home/images/repeat.png" />
+	                </div>
+	                <div class="tion_box tion_box3">
+	                    <span class="jp-mute"><img src="/home/images/i_3.png" /></span>
+	                    <span class="jp-unmute"><img src="/home/images/i_4.png" /></span>
+	                    <div class="time_jindu_v" id="soundBar">
+	                        <div class="time_line_v jp-volume-bar"><a></a>
+	                        <div class="time_hong_v jp-volume-bar-value"></div>
+	                        </div>
+	                        <div class="time_dian_v"></div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 <script>
 //<![CDATA[
-	 var myPlaylist;
-$(document).ready(function(){
+	var myPlaylist;
+	$(document).ready(function(){
 		 var lrc_list_map = new Map();
     	var $lrc=$("#lrcWrap").lrc({scrollAnimate: "line"});
 	    myPlaylist = new jPlayerPlaylist({

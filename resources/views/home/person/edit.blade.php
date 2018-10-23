@@ -41,7 +41,6 @@ var pv, cv;
 var i, ii;
 var city = document.getElementById('sel_City');
 function set_son_name(father_name, son_name){  
-  
   pv=father_name.value;
   cv=son_name.value;
   son_name.length=0;
@@ -59,11 +58,8 @@ function set_son_name(father_name, son_name){
     //     }  
     // }
   }
-}  
-      
+}   
 </script>
-
-
 @section('content')
 
 <div class="navWrap">
@@ -76,8 +72,6 @@ function set_son_name(father_name, son_name){
             <li><a class="normal"  href="/home/specialshow">歌单</a></li>
             <li><a class="normal"  href="/home/personal">我的音乐</a></li>
         </ul>
-        
-      
     </div>
 </div>
 
@@ -108,7 +102,8 @@ function set_son_name(father_name, son_name){
             @endforeach
         </ul>
     </div>
-    @endif @if(session('success'))
+@endif 
+@if(session('success'))
     <div class="mws-form-message info" style="background-color: #bce5f7;
             background-image: url(/admins/images/core/message-info.png);
             border-color: #a6d3e8;
@@ -149,7 +144,6 @@ function set_son_name(father_name, son_name){
                                             <li><a href="/home/person" title="修改头像"><span>修改头像</span></a></li>
                                             <li class="cur"><a href="#" title="编辑资料"><span>编辑资料</span></a></li>
                                             <li><a href="/home/person/pass" title="修改密码"><span>修改密码</span></a></li>
-                                           
                                         </ul>
                                     </div>
                                     <div class="kg_uc_module02_bd">
@@ -159,11 +153,9 @@ function set_son_name(father_name, son_name){
                                                 <tr>
                                                     <td width="120" align="right" valign="top"><label class="kg_uc_gen_tb_tl">帐号：</label></td>
                                                     <td>
-                                                         <!-- <script>document.write(decodeURI(userinfo.UM_UserName))</script> -->
                                                          {{$rs['0']->username}}
                                                     </td>
                                                 </tr>
-                                               
                                                 <tr>
                                                     <td align="right" valign="top"><label for="nickname" class="kg_uc_gen_tb_tl">昵称：</label></td>
                                                     <td>
@@ -185,66 +177,59 @@ function set_son_name(father_name, son_name){
                                                     <td>
                                                         <input type="radio" name="sex"  checked value="1"/> 男　
                                                         <input type="radio" name="sex"   value="0" /> 女
-                                                        
                                                     </td>
-                                                </tr>                                               
-                                                
+                                                </tr>       
                                                 <tr>
                                                     <td align="right" valign="top"><label for="city" class="kg_uc_gen_tb_tl">地区：</label></td>
                                                     <td>
                                                         <div class="kg_uc_textbox_area kg_uc_textbox_nickname">
                                                             <div class="kg_uc_textbox_fixed">
                                                          
-                              <select   name="province" id="sel_Province" onchange="set_son_name(this, document.getElementById('sel_City'));"> 
-                            <option @if($rs['0']->province=='') selected @endif value="" >请选择</option>
-                            <option @if($rs['0']->province=='北京市') selected @endif value="北京市">北京市</option>
-                            <option @if($rs['0']->province=='天津市') selected @endif value="天津市">天津市</option>
-                            <option @if($rs['0']->province=='河北省') selected @endif value="河北省">河北省</option>
-                            <option @if($rs['0']->province=='山西省') selected @endif value="山西省">山西省</option>
-                            <option @if($rs['0']->province=='内蒙古') selected @endif value="内蒙古">内蒙古</option>
-                            <option @if($rs['0']->province=='辽宁省') selected @endif value="辽宁省">辽宁省</option>
-                            <option @if($rs['0']->province=='吉林省') selected @endif value="吉林省">吉林省</option>
-                            <option @if($rs['0']->province=='黑龙江') selected @endif value="黑龙江">黑龙江</option>
-                            <option @if($rs['0']->province=='上海市') selected @endif value="上海市">上海市</option>
-                            <option @if($rs['0']->province=='江苏省') selected @endif value="江苏省">江苏省</option>
-                            <option @if($rs['0']->province=='浙江省') selected @endif value="浙江省">浙江省</option>
-                            <option @if($rs['0']->province=='安徽省') selected @endif value="安徽省">安徽省</option>
-                            <option @if($rs['0']->province=='福建省') selected @endif value="福建省">福建省</option>
-                            <option @if($rs['0']->province=='江西省') selected @endif value="江西省">江西省</option>
-                            <option @if($rs['0']->province=='山东省') selected @endif value="山东省">山东省</option>
-                            <option @if($rs['0']->province=='河南省') selected @endif value="河南省">河南省</option>
-                            <option @if($rs['0']->province=='湖北省') selected @endif value="湖北省">湖北省</option>
-                            <option @if($rs['0']->province=='湖南省') selected @endif value="湖南省">湖南省</option>
-                            <option @if($rs['0']->province=='广东省') selected @endif value="广东省">广东省</option>
-                            <option @if($rs['0']->province=='广西省') selected @endif value="广西省">广西省</option>
-                            <option @if($rs['0']->province=='海南省') selected @endif value="海南省">海南省</option>
-                            <option @if($rs['0']->province=='重庆市') selected @endif value="重庆市">重庆市</option>
-                            <option @if($rs['0']->province=='四川省') selected @endif value="四川省">四川省</option>
-                            <option @if($rs['0']->province=='贵州省') selected @endif value="贵州省">贵州省</option>
-                            <option @if($rs['0']->province=='云南省') selected @endif value="云南省">云南省</option>
-                            <option @if($rs['0']->province=='西  藏') selected @endif value="西  藏">西藏</option>
-                            <option @if($rs['0']->province=='陕西省') selected @endif value="陕西省">陕西省</option>
-                            <option @if($rs['0']->province=='甘肃省') selected @endif value="甘肃省">甘肃省</option>
-                            <option @if($rs['0']->province=='青海省') selected @endif value="青海省">青海省</option>
-                            <option @if($rs['0']->province=='宁  夏') selected @endif value="宁  夏">宁夏</option>
-                            <option @if($rs['0']->province=='新  疆') selected @endif value="新  疆">新疆</option>
-                            <option @if($rs['0']->province=='香  港') selected @endif value="香  港">香港</option>
-                            <option @if($rs['0']->province=='澳  门') selected @endif value="澳  门">澳门</option>
-                            <option @if($rs['0']->province=='台湾省') selected @endif value="台湾省">台湾省</option>
-                                </select>
-                        <select  name="city" id="sel_City" >
-                        <option value="" selected>请选择</option>
-                        </select>
-
-                         <script type="text/javascript">
-                            document.getElementById("sel_Province").value= "{{$rs['0']->province}}";
-                            set_son_name(document.getElementById("sel_Province"),document.getElementById("sel_City"));
-                            document.getElementById("sel_City").value = "{{$rs['0']->city}}";
-	                         
-							    // console.log(city)
-
-					</script>
-
+                                                                <select name="province" id="sel_Province" onchange="set_son_name(this, document.getElementById('sel_City'));"> 
+                                                                    <option @if($rs['0']->province=='') selected @endif value="" >请选择</option>
+                                                                    <option @if($rs['0']->province=='北京市') selected @endif value="北京市">北京市</option>
+                                                                    <option @if($rs['0']->province=='天津市') selected @endif value="天津市">天津市</option>
+                                                                    <option @if($rs['0']->province=='河北省') selected @endif value="河北省">河北省</option>
+                                                                    <option @if($rs['0']->province=='山西省') selected @endif value="山西省">山西省</option>
+                                                                    <option @if($rs['0']->province=='内蒙古') selected @endif value="内蒙古">内蒙古</option>
+                                                                    <option @if($rs['0']->province=='辽宁省') selected @endif value="辽宁省">辽宁省</option>
+                                                                    <option @if($rs['0']->province=='吉林省') selected @endif value="吉林省">吉林省</option>
+                                                                    <option @if($rs['0']->province=='黑龙江') selected @endif value="黑龙江">黑龙江</option>
+                                                                    <option @if($rs['0']->province=='上海市') selected @endif value="上海市">上海市</option>
+                                                                    <option @if($rs['0']->province=='江苏省') selected @endif value="江苏省">江苏省</option>
+                                                                    <option @if($rs['0']->province=='浙江省') selected @endif value="浙江省">浙江省</option>
+                                                                    <option @if($rs['0']->province=='安徽省') selected @endif value="安徽省">安徽省</option>
+                                                                    <option @if($rs['0']->province=='福建省') selected @endif value="福建省">福建省</option>
+                                                                    <option @if($rs['0']->province=='江西省') selected @endif value="江西省">江西省</option>
+                                                                    <option @if($rs['0']->province=='山东省') selected @endif value="山东省">山东省</option>
+                                                                    <option @if($rs['0']->province=='河南省') selected @endif value="河南省">河南省</option>
+                                                                    <option @if($rs['0']->province=='湖北省') selected @endif value="湖北省">湖北省</option>
+                                                                    <option @if($rs['0']->province=='湖南省') selected @endif value="湖南省">湖南省</option>
+                                                                    <option @if($rs['0']->province=='广东省') selected @endif value="广东省">广东省</option>
+                                                                    <option @if($rs['0']->province=='广西省') selected @endif value="广西省">广西省</option>
+                                                                    <option @if($rs['0']->province=='海南省') selected @endif value="海南省">海南省</option>
+                                                                    <option @if($rs['0']->province=='重庆市') selected @endif value="重庆市">重庆市</option>
+                                                                    <option @if($rs['0']->province=='四川省') selected @endif value="四川省">四川省</option>
+                                                                    <option @if($rs['0']->province=='贵州省') selected @endif value="贵州省">贵州省</option>
+                                                                    <option @if($rs['0']->province=='云南省') selected @endif value="云南省">云南省</option>
+                                                                    <option @if($rs['0']->province=='西  藏') selected @endif value="西  藏">西藏</option>
+                                                                    <option @if($rs['0']->province=='陕西省') selected @endif value="陕西省">陕西省</option>
+                                                                    <option @if($rs['0']->province=='甘肃省') selected @endif value="甘肃省">甘肃省</option>
+                                                                    <option @if($rs['0']->province=='青海省') selected @endif value="青海省">青海省</option>
+                                                                    <option @if($rs['0']->province=='宁  夏') selected @endif value="宁  夏">宁夏</option>
+                                                                    <option @if($rs['0']->province=='新  疆') selected @endif value="新  疆">新疆</option>
+                                                                    <option @if($rs['0']->province=='香  港') selected @endif value="香  港">香港</option>
+                                                                    <option @if($rs['0']->province=='澳  门') selected @endif value="澳  门">澳门</option>
+                                                                    <option @if($rs['0']->province=='台湾省') selected @endif value="台湾省">台湾省</option>
+                                                                </select>
+                                                                <select  name="city" id="sel_City" >
+                                                                    <option value="" selected>请选择</option>
+                                                                </select>
+                                                                <script type="text/javascript">
+                                                                    document.getElementById("sel_Province").value= "{{$rs['0']->province}}";
+                                                                    set_son_name(document.getElementById("sel_Province"),document.getElementById("sel_City"));
+                                                                    document.getElementById("sel_City").value = "{{$rs['0']->city}}";
+                                        					   </script>
                                                             </div>
                                                             <div class="kg_uc_tips"><i class="kg_uc_tips_icon"></i><span class="kg_uc_tips_txt"></span></div>
                                                         </div>
@@ -261,7 +246,6 @@ function set_son_name(father_name, son_name){
                                                         </div>
                                                     </td>
                                                 </tr>
-                                               
                                                 <tr>
                                                     <td></td>
                                                     <td><input type="submit" id="button" class="kg_uc_btn_style02 pc_temp_b_btn" value="保存修改" /></td>
@@ -276,33 +260,31 @@ function set_son_name(father_name, son_name){
                      <!--/主体 -->
                     </div>
                 </div>
-    <div class="wing_side">
-    <!-- 左侧栏 -->
-        <!-- 头像区域 -->
-        <div class="kg_uc_avatar_area">
-            <div class="kg_uc_avatar_cover"><img id="UserImage" width="165" height="165" src="{{$rs['0']->photo}}" alt="{{$rs['0']->uname}}">
-            </div>
-            <div class="kg_uc_avatar_txt">
-                <p align="center"><a href="http://www.kugou.com/newuc/user/uc/" id="myucname" class="kg_uc_avatar_name">{{$rs['0']->uname}}</a>
-                                        </p>
-                <p align="center">(帐号:{{$rs['0']->username}})</p>
-                <!--<p align="center">积分：0</p>-->
-                 <!--<p align="center"><a href="http://www.kugou.com/uc/1349805978.html" style="text-decoration:underline" >返回旧版</a></p>-->
+                <div class="wing_side">
+                <!-- 左侧栏 -->
+                    <!-- 头像区域 -->
+                    <div class="kg_uc_avatar_area">
+                        <div class="kg_uc_avatar_cover"><img id="UserImage" width="165" height="165" src="{{$rs['0']->photo}}" alt="{{$rs['0']->uname}}">
+                        </div>
+                        <div class="kg_uc_avatar_txt">
+                            <p align="center"><a href="http://www.kugou.com/newuc/user/uc/" id="myucname" class="kg_uc_avatar_name">{{$rs['0']->uname}}</a>
+                                                    </p>
+                            <p align="center">(帐号:{{$rs['0']->username}})</p>
+                        </div>
+                    </div>
+                    <!--/头像区域 -->
+                <!--/左侧栏 -->
+                </div>
+                <div class="clear"></div>
             </div>
         </div>
-        <!--/头像区域 -->
-    <!--/左侧栏 -->
     </div>
-    <div class="clear"></div>
-</div>
-</div>
-</div>
     <!--/body -->
-	<script type="text/javascript">
+    <script type="text/javascript">
           // alert($);
         setTimeout(function(){
             $('.mws-form-message').slideUp(2000);
         },3000)
-</script>
+    </script>
 
 @stop

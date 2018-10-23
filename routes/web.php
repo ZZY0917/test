@@ -3,58 +3,13 @@
 
 
 	Route::get('/','Home\HomeController@index');
-
 	//后台登录
 	Route::any('/admin/login','Admin\LoginController@login');
 	Route::post('/admin/dologin','Admin\LoginController@dologin');
-	// ,'roleper'权限中间件
-	// 
 Route::group(['middleware'=>['adminlogin']],function(){
-	Route::any('admin','Admin\IndexController@index');
 	//后台退出登录
 	Route::any('/admin/outlogin','Admin\LoginController@outlogin');	
 	Route::any('/admin/photo','Admin\RooterController@photo');
-
-	//音乐管理
-	Route::resource('admin/music', 'Admin\MusicController');
-
-	//后台管理员
-	Route::resource('admin/rooter','Admin\RooterController');
-	Route::any('admin/user_role/{id}', 'Admin\RooterController@user_role');
-	Route::any('admin/do_user_role', 'Admin\RooterController@do_user_role');
-
-	//用户管理
-	Route::resource('/admin/user/user','Admin\UserController');
-
-	//用户收藏
-	Route::any('admin/collect/{uid}/index', 'Admin\CollectController@index');
-	Route::any('admin/collect/index/{uid}', 'Admin\CollectController@search');
-
-	
-	// 修改图片
-	Route::any('admin/upload','Admin\AlbumController@upload');
-	// Route::any('admin/upload',function (){return 1;});
-	//专辑搜索歌曲
-	Route::any('admin/album/album_music/{aid}','Admin\AlbumController@search');
-
-	//专辑歌曲
-	Route::any('admin/al/{aname}','Admin\AlbumController@music');
-	Route::any('admin/al/{id}/shezhi','Admin\AlbumController@shezhi');
-
-	//专辑管理
-	Route::resource('admin/album','Admin\AlbumController');
-
-	//歌单管理
-	Route::resource('admin/gedan','Admin\GedanController');
-
-	//权限管理
-	Route::resource('/admin/permission','Admin\PermissionController');
-
-	//角色管理
-	Route::resource('/admin/role','Admin\RoleController');
-	Route::any('/admin/role_per/{id}','Admin\RoleController@role_per');
-	Route::any('/admin/do_role_per','Admin\RoleController@do_role_per');
-
 	//修改头像
 	Route::any('admin/profile','Admin\LoginController@profile');
 	Route::any('admin/doprofile','Admin\LoginController@doprofile');
@@ -62,13 +17,46 @@ Route::group(['middleware'=>['adminlogin']],function(){
 	//修改密码
 	Route::any('admin/pass','Admin\LoginController@pass');
 	Route::any('admin/dopass','Admin\LoginController@dopass');
+});
+	// ,'roleper'权限中间件
+Route::group(['middleware'=>['adminlogin','roleper'],'namespace'=>'Admin'],function(){
+	Route::any('admin','IndexController@index');
+	//音乐管理
+	Route::resource('admin/music', 'MusicController');
+	//后台管理员
+	Route::resource('admin/rooter','RooterController');
+	Route::any('admin/user_role/{id}', 'RooterController@user_role');
+	Route::any('admin/do_user_role', 'RooterController@do_user_role');
+	//用户管理
+	Route::resource('/admin/user/user','UserController');
+	//用户收藏
+	Route::any('admin/collect/{uid}/index', 'CollectController@index');
+	Route::any('admin/collect/index/{uid}', 'CollectController@search');
+	// 修改图片
+	Route::any('admin/upload','AlbumController@upload');
+	// Route::any('admin/upload',function (){return 1;});
+	//专辑搜索歌曲
+	Route::any('admin/album/album_music/{aid}','AlbumController@search');
+	//专辑歌曲
+	Route::any('admin/al/{aname}','AlbumController@music');
+	Route::any('admin/al/{id}/shezhi','AlbumController@shezhi');
+	//专辑管理
+	Route::resource('admin/album','AlbumController');
+	//歌单管理
+	Route::resource('admin/gedan','GedanController');
+	//权限管理
+	Route::resource('/admin/permission','PermissionController');
+	//角色管理
+	Route::resource('/admin/role','RoleController');
+	Route::any('/admin/role_per/{id}','RoleController@role_per');
+	Route::any('/admin/do_role_per','RoleController@do_role_per');
 	//后台歌单管理
-	Route::resource('/admin/special','Admin\SpecialController');
-	Route::any('/admin/special/{gdid}/shezhi','Admin\SpecialController@shezhi');
-	Route::any('/admin/special/speview','Admin\SpecialController@speview');
+	Route::resource('/admin/special','SpecialController');
+	Route::any('/admin/special/{gdid}/shezhi','SpecialController@shezhi');
+	Route::any('/admin/special/speview','SpecialController@speview');
 
 	//后台歌手管理
-	Route::resource('/admin/userssong','Admin\UsersSongController');
+	Route::resource('/admin/userssong','UsersSongController');
 });
 
 // 前台管理

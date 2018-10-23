@@ -1,22 +1,20 @@
 @extends('layout.home')
 
-
     <link rel="stylesheet" type="text/css" href="/home/css/special.css">
 
 @section('content')
 <div class="navWrap">
-            <div class="nav">
-                <ul class="homeNav">
-                    <li><a class="normal" href="/">首页</a></li>
-                    <li><a class="normal"  href="/home/paihang">榜单</a></li>
-                    <li><a class="normal"  href="/home/list">歌手</a></li>
-                    <li><a class="normal"  href="/home/music">音乐</a></li>
-                    <li><a class="normal active"  href="/home/specialshow">歌单</a></li>
-                    <li><a class="normal"  href="/home/personal">我的音乐</a></li>
-                </ul>
-            </div>
-        </div>
-
+    <div class="nav">
+        <ul class="homeNav">
+            <li><a class="normal" href="/">首页</a></li>
+            <li><a class="normal"  href="/home/paihang">榜单</a></li>
+            <li><a class="normal"  href="/home/list">歌手</a></li>
+            <li><a class="normal"  href="/home/music">音乐</a></li>
+            <li><a class="normal active"  href="/home/specialshow">歌单</a></li>
+            <li><a class="normal"  href="/home/personal">我的音乐</a></li>
+        </ul>
+    </div>
+</div>
 <div class="wrap album spe clear_fix" id="spe">
    <div class="r">
         <ul id="ulAlbums">
@@ -40,15 +38,15 @@
                                             @elseif ($v->styles == 5) 影视
                                             @elseif ($v->styles == 6) 摇滚
                                             @elseif ($v->styles == 7) 治愈
-                                            @endif</i></span>
-                    
+                                            @endif</i>
+                    </span>
                 </div>
             </div>
-        </li>
-        @endforeach
-    </ul>
-</div>
+            </li>
+            @endforeach
+        </ul>
     </div>
+</div>
 @stop
 
 @section('js')

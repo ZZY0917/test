@@ -13,23 +13,23 @@
 <link rel="stylesheet" href="/css/user_center_v.1.css" />
 @section('content')
 <div class="navWrap">
-            <div class="nav">
-                <ul class="homeNav">
-                    <li><a class="normal" href="/">首页</a></li>
-                    <li><a class="normal"  href="/home/paihang">榜单</a></li>
-                    <li><a class="normal"  href="/home/list">歌手</a></li>
-                    <li><a class="normal"  href="/home/music">音乐</a></li>
-                    <li><a class="normal active"  href="/home/specialshow">歌单</a></li>
-                    <li><a class="normal"  href="/home/personal">我的音乐</a></li>
-                </ul>
-            </div>
-        </div>
-	@if(session('success'))   
-    <div class="mws-form-message info">
-        {{session('success')}}  
+    <div class="nav">
+        <ul class="homeNav">
+            <li><a class="normal" href="/">首页</a></li>
+            <li><a class="normal"  href="/home/paihang">榜单</a></li>
+            <li><a class="normal"  href="/home/list">歌手</a></li>
+            <li><a class="normal"  href="/home/music">音乐</a></li>
+            <li><a class="normal active"  href="/home/specialshow">歌单</a></li>
+            <li><a class="normal"  href="/home/personal">我的音乐</a></li>
+        </ul>
     </div>
-  @endif
-	<body>
+</div>
+@if(session('success'))   
+  <div class="mws-form-message info">
+      {{session('success')}}  
+  </div>
+@endif
+<body>
 
 <!--精选集内页-->
 <div class="wrap alm2 clear_fix specialPage">
@@ -51,10 +51,10 @@
           	    @endforeach  
             </ul>
                {{csrf_field()}}
-          <input type="submit" id="button" class="kg_uc_btn_style02 pc_temp_b_btn" value="编辑歌单" />
-       </form>
-    </div>
-    <div class="clear"></div>
+            <input type="submit" id="button" class="kg_uc_btn_style02 pc_temp_b_btn" value="编辑歌单" />
+          </form>
+      </div>
+      <div class="clear"></div>
   </div>
 </div>
 <!--脚步-->

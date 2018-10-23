@@ -17,17 +17,16 @@ class HasRolePermission
      */
     public function handle($request, Closure $next)
     {   
-        
+       
+        // 获取当前访问的路由对应的控制器方法
+        $action = \Route::current()->getAction()['controller'];
+
         //用户登录  获取用户信息
         $user = Rooter::find(session('rid'));
 
         //知道我有哪些角色 1 2 3 4
 
         $role = $user->roles;
-        // dd($role); 
-        //有了角色之后我就知道我有哪些权限
-
-        // dd($role);
 
         $arr = [];
         foreach($role as $rl){
@@ -36,24 +35,15 @@ class HasRolePermission
 
             foreach($per as $url){
 
-               $arr[] = $url->per_url;
+               $arr[] = \Route::current()->getAction()['namespace'].'\\'.$url->per_url;
             }
 
         }
-
         //获取权限
         $arrs = array_unique($arr);
 
-        //获取当前控制器方法的路径(url);
-
-         // $urs = \Route::current()->getActionName();
-
-        $uls = \Request::getRequestUri();
-
-        // dump($uls);
-
         //判断
-        if(in_array($uls,$arrs)){
+        if(in_array($action,  $arrs)){
 
             return $next($request);
             
@@ -61,7 +51,6 @@ class HasRolePermission
 
             return redirect('/admin');
         }
-
 
     }
     

@@ -19,8 +19,6 @@
 	            </ul>
 	        </div>
 		@endif
-
-
     	<form action="/admin/do_role_per?id={{$role->id}}" method='post' class="mws-form">
     		<div class="mws-form-inline">
     			<div class="mws-form-row">
@@ -29,7 +27,6 @@
     					<input type="text" class="small" name='role_name' value='{{$role->role_name}}'>
     				</div>
     			</div>
-
     			<div class="mws-form-row">
                     <label class="mws-form-label">权限名</label>
                     <div class="mws-form-item clearfix">
@@ -39,7 +36,6 @@
                                 <label><input type="checkbox"  name='per_id[]' value='{{$v->id}}' @if(in_array($v->id, $arr)) checked  @endif>{{$v->per_name}}</label>
                             </li>
                             @endforeach
-                            
                         </ul>
                     </div>
                 </div>
@@ -57,13 +53,6 @@
 
 @section('js')
 <script>
-	/*setTimeout(function(){
-
-		$('.mws-form-message').fadeOut(2000);
-
-	},5000)*/
-
 	$('.mws-form-message').delay(3000).fadeOut(2000);
 </script>
-
 @stop
