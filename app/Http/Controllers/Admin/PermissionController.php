@@ -138,4 +138,9 @@ class PermissionController extends Controller
 
         }
     }
+
+    public function error()
+    {
+        return view('admin.error');
+    }
 }

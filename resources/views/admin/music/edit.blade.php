@@ -64,19 +64,19 @@
                         <label class="mws-form-label">歌曲图片</label>
                         <div class="mws-form-item">
                             <img src="{{$res->photp}}" alt="" width='100px'>
-                            <div style="position: relative;" class="fileinput-holder"><input type="file" name='photp' style="position: absolute; top: 0px; right: 0px; margin: 0px; cursor: pointer; font-size: 999px; opacity: 0; z-index: 999;"required></div>
+                            <div style="position: relative;" class="fileinput-holder"><input type="file" name='photp' style="position: absolute; top: 0px; right: 0px; margin: 0px; cursor: pointer; font-size: 999px; opacity: 0; z-index: 999;" ></div>
                         </div>
                     </div>
                     <div class="mws-form-row">    
                         <div class="mws-form-label">歌曲上传</div>
                         <div class="mws-form-item">               
-                            <input  id="file" type="file" class="form-control" name="urll" required>     
+                            <input id="" type="file" class="form-control" name="urll" >     
                         </div>
                     </div>
                     <div class="mws-form-row">
                         <label class="mws-form-label">歌词添加</label>
                         <div class="mws-form-item">
-                            <textarea rows="3" cols="20" class="small" name="lrc" >{{$res->lrc}}</textarea>
+                            <input  type="file" class="form-control" name="lrc" value="{{$res->lrc}}" >
                         </div>
                     </div>
         		</div>

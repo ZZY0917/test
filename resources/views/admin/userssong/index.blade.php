@@ -75,7 +75,7 @@
                                 @endif
                             </td>
                             <td class=" ">
-                                {{$v->photo}}
+                               <img src="{{$v->photo}}"> 
                             </td>
                              <td class=" ">
                                 @if($v->szone ==0) 中国大陆

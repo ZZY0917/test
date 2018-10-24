@@ -140,14 +140,14 @@
                             <span class="MenuItem " data="2">欧美</span>
                             <span class="MenuItem " data="3">日韩</span>
                         </div>
-                        <button class="playAll"><span class="icon icon-play"></span><em>全部播放</em></button>
+                        
                     </div>
                     <div class="itemContent">
                         <div class="tabC" id="SongtabContent">
                             <ul id="music">
                                 @foreach($arr as $k => $v)
                                 <li>
-                                    <a href="/">
+                                    <a href="/home/play/{{$v->mid}}">
                                         <span class="songName" >{{$v->sname}} - {{$v->mname}}</span>
                                         <span class="songTips"></span>
                                         <span class="songTime"></span>
@@ -173,7 +173,7 @@
                             $(this).addClass('active');
                             var a = $(this).attr('data');
                             $.get("/home/music/show",{szone : a},function(data){
-                                $("#music").html('');
+                                $("#SongtabContent").find('ul').html('');
                                     bb = data[data.length-1];
 
                                     // 1. 循环遍历ajax放回的数组
@@ -198,12 +198,12 @@
                                                 <a href="#">
                                                     <span class="songName" >${data.sname} - ${data.mname}</span>
                                                     <span class="songTips"></span>
-                                                    <span class="songTime"></span>
+                                                    <span class="songTime">${data.times}</span>
                                                     <span id="a" class="icon playBtn icon-collect" style="width:15px;background:url('/home/images/${str}.jpg');display:block;">
                                                     </span>
                                                 </a>
                                             </li>`;
-                                $(music).appendTo($("#music"));
+                                $(music).appendTo($("#SongtabContent").find('ul'));
                             }
                     </script>
                     <script type="text/javascript">

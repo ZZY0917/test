@@ -3,6 +3,12 @@
 @section('title', $title)
 
 @section('content')
+<style type="text/css">
+    .permission{
+        width: 150px;
+        height: 40px;
+    }
+</style>
 <div class="mws-panel grid_8">
 	<div class="mws-panel-header">
     	<span>{{$title}}</span>
@@ -32,7 +38,7 @@
                     <div class="mws-form-item clearfix">
                         <ul class="mws-form-list inline">
                             @foreach($per as $k=>$v)
-                            <li>
+                            <li class="permission">
                                 <label><input type="checkbox"  name='per_id[]' value='{{$v->id}}' @if(in_array($v->id, $arr)) checked  @endif>{{$v->per_name}}</label>
                             </li>
                             @endforeach

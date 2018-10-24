@@ -14,23 +14,35 @@
         </ul>
     </div>
 </div>
+
+<style>
+    #content .newSongList {
+        height: auto!important;
+        overflow: auto;
+    }
+    #content .newSongList .itemContent {
+        height: auto!important;
+        overflow: auto;
+    }
+</style>
+
+
 <div class="content" id="content">
-    <div class="itemM newSongList" >
+    <div class="itemM newSongList">
         <div class="subContentM" id="secoundContent" style="margin-bottom: 20px;">
             <div class="itemTitle hasBorder">
                 <h3><b>歌手</b>地区</h3>
                 <div class="tabT" id="SongtabMenu">
-                    <span class="MenuItem active" data="0">华语</span>
-                    <span class="MenuItem" data="1">欧美</span>
-                    <span class="MenuItem" data="2">韩国</span>
-                    <span class="MenuItem" data="3">日本</span>
+                    <span class="MenuItem active" data="0">大陆</span>
+                    <span class="MenuItem" data="1">港台</span>
+                    <span class="MenuItem" data="2">欧美</span>
+                    <span class="MenuItem" data="3">日韩</span>
                 </div>
                 <button class=""><span class="icon "></span><em></em></button>
             </div>
             <div class="itemContent">
                 <div class="tabC" id="SongtabContent" style="margin-top: 0px;">
-                	{{--csrf_field()--}}
-                    <ul  style="display: block;">
+                    <ul id="music-item-list" style="display: block;">
                         @foreach($rs as $k=>$v)
                             <li id="music">
                                 <a href="/home/play/{{$v->mid}}">
@@ -53,11 +65,11 @@
                     </ul>
                 </div>
             </div>
-            <div class="pages p">
+            <!-- <div class="pages p">
                 <a class="prev disable">上一页</a>
                 <div class="page"><span class="currentPage">1</span>/<span class="allPage">3</span></div>
                 <a class="next">下一页</a>
-            </div>   
+            </div>    -->
         </div>
     </div>
 </div>
@@ -70,8 +82,8 @@
 			$('.MenuItem').removeClass('active')
 			$(this).addClass('active');
 			var a = $(this).attr('data');
-			$.get("/home/music/show",{szone : a},function(data){
-			  	$("#music").html('');
+			$.get("/home/music/show2",{szone : a},function(data){
+			  	$("#music-item-list").html('');
                     bb = data[data.length-1];
 
                     // 1. 循环遍历ajax放回的数组
@@ -98,7 +110,7 @@
                                     </span>
                                 </a>
                             </li>`;
-                $(music).appendTo($("#music"));
+                $(music).appendTo($("#music-item-list"));
             }
 	</script>
     <script type="text/javascript">

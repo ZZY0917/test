@@ -34,18 +34,6 @@
                         </div>
                     </div>
         			<div class="mws-form-row">
-        				<label class="mws-form-label">密码</label>
-        				<div class="mws-form-item">
-        					<input type="password" class="small" name='password' value="">
-        				</div>
-        			</div>
-        			<div class="mws-form-row">
-        				<label class="mws-form-label">确认密码</label>
-        				<div class="mws-form-item">
-        					<input type="password" class="small" name='repass' value="">
-        				</div>
-        			</div>
-        			<div class="mws-form-row">
         				<label class="mws-form-label">邮箱</label>
         				<div class="mws-form-item">
         					<input type="text" class="small" name='email' value="{{$rs->email}}">
@@ -54,7 +42,7 @@
         			<div class="mws-form-row">
                     	<label class="mws-form-label">头像</label>
                     	<div class="mws-form-item">
-                            <img src=" {{$rs->photo}}" id='img1'>
+                            <img src=" {{$rs->photo}}" id='img1' style="max-width: 150px;max-height: 150px;">
                         	<div style="position: relative;" class="fileinput-holder"><input type="file" id='file_upload' name='photo' style="position: absolute; top: 0px; right: 0px; margin: 0px; cursor: pointer; font-size: 999px; opacity: 0; z-index: 999;"></div>
 
                         </div>

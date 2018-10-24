@@ -139,7 +139,7 @@
                 </tbody>
             </table>
             <div class="dataTables_info" id="DataTables_Table_1_info">
-                每页显示 {{$request->num}}条数据
+                每页显示 5 条数据
             </div>
             <style>
                 .pagination li{

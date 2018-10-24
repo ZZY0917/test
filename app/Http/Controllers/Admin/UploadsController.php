@@ -29,9 +29,9 @@ class UploadsController extends Controller
         $this->fileExtension = $this->fileObject->getClientOriginalExtension();
         $this->setAllowFileType([
             'jpg', 'png', 'gif',
-            'mp3','mp4','wma','rm','m4a'
+            'mp3','mp4','wma','rm','m4a','lrc'
         ]);
-        $this->setAllowFileSize(10485760);
+        $this->setAllowFileSize(1048576000);
     }
 
 

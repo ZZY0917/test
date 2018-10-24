@@ -17,24 +17,15 @@ class MusicController extends Controller
         $str = '';
         if(session('uid')){
             $ress = DB::table('collect')->where('uid',session('uid'))->get()->toArray();
-            
             foreach($ress as $k => $v){
                 $str .= $v->sname.' - '.$v->mname.',';
             }
         }
-        // 根据地区查找歌手
-        $res = DB::table('singer')->where('szone',0)->paginate(30);
-        if($res){
-            foreach($res as $k => $v)
-            {
-                
-                $rs[] = DB::table('singer')
+        
+        $rs = DB::table('singer')
                 ->join('music','singer.sname','music.sname')
-                ->where('sid',$v->sid)
-                ->orderBy('mid','desc')
-                ->first();
-            }
-        }
+                ->where('szone',0)
+                ->get();
     	return view('/home/music/index',['rs'=>$rs,'str'=>$str]);
     }
 
@@ -131,5 +122,47 @@ class MusicController extends Controller
             'status'=>1
         ])->delete();
         return 1;
+    }
+
+
+
+    public function show2(Request $request)
+    {
+
+        // 根据地区查找歌手
+        // $rs = [];
+        // $res = DB::table('singer')->where('szone',$request->szone)->paginate(30);
+        // if($res){
+        //     foreach($res as $k => $v)
+        //     {
+                
+            $rs = DB::table('singer')
+            ->join('music','singer.sname','music.sname')
+            ->where('szone',$request->szone)
+            // ->orderBy('mid','desc')
+            ->get();
+                // dd($rs);
+        //     }
+        // }else{ 
+        //     $rs[] = '';
+        // } 
+        // $rs = DB::table('singer')
+        //     ->join('music','singer.sname','music.sname')
+        //     ->where('sid',$v->sid)
+        //     ->where()
+        if(session('uid')){
+            // 根据session里的uid查找个人收藏的歌曲
+            $ress = DB::table('collect')->where('uid',session('uid'))->get()->toArray();
+            $str = '';
+            foreach($ress as $k => $v){
+                $str .= $v->sname.' - '.$v->mname.',';
+            }
+            $rs[] = $str;
+        }else{
+            $rs[] = '';
+        }
+        // dd($rs);
+        return response()->json($rs);
+        // return json($rs);
     }
 }

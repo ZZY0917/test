@@ -49,7 +49,7 @@ class HasRolePermission
             
         } else {
 
-            return redirect('/admin');
+            return redirect('/admin/error');
         }
 
     }

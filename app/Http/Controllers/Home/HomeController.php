@@ -91,12 +91,13 @@ class HomeController extends Controller
     {   
         $rs = DB::table('music')->where('mid',$id)->first();
 
+        // 将查询出来的数据放入session中, 注意session的键不要冲突,否则会覆盖
 
+        // 在前台遍历session中的数据, 不要直接遍历遭到的这一条
+
+        // 让session中最后一条播放
 
         // 将数组装换为字符串
-        
-
-        
         return view('home.play.play',[
             'rs' => $rs
         ]);

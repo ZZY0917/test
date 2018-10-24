@@ -1,7 +1,6 @@
 <?php
 
 
-
 	Route::get('/','Home\HomeController@index');
 	//后台登录
 	Route::any('/admin/login','Admin\LoginController@login');
@@ -17,6 +16,9 @@ Route::group(['middleware'=>['adminlogin']],function(){
 	//修改密码
 	Route::any('admin/pass','Admin\LoginController@pass');
 	Route::any('admin/dopass','Admin\LoginController@dopass');
+
+	// 无权限返回页面
+	Route::any('/admin/error','Admin\PermissionController@error');
 });
 	// ,'roleper'权限中间件
 Route::group(['middleware'=>['adminlogin','roleper'],'namespace'=>'Admin'],function(){
@@ -54,7 +56,6 @@ Route::group(['middleware'=>['adminlogin','roleper'],'namespace'=>'Admin'],funct
 	Route::resource('/admin/special','SpecialController');
 	Route::any('/admin/special/{gdid}/shezhi','SpecialController@shezhi');
 	Route::any('/admin/special/speview','SpecialController@speview');
-
 	//后台歌手管理
 	Route::resource('/admin/userssong','UsersSongController');
 });
@@ -79,6 +80,7 @@ Route::group(['middleware'=>['adminlogin','roleper'],'namespace'=>'Admin'],funct
 	// 前台歌曲列表
 	Route::any('/home/music','Home\MusicController@index');
 	Route::any('/home/music/show','Home\MusicController@show');
+	Route::any('/home/music/show2','Home\MusicController@show2');
 	//前台专辑详情
 	Route::any('home/albumlist/{id}','Home\HomeController@albumlist');
 	//前台歌手AJAX

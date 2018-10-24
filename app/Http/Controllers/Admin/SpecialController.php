@@ -232,7 +232,7 @@ class SpecialController extends Controller
     {
         try{
            
-            $res = Rooter::where('gdid',$id)->delete();
+            $res = Special::where('gdid',$id)->delete();
 
             if($res){
 

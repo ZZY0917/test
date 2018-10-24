@@ -212,18 +212,13 @@ class RooterController extends Controller
 
         $this->validate($request, [
             'username' => 'required|regex:/^\w{6,12}$/',
-            'password' => 'required|regex:/^\S{6,12}$/',
-            'repass' =>'same:password',
             'rname' =>'required|regex:/^\w{4,10}$/',
             'email' =>'email:email',
 
 
         ],[
             'username.required'=>'管理员账号不能为空',
-            'password.required'=>'密码不能为空',
             'username.regex'=>'管理员账号格式不正确',
-            'password.regex'=>'密码格式不正确',
-            'repass.same'=>'两次密码不一致',
             'rname.required' => '管理员名称不能为空',
             'rname.regex' => '管理员名称格式不正确',
             'email.email'=>'邮箱格式不正确',
@@ -249,7 +244,7 @@ class RooterController extends Controller
             $res['photo'] = '/uploads/'.$name.'.'.$suffix;
 
         }
-        $res['password'] = Hash::make($request->input('password'));
+        // $res['password'] = Hash::make($request->input('password'));
         // dd($rs);
 
         try{

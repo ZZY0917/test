@@ -55,7 +55,6 @@ class MusicController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->mname);
         //表单验证
         $fields = $request->all();
         //曲风多选框
@@ -80,17 +79,25 @@ class MusicController extends Controller
         $imageUrl = $this->uploadFile($request, 'photp');
         $musicUrl = $this->uploadFile($request, 'urll');
         $lrcUrl = $this->uploadFile($request, 'lrc');
+        // dd($musicUrl);
 
         $fields['photp'] = $imageUrl;
         $fields['urll'] = $musicUrl;
-        $fields['lrc'] = $lrcUrl;
+        if($lrcUrl){
+            $fields['lrc'] = $lrcUrl;
+        }
         $res = Music::create($fields);
 
-        album::insert([
-            'aname'=>$request->aname,
-            'sname'=>$request->sname
-            // 'styles'=>$request->styles
-        ]);
+        // 查询专辑是否存在
+        $search = album::where([['sname',$request->sname],['aname',$request->aname]])->first();
+        // dd($search);
+        if(!$search){
+            album::insert([
+                'aname'=>$request->aname,
+                'sname'=>$request->sname
+                // 'styles'=>$request->styles
+            ]);
+        }
 
         if ($musicUrl && $imageUrl) {
             // 文件上传成功
@@ -106,7 +113,7 @@ class MusicController extends Controller
                     
         }
 
-        return view('/admin');
+        return view('/admin/index',['title'=>'后台首页']);
     }
 
 
@@ -194,7 +201,7 @@ class MusicController extends Controller
                     
         }
 
-        return view('/admin');
+        return view('/admin/index',['title'=>'后台首页']);
     }
 
     /**

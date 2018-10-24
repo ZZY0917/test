@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
@@ -26,6 +25,11 @@
     }
     .tyg-div-form form {padding:10px;}
     .tyg-div-form form input[type="text"]{
+        width: 270px;
+        height: 30px;
+        margin: 25px 10px 0px 0px;
+    }
+    .tyg-div-form form input[type="password"]{
         width: 270px;
         height: 30px;
         margin: 25px 10px 0px 0px;
@@ -96,7 +100,7 @@
                 <input type="text" name='username' placeholder="请输入账号..."/>
             </div>
             <div style="margin:5px 0px;">
-                <input type="text" name='password' placeholder="请输入密码..."/>
+                <input type="password" name='password' placeholder="请输入密码..."/>
             </div>
             <div style="margin:5px 0px;">
                 <input type="text" name="code" style="width:120px;" placeholder="请输入验证码..."/>
