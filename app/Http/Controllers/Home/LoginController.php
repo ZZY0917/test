@@ -39,7 +39,7 @@ class LoginController extends Controller
     	//判断status
     	if($data->status == '0'){
 
-    		return back()->with('error','请到注册时的邮箱进行激活账号,否则不能进行登录');
+    		return back()->with('error','请到邮箱进行账号激活!!!');
 
     		
     	}
