@@ -144,15 +144,25 @@ class LoginController extends Controller
         
         //获取旧密码
         $oldpass = $request->oldpass;
-// dd($oldpass);
+        // dd(Hash::check($oldpass, $pass->password));
 
-        // dd(decrypt($pass->password));
-        if(decrypt($pass->password) != $oldpass){
+        // dd($oldpass);
 
-            return back()->with('error','原密码错误');
+        //检测密码  hash   
+        if (!Hash::check($oldpass, $pass->password)) {
+            
+            return back()->with('error','原密码错误!');
+
         }
 
-        $rs['password'] = encrypt($request->password);
+        // if(decrypt($pass->password) != $oldpass){
+
+        //     return back()->with('error','原密码错误');
+        // }
+
+        // $rs['password'] = encrypt($request->password);
+        $rs['password'] = Hash::make($request->input('password'));
+        // dd($rs);
 
 
         try{

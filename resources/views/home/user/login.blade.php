@@ -30,7 +30,7 @@
     <div class="wrap">
         <link rel="stylesheet" href="/homes/css/shopmain-20150729.css" type="text/css">
         <div class="topBanner">
-        	<a href="../../shop/product/kugouproduct/index.html" target="_blank"></a>
+        	<a href="/" target="_blank"></a>
         </div>
         <div class="public-header-wrapper">
             <div id="public-header">
@@ -48,7 +48,7 @@
         </div>
         <div class="public-nav-wrapper">
         	<div id="public-nav" class="clear_fix">
-        	  <h1 class="logo"><a href="../../index.html"><img src="/homes/images/herder_logo.jpg" width="170" height="40" alt="酷狗音乐"/></a></h1>
+        	  <h1 class="logo"><a href="/"><img src="/images/music2.png" width="170" height="0" alt="因乐" style="margin-top:0px;height: 50px;" /></a></h1>
         	</div>
         </div>
         <div class="scroll" id="scroll"><img src="/homes/images/scrolltop.png" alt="返回顶部"/></div>
@@ -133,7 +133,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td><label class="gray"><input type="checkbox" name="readed" id="t01Agree" class="kg_lgn_checkbox" checked />我已经认真阅读并同意 <a href="../../newuc/reg/protocol.html" target="_blank" class="a_link">《酷狗服务条款》</a></label></td>
+                                    <td><label class="gray"><input type="checkbox" name="readed" id="t01Agree" class="kg_lgn_checkbox" checked />我已经认真阅读并同意 <a href="../../newuc/reg/protocol.html" target="_blank" class="a_link">《因乐服务条款》</a></label></td>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -156,7 +156,7 @@
         <div class="footerWrapper">
             <div class="footer">
                 <div class="links">
-                    <a hidefocus="true" href="../../about/aboutus.html" target="_blank">关于酷狗</a> | <a hidefocus="true" href="javascript:void(0);" id="report">监督举报</a> | <a hidefocus="true" href="../../about/adservice.html" target="_blank">广告服务</a> | <a hidefocus="true" target="_blank" href="../../about/copyRightGuide.html">版权指引</a> |<a target="_blank" href="../../about/privacy.html">隐私政策</a>| <a hidefocus="true" target="_blank" href="../../about/protocol.html">用户服务协议</a> | <a hidefocus="true" target="_blank" href="../../company/partners.html">推广合作</a> | <a hidefocus="true" target="_blank" href="../../imusic/index.html">酷狗音乐人</a> |<a hidefocus="true" target="_blank" href="http://tui.kugou.com/">酷狗音乐推</a> |<a hidefocus="true" href="../../hr/html/index.html" target="_blank">招聘信息</a> | <a hidefocus="true" href="../../shop/help/serviceCenter.html" target="_blank">客服中心</a> | <a hidefocus="true" href="http://survey.kugou.com/default/index/i=40CD7B8437008E65E67D82D9044C15C99C2E699859F51338" target="_blank">用户体验提升计划</a>
+                    <a hidefocus="true" href="../../about/aboutus.html" target="_blank">关于因乐</a> | <a hidefocus="true" href="javascript:void(0);" id="report">监督举报</a> | <a hidefocus="true" href="../../about/adservice.html" target="_blank">广告服务</a> | <a hidefocus="true" target="_blank" href="../../about/copyRightGuide.html">版权指引</a> |<a target="_blank" href="../../about/privacy.html">隐私政策</a>| <a hidefocus="true" target="_blank" href="../../about/protocol.html">用户服务协议</a> | <a hidefocus="true" target="_blank" href="../../company/partners.html">推广合作</a> |<a hidefocus="true" href="../../hr/html/index.html" target="_blank">招聘信息</a> | <a hidefocus="true" href="../../shop/help/serviceCenter.html" target="_blank">客服中心</a> | <a hidefocus="true" href="http://survey.kugou.com/default/index/i=40CD7B8437008E65E67D82D9044C15C99C2E699859F51338" target="_blank">用户体验提升计划</a>
                 </div>
                 <div class="copyright">
                     <p class="can_select">我们致力于推动网络正版音乐发展，相关版权合作请联系copyrights@kugou.com</p>

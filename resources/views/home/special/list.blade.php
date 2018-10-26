@@ -43,8 +43,9 @@
                   <span class="listen" title="播放"></span>
                   <span class="num1">@if($k+1>=10) {{$k+1}} @else 0{{$k+1}} @endif</span>
                   <span class="text">
-                    <i>{{$v->sname}} - {{$v->mname}}</i>
-                    <span style="margin-left: 200px;"> {{'<'.$v->aname.'>'}}</span>
+                    <i style="display:block;">{{$v->sname}} - {{$v->mname}}
+                      <span style="display: block;float: right;margin-left: 200px;"> {{'<'.$v->aname.'>'}}</span>
+                    </i>
                   </span>
                 </a>
               </li>

@@ -1,7 +1,10 @@
     body, 
 #mws-container
 {
-    background-image:url('/images/1.jpg');
+    background-image:url('/images/xiaba-132408080.jpg');
+    background-size:1520px 850px;
+	background-repeat:no-repeat;
+
 }
 
 #mws-sidebar, 

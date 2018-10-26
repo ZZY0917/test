@@ -137,8 +137,8 @@
                         <div class="tabT" id="SongtabMenu">
                             <span class="MenuItem active" data="0">大陆</span>
                             <span class="MenuItem " data="1">港台</span>
-                            <span class="MenuItem " data="2">欧美</span>
-                            <span class="MenuItem " data="3">日韩</span>
+                            <span class="MenuItem " data="2">日韩</span>
+                            <span class="MenuItem " data="3">欧美</span>
                         </div>
                         
                     </div>
@@ -245,7 +245,7 @@
                     <div class="itemContent">
                         <div class="cpt cptBigL">
                             <a target="_blank" href="/home/mvplay">
-                                      <img   width="320" height="175" src="/images/18.jpg" >
+                                      <img   width="320" height="175" src="/images/20180927173146386001.jpg" >
                                 <div class="Cover">
                                     <div class="playBtn icon icon-play_b">播放</div>
                                 </div>
@@ -258,7 +258,7 @@
                         </div>
                         <div class="cpt cptMidL">
                             <a target="_blank" href="/home/mvplay">
-                                <img  src="/home/images/20180913063318694832.jpg" width="154" height="84" >
+                                <img  src="/images/20180925215554929011.jpg" width="154" height="84" >
                                 <div class="Cover">
                                     <div class="playBtn icon icon-play_b">播放</div>
                                 </div>
@@ -271,7 +271,7 @@
                         </div>
                         <div class="cpt cptMidL">
                             <a target="_blank" href="/home/mvplay">
-                                <img  src="/home/images/20180926184203696067.jpg" width="154" height="84" >
+                                <img  src="/images/20180927165901814451.jpg" width="154" height="84" >
                                 <div class="Cover">
                                     <div class="playBtn icon icon-play_b">播放</div>
                                 </div>

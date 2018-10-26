@@ -27,7 +27,7 @@
   </div>
   <div class="l">
       <div class="pic">
-          <img alt="亲子合唱儿歌精选" src="{{$res->photo}}" height="148" width="148" />
+          <img alt="{{$res->username}}" src="{{$res->photo}}" height="148" width="148" />
       </div>
       <p class="detail">
           <span>用户名:{{$res->uname}}</span><br />
@@ -41,7 +41,16 @@
           <form action="/home/special/create" method='post'>
               <ul>
                   @foreach($rs as $k=>$v)               
-                  <li><a  hidefocus="true" href="/home/play/{{$v->mid}}" ><span class="num1">@if($k+1>=10) {{$k+1}} @else 0{{$k+1}} @endif</span><span class="text"><i> {{$v->mname}}- {{$v->sname}}</i><span style="margin-left: 200px;">{{'<'.$v->aname.'>'}}</span></span></a></li>
+                  <li>
+                    <a  hidefocus="true" href="/home/play/{{$v->mid}}" >
+                      <span class="num1">@if($k+1>=10) {{$k+1}} @else 0{{$k+1}} @endif</span>
+                      <span class="text">
+                        <i style="display:block;">{{$v->sname}} - {{$v->mname}}
+                          <span style="display: block;float: right;margin-left: 200px;"> {{'<'.$v->aname.'>'}}</span>
+                        </i>
+                      </span>
+                    </a>
+                  </li>
                   @endforeach
               </ul>
                {{csrf_field()}}

@@ -31,7 +31,7 @@
     <div class="wrap">
         <link rel="stylesheet" href="/homes/css/shopmain-20150729.css" type="text/css">
         <div class="topBanner">
-        	<a href="../../shop/product/kugouproduct/index.html" target="_blank"></a>
+        	<a href="/" target="_blank"></a>
         </div>
         <div class="public-header-wrapper">
             <div id="public-header">
@@ -49,7 +49,7 @@
         </div>
         <div class="public-nav-wrapper">
         	<div id="public-nav" class="clear_fix">
-        	  <h1 class="logo"><a href="/"><img src="/homes/images/herder_logo.jpg" width="170" height="40" alt="酷狗音乐"/></a></h1>
+        	  <h1 class="logo"><a href="/"><img src="/images/music2.png" style="margin-top:0px;height: 50px;" width="170" height="40" alt="酷狗音乐"/></a></h1>
         	</div>
         </div>
         <div class="scroll" id="scroll"><img src="/homes/images/scrolltop.png" alt="返回顶部"/></div>

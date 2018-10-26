@@ -35,8 +35,8 @@
                 <div class="tabT" id="SongtabMenu">
                     <span class="MenuItem active" data="0">大陆</span>
                     <span class="MenuItem" data="1">港台</span>
-                    <span class="MenuItem" data="2">欧美</span>
-                    <span class="MenuItem" data="3">日韩</span>
+                    <span class="MenuItem" data="2">日韩</span>
+                    <span class="MenuItem" data="3">欧美</span>
                 </div>
                 <button class=""><span class="icon "></span><em></em></button>
             </div>
@@ -46,6 +46,7 @@
                         @foreach($rs as $k=>$v)
                             <li id="music">
                                 <a href="/home/play/{{$v->mid}}">
+                                    <span class="songName">@if ($k<9) 0{{$k+1}} @else {{$k+1}} @endif &nbsp; </span>
                                     <span class="songName" >{{$v->sname}} - {{$v->mname}}</span>
                                     <span class="songTips"></span>
                                     <span class="songTime"></span>
@@ -65,11 +66,6 @@
                     </ul>
                 </div>
             </div>
-            <!-- <div class="pages p">
-                <a class="prev disable">上一页</a>
-                <div class="page"><span class="currentPage">1</span>/<span class="allPage">3</span></div>
-                <a class="next">下一页</a>
-            </div>    -->
         </div>
     </div>
 </div>
@@ -89,7 +85,12 @@
                     // 1. 循环遍历ajax放回的数组
                     for (var i = 0; i < data.length-1; i++) {
                         if($.isPlainObject(data[i])) {
-                            setSingerHtml(data[i],bb);
+                            if(i<9){
+                                b = "0"+(i+1);
+                            }else{
+                                b = i+1;
+                            }
+                            setSingerHtml(data[i],bb,b);
                         }
                     }
                     // 2. 创建节点
@@ -98,11 +99,12 @@
                 });
 		});
 		// 设置html
-            function setSingerHtml(data,bb) {
+            function setSingerHtml(data,bb,b) {
                 var patt1 = new RegExp(data.sname + ' - ' + data.mname);
                 var str = patt1.test(bb) ? "2": '1';
                 var music = `<li>
                                 <a href="/home/play/${data.mid}">
+                                    <span class="songName">${b}  &nbsp; </span>
                                     <span class="songName" >${data.sname} - ${data.mname}</span>
                                     <span class="songTips"></span>
                                     <span class="songTime"></span>
@@ -117,10 +119,10 @@
         // $(function(){
             $("ul").delegate(".icon-collect", "click", function(){
                 // alert(123);
-                var se = $(this).siblings().eq(0).text().split(' ');
+                var se = $(this).siblings().eq(1).text().split(' ');
                 var mname = se['2'];
                 var sname = se['0'];
-                // console.log(sname)
+                console.log(se)
                 var str = $(this).attr('style')
                 $(this).removeAttr('style');
                 if(str == "width:15px;background:url('/home/images/1.jpg');display:block;"){

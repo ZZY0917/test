@@ -69,7 +69,7 @@
                     <a href="/home/play/{{$v->mid}}">
                     <span style="padding-right: 10px;"> @if($k+1<10) {{$k+1}} @else  {{$k}} @endif </span>
                     <span class="" >{{$v->mname}} - {{$v->sname}}</span>
-                    <span style="position: absolute;left:850px;">03:14</span>
+                    <span style="position: absolute;left:850px;">0{{$v->times}}</span>
                     <span class="icon playBtn icon-play" style="width:15px;background:url('/home/images/3.jpg');display:block;"></span>
                     </a>
                 </li>  

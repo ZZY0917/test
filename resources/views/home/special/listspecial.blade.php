@@ -39,7 +39,18 @@
           </h4>
           <ul>
                @foreach($music as $k=>$v)              
-              <li><a title="{{$v->sname}} - {{$v->mname}}" hidefocus="true" href="javascript:;" data="C3967DE92CF781436E29B2E30ACFA0E7|140200"><span  class="share" title="分享" ></span><span class="listen" title="播放"></span><span class="num1">@if($k+1>=10) {{$k+1}} @else 0{{$k+1}} @endif</span><span class="text"><i>{{$v->sname}} - {{$v->mname}}</i><span style="margin-left: 200px;"> {{'<'.$v->aname.'>'}}</span></span></a></li>
+              <li>
+                <a title="{{$v->sname}} - {{$v->mname}}" hidefocus="true" href="javascript:;" data="C3967DE92CF781436E29B2E30ACFA0E7|140200">
+                  <span  class="share" title="分享" ></span>
+                  <span class="listen" title="播放"></span>
+                  <span class="num1">@if($k+1>=10) {{$k+1}} @else 0{{$k+1}} @endif</span>
+                  <span class="text">
+                    <i style="display:block;">{{$v->sname}} - {{$v->mname}}
+                    <span style="display: block;float: right;margin-left: 200px;"> {{'<'.$v->aname.'>'}}</span>
+                    </i>
+                  </span>
+                </a>
+              </li>
               @endforeach
           </ul>
       </div>

@@ -9,7 +9,7 @@
     <meta itemprop="images" content="/home/images/logo.png" />
     <meta name="keywords" content="" />
     
-    <link href="root/favicon.ico" rel="shortcut icon">
+    <link href="/images/20130807185439172736.png" rel="shortcut icon">
     <link rel="stylesheet" href="/home/css/index.css">
     <link rel="stylesheet" href="/homes/css/base_v.1.css" />
     <link rel="stylesheet" href="/homes/css/user_center_v.1.css" />
@@ -34,7 +34,7 @@
     
     <div class="mainPage">
         <div class="header">
-            <h1 class="logo"><a  href="/"><img src="" alt=""></a></h1>
+            <h1 class="logo"><a  href="/"><img src="/images/music.png" alt=""></a></h1>
             <div class="search_wrapper top_search">
                 <div class="search_input">
                     <form method="post" action="/home/sou">

@@ -67,7 +67,7 @@ class MusicController extends Controller
     public function collect(Request $request)
     {
         // dd($request->mname,$request->sname);
-
+        
         $rs = Music::where([
                     ['mname',$request->mname],
                     ['sname',$request->sname]

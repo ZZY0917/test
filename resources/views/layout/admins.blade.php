@@ -6,6 +6,7 @@
 <!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
+<link href="/images/20130807185439172736.png" rel="shortcut icon">
 
 <!-- Viewport Metatag -->
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -189,7 +190,7 @@
         <div id="mws-container" class="clearfix">
         
         	<!-- Inner Container Start -->
-            <div class="container" style="min-width: 1200px;min-height: 600px">
+            <div class="container" style="min-width: 1200px;min-height: 684px">
             
             @section('content')
 

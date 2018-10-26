@@ -40,8 +40,6 @@ class LoginController extends Controller
     	if($data->status == '0'){
 
     		return back()->with('error','请到邮箱进行账号激活!!!');
-
-    		
     	}
     	//判断密码
     	if(!Hash::check($res['password'], $data->password)){

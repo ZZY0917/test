@@ -86,8 +86,9 @@
 	    <div class="boxxx">
 	        <div class="music_txt">
 	            <div class="music_logo">
-	            	<a href="/" target="_blank">
-	            		<img src="/home/images/logo1.png" />
+	            	<a href="/" target="_blank" style="font-family:'隶书';font-size:60px;">
+	            		<!-- <img src="/images/music.png" /> -->
+	            		因乐网
 	            	</a>
 	            </div>
 	            <ul class="ul-title">
